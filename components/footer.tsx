@@ -141,7 +141,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center justify-center space-x-3">
               <MapPin className="w-5 h-5 text-green-500" />
-              <span className="text-secondary">América Latina</span>
+              <span className="text-secondary">Viedma, Rio Negro, Argentina</span>
             </div>
           </div>
         </motion.div>
