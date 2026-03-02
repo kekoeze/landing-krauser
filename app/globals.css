@@ -398,12 +398,12 @@ html {
 
 /* Enhanced button gradient with smooth microinteractions */
 .btn-gradient {
-  @apply bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-300 relative overflow-hidden;
+  @apply bg-gradient-to-r from-primary/75 to-secondary/75 transition-all duration-300 relative overflow-hidden;
   position: relative;
   transform: translateY(0);
   box-shadow: 
-    0 4px 15px rgba(134, 44, 253, 0.3),
-    0 2px 8px rgba(32, 176, 254, 0.2);
+    0 3px 10px rgba(134, 44, 253, 0.14),
+    0 1px 4px rgba(32, 176, 254, 0.08);
 }
 
 .btn-gradient::before {
@@ -413,18 +413,11 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
   transition: left 0.6s ease;
 }
 
-.btn-gradient:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(to right, #20b0fe, #862cfd, #de3dd3);
-  box-shadow: 
-    0 8px 25px rgba(134, 44, 253, 0.4),
-    0 4px 15px rgba(32, 176, 254, 0.3),
-    0 0 20px rgba(134, 44, 253, 0.2);
-}
+
 
 .btn-gradient:hover::before {
   left: 100%;
