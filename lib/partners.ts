@@ -1,7 +1,43 @@
+export type PartnerLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+export type PartnerCapability = {
+  title: string;
+  description: string;
+};
+
+export type PartnerUseCase = {
+  title: string;
+  description: string;
+};
+
+export type PartnerFaq = {
+  question: string;
+  answer: string;
+};
+
+export type PartnerDetailPage = {
+  badge: string;
+  heroDescription: string;
+  heroLinks: PartnerLink[];
+  allianceTitle: string;
+  allianceDescription: string;
+  allianceBenefits: string[];
+  allianceLink: PartnerLink;
+  capabilities: PartnerCapability[];
+  useCases: PartnerUseCase[];
+  faq: PartnerFaq[];
+};
+
 export type Partner = {
   slug: string;
   name: string;
   industry: string;
+  subtitle?: string;
+  featured?: boolean;
   shortDescription: string;
   longDescription: string;
   cardGradient: string;
@@ -16,175 +52,269 @@ export type Partner = {
     label: string;
     value: string;
   }>;
-  cta?: {
-    label: string;
-    href: string;
-  };
+  cta?: PartnerLink;
+  detailPage?: PartnerDetailPage;
 };
 
 export const partners: Partner[] = [
   {
-    slug: 'andes-retail',
-    name: 'Andes Retail Group',
-    industry: 'Retail y Ecommerce',
+    slug: 'donweb',
+    name: 'DonWeb',
+    industry: 'Hosting, Cloud y Dominios',
     shortDescription:
-      'Grupo omnicanal que unifico catalogo, pagos y logistica en una sola plataforma.',
+      'Aliado de infraestructura y presencia digital para proyectos que necesitan una base solida para crecer.',
     longDescription:
-      'Trabajamos en una arquitectura headless para acelerar lanzamientos y mejorar conversion. El roadmap incluye personalizacion con IA y analitica en tiempo real para los equipos de marketing.',
+      'Trabajamos junto a DonWeb para potenciar despliegues, dominios y servicios de hosting con una base confiable para productos web, ecommerce y plataformas a medida.',
     cardGradient: 'gradient-bg-1',
     logo: {
-      alt: 'Andes Retail Group',
-      initials: 'AR',
+      alt: 'DonWeb',
+      initials: 'DW',
       gradient: 'from-teal-500 to-emerald-500',
     },
     highlights: [
-      'Ecommerce headless con catalogo unificado',
-      'Integraciones con ERP y fulfillment',
-      'Panel de ventas con alertas de stock',
+      'Infraestructura para sitios y aplicaciones',
+      'Servicios de hosting, cloud y dominios',
+      'Soporte para despliegues escalables',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Buenos Aires, AR' },
-      { label: 'Tiempo de alianza', value: '18 meses' },
-      { label: 'Servicios', value: 'Ecommerce, Integraciones, Data' },
-      { label: 'Equipo dedicado', value: '8 especialistas' },
+      { label: 'Categoria', value: 'Infraestructura digital' },
+      { label: 'Relacion', value: 'Partner tecnologico' },
+      { label: 'Enfoque', value: 'Hosting, cloud y dominios' },
+      { label: 'Aporte', value: 'Base estable para proyectos online' },
     ],
-    cta: {
-      label: 'Solicitar caso',
-      href: '/#contact',
-    },
   },
   {
-    slug: 'patagonia-logistics',
-    name: 'Patagonia Logistics',
-    industry: 'Logistica y Supply Chain',
+    slug: 'tedxviedma',
+    name: 'TEDxViedma',
+    industry: 'Comunidad, Ideas y Eventos',
     shortDescription:
-      'Operador regional que optimizo rutas y redujo tiempos de entrega con automatizacion.',
+      'Partner institucional vinculado a la difusion de ideas, comunidad y experiencias con impacto local.',
     longDescription:
-      'Implementamos un motor de asignacion dinamica con visibilidad en tiempo real. La capa de integraciones conecta WMS, tracking y canales B2B.',
+      'Acompanamos a TEDxViedma en iniciativas donde tecnologia, comunicacion y experiencia digital ayudan a amplificar eventos, contenidos y alcance comunitario.',
     cardGradient: 'gradient-bg-2',
     logo: {
-      alt: 'Patagonia Logistics',
-      initials: 'PL',
+      alt: 'TEDxViedma',
+      initials: 'TV',
       gradient: 'from-blue-500 to-cyan-500',
     },
     highlights: [
-      'Ruteo inteligente con SLA por zona',
-      'Dashboard operativo con KPIs diarios',
-      'Automatizacion de notificaciones',
+      'Soporte para presencia digital',
+      'Acompanamiento en iniciativas de difusion',
+      'Experiencias centradas en comunidad',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Neuquen, AR' },
-      { label: 'Tiempo de alianza', value: '12 meses' },
-      { label: 'Servicios', value: 'Automatizacion, Cloud, Data' },
-      { label: 'Cobertura', value: '6 provincias' },
+      { label: 'Categoria', value: 'Comunidad y eventos' },
+      { label: 'Relacion', value: 'Partner institucional' },
+      { label: 'Enfoque', value: 'Difusion y experiencia' },
+      { label: 'Perfil', value: 'Evento independiente TEDx' },
     ],
   },
   {
-    slug: 'financia-sur',
-    name: 'Financia Sur',
-    industry: 'Fintech y Pagos',
+    slug: 'jetbrains',
+    name: 'JetBrains',
+    industry: 'Herramientas de Desarrollo',
     shortDescription:
-      'Fintech que acelero el onboarding digital y mejoro la aprobacion crediticia.',
+      'Alianza con una referencia global en herramientas para desarrollo profesional de software.',
     longDescription:
-      'Creamos flujos KYC con verificacion automatica y scoring con modelos explicables. La arquitectura esta lista para escalar con nuevos productos financieros.',
+      'La relacion con JetBrains fortalece nuestro flujo tecnico con herramientas enfocadas en productividad, calidad de codigo y trabajo sostenido en proyectos complejos.',
     cardGradient: 'gradient-bg-3',
     logo: {
-      alt: 'Financia Sur',
-      initials: 'FS',
+      alt: 'JetBrains',
+      initials: 'JB',
       gradient: 'from-purple-500 to-blue-500',
     },
     highlights: [
-      'KYC automatizado con validaciones en segundos',
-      'Scoring con reglas y machine learning',
-      'Monitoreo antifraude integrado',
+      'Herramientas para desarrollo profesional',
+      'Mejora de productividad y calidad',
+      'Soporte al trabajo de equipos tecnicos',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Cordoba, AR' },
-      { label: 'Tiempo de alianza', value: '24 meses' },
-      { label: 'Servicios', value: 'IA, Integraciones, Cloud' },
-      { label: 'Usuarios activos', value: '120k' },
+      { label: 'Categoria', value: 'Developer tools' },
+      { label: 'Relacion', value: 'Partner tecnologico' },
+      { label: 'Enfoque', value: 'Productividad y calidad de codigo' },
+      { label: 'Aporte', value: 'Flujo tecnico mas consistente' },
     ],
-    cta: {
-      label: 'Agendar reunion',
-      href: '/#contact',
-    },
   },
   {
-    slug: 'salud-viva',
-    name: 'Salud Viva',
-    industry: 'Salud Digital',
+    slug: 'mercadopago',
+    name: 'Mercado Pago',
+    industry: 'Fintech y Pagos',
     shortDescription:
-      'Red de clinicas que digitalizo turnos, historias clinicas y telemedicina.',
+      'Partner clave para integraciones de cobro, checkout y experiencias de pago digitales en la region.',
     longDescription:
-      'Diseniamos un hub de datos clinicos con integraciones HL7 y APIs privadas. La experiencia paciente es mobile-first con recordatorios automatizados.',
+      'Trabajamos con Mercado Pago para implementar flujos de pago robustos, integraciones confiables y experiencias de compra mas fluidas en productos web y plataformas transaccionales.',
     cardGradient: 'gradient-bg-1',
     logo: {
-      alt: 'Salud Viva',
-      initials: 'SV',
+      alt: 'Mercado Pago',
+      initials: 'MP',
       gradient: 'from-rose-500 to-orange-500',
     },
     highlights: [
-      'Portal del paciente con turnos y pagos',
-      'Interoperabilidad con laboratorios',
-      'Telemedicina segura y escalable',
+      'Integraciones de checkout y cobros',
+      'Experiencias de pago mas simples',
+      'Base confiable para productos transaccionales',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Rosario, AR' },
-      { label: 'Tiempo de alianza', value: '9 meses' },
-      { label: 'Servicios', value: 'App Web, Integraciones, Cloud' },
-      { label: 'Sedes', value: '14 clinicas' },
+      { label: 'Categoria', value: 'Pagos digitales' },
+      { label: 'Relacion', value: 'Partner de integracion' },
+      { label: 'Enfoque', value: 'Checkout, cobros y pagos' },
+      { label: 'Cobertura', value: 'Ecosistema fintech regional' },
     ],
   },
   {
-    slug: 'energia-nova',
-    name: 'Energia Nova',
-    industry: 'Energia Renovable',
+    slug: 'nvidia',
+    name: 'NVIDIA',
+    subtitle: 'NVIDIA Connect (ISV Program)',
+    featured: true,
+    industry: 'IA, GPU y Computacion Acelerada',
     shortDescription:
-      'Empresa solar que consolido operaciones y mantenimiento en un solo centro.',
+      'Partner a traves del programa NVIDIA Connect para acompanar soluciones de IA, vision y workloads acelerados con foco de negocio.',
     longDescription:
-      'Implementamos un sistema de monitoreo con alertas predictivas y reportes ESG. El equipo opera desde un NOC con tableros en tiempo real.',
+      'Trabajamos como partner a traves del programa NVIDIA Connect (ISV) para ayudar a equipos que necesitan acelerar desarrollo, validacion tecnica y salida a mercado en productos basados en IA.',
     cardGradient: 'gradient-bg-2',
     logo: {
-      alt: 'Energia Nova',
-      initials: 'EN',
-      gradient: 'from-amber-500 to-yellow-500',
+      alt: 'NVIDIA',
+      initials: 'NV',
+      gradient: 'from-emerald-500 to-lime-500',
     },
     highlights: [
-      'Monitoreo de activos con alertas predictivas',
-      'Dashboards ESG para inversores',
-      'Integracion con sensores IoT',
+      'AI y GenAI aplicada',
+      'Computer Vision',
+      'Optimizacion de performance',
+      'Deploy en cloud',
+      'Soluciones empresariales aceleradas',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Mendoza, AR' },
-      { label: 'Tiempo de alianza', value: '15 meses' },
-      { label: 'Servicios', value: 'Cloud, Data, Automatizacion' },
-      { label: 'Activos conectados', value: '2.400' },
+      { label: 'Modalidad', value: 'Partner via NVIDIA Connect (ISV)' },
+      { label: 'Categoria', value: 'IA y computacion acelerada' },
+      { label: 'Enfoque', value: 'Innovacion y time-to-market' },
+      { label: 'Perfil', value: 'Implementacion orientada a negocio' },
     ],
+    cta: {
+      label: 'Hablemos de tu proyecto',
+      href: '/#contact',
+    },
+    detailPage: {
+      badge: 'NVIDIA Connect for ISVs',
+      heroDescription:
+        'Krauser es partner a traves del programa NVIDIA Connect para ISVs, acompanando iniciativas que necesitan acelerar desarrollo, validacion tecnica y ejecucion de soluciones de IA sin prometer niveles o certificaciones no verificadas.',
+      heroLinks: [
+        {
+          label: 'Conocer NVIDIA Connect',
+          href: 'https://www.nvidia.com/en-us/programs/isv/',
+          external: true,
+        },
+        {
+          label: 'Hablemos de tu proyecto',
+          href: '/#contact',
+        },
+      ],
+      allianceTitle: 'Sobre la alianza',
+      allianceDescription:
+        'NVIDIA Connect es un programa orientado a ISVs que busca impulsar innovacion y aceleracion tecnologica. Lo usamos como marco para trabajar con mas recursos de desarrollo, mejor contexto tecnico y un camino mas ordenado hacia implementaciones listas para negocio.',
+      allianceBenefits: [
+        'Recursos de desarrollo para acelerar pruebas y validaciones.',
+        'Entrenamiento tecnico para fortalecer decisiones de implementacion.',
+        'Guia tecnica para ordenar arquitectura y despliegue.',
+        'Acceso a oportunidades del ecosistema en contextos relevantes.',
+      ],
+      allianceLink: {
+        label: 'Ver programa NVIDIA Connect',
+        href: 'https://www.nvidia.com/en-us/programs/isv/',
+        external: true,
+      },
+      capabilities: [
+        {
+          title: 'AI / GenAI',
+          description:
+            'Diseno e implementacion de asistentes, automatizaciones y experiencias generativas con foco en productividad y operaciones.',
+        },
+        {
+          title: 'Computer Vision',
+          description:
+            'Pipelines de deteccion, analitica e inspeccion visual para escenarios industriales, comerciales y operativos.',
+        },
+        {
+          title: 'Optimizacion de performance',
+          description:
+            'Ajuste de inferencia, arquitectura y consumo para mejorar rendimiento, costo y estabilidad.',
+        },
+        {
+          title: 'Deploy en cloud',
+          description:
+            'Puesta en produccion de workloads acelerados con monitoreo, observabilidad y criterios de escalado.',
+        },
+        {
+          title: 'Soluciones empresariales aceleradas',
+          description:
+            'Integracion de IA aplicada en procesos, productos y plataformas que necesitan velocidad de adopcion.',
+        },
+      ],
+      useCases: [
+        {
+          title: 'Asistente corporativo con GenAI',
+          description:
+            'Implementamos un asistente con contexto interno para soporte, operaciones y consulta documental, reduciendo friccion operativa.',
+        },
+        {
+          title: 'Analitica visual en tiempo real',
+          description:
+            'Desarrollamos un flujo de vision para deteccion de eventos y control visual con alertas y tableros de seguimiento.',
+        },
+        {
+          title: 'Capa de inferencia para producto digital',
+          description:
+            'Llevamos modelos a un entorno productivo con integraciones de negocio, trazabilidad y despliegue preparado para escalar.',
+        },
+      ],
+      faq: [
+        {
+          question: 'Que implica ser partner a traves de NVIDIA Connect?',
+          answer:
+            'Implica que trabajamos dentro del marco del programa NVIDIA Connect para ISVs, enfocado en acelerar desarrollo y salida a mercado.',
+        },
+        {
+          question: 'Que beneficio obtiene el cliente?',
+          answer:
+            'El cliente obtiene un equipo que combina ejecucion tecnica con foco de negocio para construir soluciones aceleradas con mayor claridad y menor friccion.',
+        },
+        {
+          question: 'Venden hardware o licencias de NVIDIA?',
+          answer:
+            'No. Nuestro foco esta en estrategia, desarrollo, integracion y despliegue. La provision final depende del alcance de cada proyecto.',
+        },
+        {
+          question: 'Como trabajan soluciones aceleradas?',
+          answer:
+            'Partimos de discovery, definimos arquitectura, validamos rapidamente y luego avanzamos a una implementacion preparada para produccion.',
+        },
+      ],
+    },
   },
   {
-    slug: 'agrovision',
-    name: 'Agrovision',
-    industry: 'Agtech',
+    slug: 'citecopa',
+    name: 'CITECOPA',
+    industry: 'Fundacion y Robotica',
     shortDescription:
-      'Plataforma agricola que conecto productores, acopios y exportadores.',
+      'Fundacion sin fines de lucro orientada a la robotica, la formacion tecnica y el desarrollo con impacto social.',
     longDescription:
-      'Creamos un marketplace con trazabilidad y contratos digitales. La infraestructura esta pensada para crecer con modulos de forecasting y pagos.',
+      'Acompanamos a CITECOPA en proyectos vinculados a robotica, educacion y tecnologia aplicada, impulsando espacios de aprendizaje, experimentacion y crecimiento comunitario.',
     cardGradient: 'gradient-bg-3',
     logo: {
-      alt: 'Agrovision',
-      initials: 'AV',
+      alt: 'CITECOPA',
+      initials: 'CT',
       gradient: 'from-green-500 to-lime-500',
     },
     highlights: [
-      'Trazabilidad por lote y origen',
-      'Contratos digitales con firma',
-      'Integracion con sistemas de acopio',
+      'Impulso a iniciativas de robotica',
+      'Enfoque educativo y social',
+      'Trabajo conjunto con impacto comunitario',
     ],
     additionalInfo: [
-      { label: 'Ubicacion', value: 'Santa Fe, AR' },
-      { label: 'Tiempo de alianza', value: '6 meses' },
-      { label: 'Servicios', value: 'Plataforma, Integraciones, Data' },
-      { label: 'Operaciones', value: '+1.200 productores' },
+      { label: 'Categoria', value: 'Fundacion sin fines de lucro' },
+      { label: 'Relacion', value: 'Partner institucional' },
+      { label: 'Enfoque', value: 'Robotica y formacion tecnica' },
+      { label: 'Perfil', value: 'Tecnologia con impacto social' },
     ],
   },
 ];

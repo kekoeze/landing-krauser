@@ -4,20 +4,22 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import PartnerLogo from '@/components/partner-logo';
+import NvidiaPartnerPage from '@/components/nvidia-partner-page';
 import { getPartnerBySlug } from '@/lib/partners';
 
 export const dynamic = 'force-dynamic';
 
 type PartnerPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata(
   { params }: PartnerPageProps
 ): Promise<Metadata> {
-  const partner = await getPartnerBySlug(params.slug);
+  const { slug } = await params;
+  const partner = await getPartnerBySlug(slug);
 
   if (!partner) {
     return {
@@ -28,15 +30,26 @@ export async function generateMetadata(
 
   return {
     title: `${partner.name} | Partners - Krauser`,
-    description: partner.shortDescription,
+    description: partner.detailPage?.heroDescription ?? partner.shortDescription,
   };
 }
 
 export default async function PartnerPage({ params }: PartnerPageProps) {
-  const partner = await getPartnerBySlug(params.slug);
+  const { slug } = await params;
+  const partner = await getPartnerBySlug(slug);
 
   if (!partner) {
     notFound();
+  }
+
+  if (partner.slug === 'nvidia' && partner.detailPage) {
+    return (
+      <main className="min-h-screen surface-primary text-primary overflow-x-hidden theme-transition">
+        <Navbar />
+        <NvidiaPartnerPage partner={partner} />
+        <Footer />
+      </main>
+    );
   }
 
   return (
@@ -71,6 +84,11 @@ export default async function PartnerPage({ params }: PartnerPageProps) {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 {partner.name}
               </h1>
+              {partner.subtitle ? (
+                <p className="text-sm md:text-base font-medium text-gray-300 mb-4">
+                  {partner.subtitle}
+                </p>
+              ) : null}
               <p className="text-xl text-gray-300 mb-6">
                 {partner.shortDescription}
               </p>
@@ -82,6 +100,8 @@ export default async function PartnerPage({ params }: PartnerPageProps) {
                 <div className="mt-8">
                   <Link
                     href={partner.cta.href}
+                    target={partner.cta.external ? '_blank' : undefined}
+                    rel={partner.cta.external ? 'noreferrer' : undefined}
                     className="inline-flex items-center btn-gradient px-6 py-3 rounded-xl text-white"
                   >
                     {partner.cta.label}

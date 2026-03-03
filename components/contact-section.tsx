@@ -360,37 +360,6 @@ export default function ContactSection() {
           </div>
         </motion.div>
 
-        {/* Additional Info */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="glass-effect rounded-xl p-6 max-w-md mx-auto">
-            <h4 className="text-lg font-bold text-primary mb-3">
-              ¿Qué podés esperar?
-            </h4>
-            <ul className="space-y-2 text-sm text-secondary">
-              <li className="flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                Email: Respuesta en menos de 24 horas
-              </li>
-              <li className="flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                WhatsApp: Respuesta inmediata
-              </li>
-              <li className="flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                Consulta inicial gratuita
-              </li>
-              <li className="flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
-                Propuesta personalizada
-              </li>
-            </ul>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -164,6 +164,12 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
                   {partner.name}
                 </h3>
 
+                {partner.subtitle ? (
+                  <p className="text-sm md:text-base font-medium text-slate-600 dark:text-gray-300 mb-4">
+                    {partner.subtitle}
+                  </p>
+                ) : null}
+
                 <p className="text-slate-600 dark:text-gray-300 mb-6 leading-relaxed text-base md:text-lg">
                   {partner.shortDescription}
                 </p>
