@@ -79,6 +79,26 @@ export type PartnerPaymentPage = {
   faq: PartnerFaq[];
 };
 
+export type PartnerFoundationPage = {
+  badge: string;
+  heroDescription: string;
+  heroLinks: PartnerLink[];
+  scopeTitle: string;
+  modules: PartnerCapability[];
+  donationTitle: string;
+  donationDescription: string;
+  donationItems: string[];
+  supportTitle: string;
+  supportDescription: string;
+  supportItems: string[];
+  impactTitle: string;
+  impactMetrics: PartnerMetric[];
+  proofTitle: string;
+  proofPoints: string[];
+  testimonial: PartnerTestimonial;
+  faq: PartnerFaq[];
+};
+
 export type Partner = {
   slug: string;
   name: string;
@@ -104,6 +124,7 @@ export type Partner = {
   detailPage?: PartnerDetailPage;
   caseStudyPage?: PartnerCaseStudyPage;
   paymentPage?: PartnerPaymentPage;
+  foundationPage?: PartnerFoundationPage;
 };
 
 export const partners: Partner[] = [
@@ -878,29 +899,189 @@ export const partners: Partner[] = [
   },
   {
     slug: 'citecopa',
-    name: 'CITECOPA',
-    industry: 'Fundacion y Robotica',
+    name: 'Fundacion CiTeCopa',
+    subtitle: 'Partner Tecnologico - Plataforma Integral',
+    cardActionLabel: 'Ver caso',
+    industry: 'Fundacion, Educacion y Gestion Social',
     shortDescription:
-      'Fundacion sin fines de lucro orientada a la robotica, la formacion tecnica y el desarrollo con impacto social.',
+      'Desarrollo completo de plataforma institucional, ecommerce y sistema de gestion con donaciones integradas.',
     longDescription:
-      'Acompanamos a CITECOPA en proyectos vinculados a robotica, educacion y tecnologia aplicada, impulsando espacios de aprendizaje, experimentacion y crecimiento comunitario.',
+      'Desarrollamos integralmente el ecosistema digital de Fundacion CiTeCopa: plataforma institucional, sistema de gestion, ecommerce solidario y procesamiento de donaciones para sostener una operacion institucional con foco social.',
     cardGradient: 'gradient-bg-3',
     logo: {
-      alt: 'CITECOPA',
-      initials: 'CT',
+      alt: 'Fundacion CiTeCopa',
+      initials: 'FC',
       gradient: 'from-green-500 to-lime-500',
     },
     highlights: [
-      'Impulso a iniciativas de robotica',
-      'Enfoque educativo y social',
-      'Trabajo conjunto con impacto comunitario',
+      'Plataforma institucional y gestion centralizada',
+      'Ecommerce solidario y donaciones online',
+      'Pagos digitales seguros y trazables',
+      'Soporte tecnico continuo e infraestructura',
     ],
     additionalInfo: [
-      { label: 'Categoria', value: 'Fundacion sin fines de lucro' },
-      { label: 'Relacion', value: 'Partner institucional' },
-      { label: 'Enfoque', value: 'Robotica y formacion tecnica' },
-      { label: 'Perfil', value: 'Tecnologia con impacto social' },
+      { label: 'Categoria', value: 'Caso de exito institucional' },
+      { label: 'Modalidad', value: 'Partner Tecnologico' },
+      { label: 'Enfoque', value: 'ONG, gestion y donaciones digitales' },
+      { label: 'Perfil', value: 'Plataforma integral para fundacion' },
     ],
+    cta: {
+      label: 'Desarrollar plataforma similar',
+      href: '/#contact',
+    },
+    foundationPage: {
+      badge: 'Partner Tecnologico',
+      heroDescription:
+        'Desarrollamos el ecosistema digital completo de Fundacion CiTeCopa, incluyendo gestion institucional, ecommerce y sistema de donaciones online para una operacion transparente, trazable y preparada para crecer.',
+      heroLinks: [
+        {
+          label: 'Visitar Fundacion',
+          href: 'https://citecopa.org.ar/',
+          external: true,
+        },
+        {
+          label: 'Desarrollar plataforma similar',
+          href: '/#contact',
+        },
+      ],
+      scopeTitle: 'Alcance del desarrollo',
+      modules: [
+        {
+          title: 'Landing institucional dinamica',
+          description:
+            'Construimos una presencia institucional flexible para comunicar programas, novedades y actividades de la fundacion.',
+        },
+        {
+          title: 'Blog autoadministrable',
+          description:
+            'Integramos un modulo de contenidos para publicar noticias, avances y acciones con autonomia editorial.',
+        },
+        {
+          title: 'Sistema de gestion de alumnos',
+          description:
+            'Centralizamos altas, seguimiento y administracion de alumnos en un flujo mas ordenado para el equipo interno.',
+        },
+        {
+          title: 'Gestion de ingresos y egresos',
+          description:
+            'Digitalizamos movimientos financieros para dar mayor control, orden administrativo y visibilidad operativa.',
+        },
+        {
+          title: 'Registro y administracion de donaciones',
+          description:
+            'Unificamos la recepcion y trazabilidad de donaciones dentro de un sistema preparado para seguimiento continuo.',
+        },
+        {
+          title: 'Panel administrativo completo',
+          description:
+            'Concentramos contenidos, operaciones y control institucional en un backoffice a medida.',
+        },
+        {
+          title: 'Ecommerce solidario',
+          description:
+            'Montamos una capa de venta alineada al modelo de sostenibilidad y captacion de fondos de la fundacion.',
+        },
+        {
+          title: 'Integracion de checkout con Mercado Pago',
+          description:
+            'Implementamos cobros y donaciones con un flujo seguro, simple y conectado al ecosistema operativo.',
+        },
+        {
+          title: 'Reportes y control financiero',
+          description:
+            'Desarrollamos vistas de control para seguir transacciones, ingresos, egresos y actividad general.',
+        },
+      ],
+      donationTitle: 'Sistema de Donaciones y Pagos',
+      donationDescription:
+        'La solucion incluye una capa especifica para pagos y donaciones: checkout integrado con Mercado Pago, registro de ordenes, seguimiento de transacciones y control administrativo para dar seguridad, transparencia y trazabilidad de fondos.',
+      donationItems: [
+        'Checkout con Mercado Pago integrado.',
+        'Procesamiento seguro de pagos y donaciones online.',
+        'Gestion de ordenes y estados dentro del sistema.',
+        'Registro automatico de transacciones para seguimiento.',
+        'Panel administrativo para control y conciliacion.',
+        'Mayor transparencia y trazabilidad de fondos.',
+      ],
+      supportTitle: 'Infraestructura y soporte',
+      supportDescription:
+        'Ademas del desarrollo, sostenemos la operacion con infraestructura, monitoreo y soporte continuo. Esto permite que la plataforma funcione con estabilidad, se actualice con criterio y evolucione junto a las necesidades de la organizacion.',
+      supportItems: [
+        'Provision de infraestructura para la operacion institucional.',
+        'Mantenimiento continuo y correcciones sobre la plataforma.',
+        'Actualizaciones evolutivas segun nuevas necesidades.',
+        'Soporte tecnico para equipo interno y operacion diaria.',
+        'Monitoreo de estabilidad y seguimiento preventivo.',
+      ],
+      impactTitle: 'Impacto del proyecto',
+      impactMetrics: [
+        {
+          value: '420+',
+          label: 'Alumnos gestionados',
+          description:
+            'Seguimiento centralizado de alumnos y procesos vinculados a la operacion educativa.',
+        },
+        {
+          value: '1.300+',
+          label: 'Donaciones procesadas',
+          description:
+            'Donaciones registradas con control administrativo y trazabilidad dentro de la plataforma.',
+        },
+        {
+          value: '2.100+',
+          label: 'Transacciones registradas',
+          description:
+            'Cobros, ordenes y movimientos procesados con mayor orden institucional.',
+        },
+        {
+          value: '68%',
+          label: 'Procesos internos automatizados',
+          description:
+            'Reduccion de tareas manuales en administracion, control y seguimiento.',
+        },
+      ],
+      proofTitle: 'Que demuestra este proyecto',
+      proofPoints: [
+        'Capacidad para desarrollar plataformas digitales para ONG y fundaciones.',
+        'Experiencia integrando ecommerce y sistemas de donaciones online.',
+        'Criterio para ordenar sistemas administrativos internos con tecnologia a medida.',
+        'Implementacion de pagos digitales seguros, transparentes y trazables.',
+        'Construccion de soluciones institucionales escalables con soporte continuo.',
+      ],
+      testimonial: {
+        quote:
+          'Krauser nos ayudo a consolidar una plataforma integral que conecta gestion, sostenibilidad y transparencia en una sola base tecnologica.',
+        author: 'Equipo institucional',
+        role: 'Fundacion CiTeCopa',
+      },
+      faq: [
+        {
+          question: 'Desarrollan plataformas para fundaciones?',
+          answer:
+            'Si. Disenamos plataformas institucionales para ONG, fundaciones y organizaciones que necesitan gestion, contenidos y procesos digitales integrados.',
+        },
+        {
+          question: 'Incluye sistema de donaciones?',
+          answer:
+            'Si. Podemos implementar recepcion de donaciones, registro de transacciones y seguimiento administrativo dentro del mismo ecosistema.',
+        },
+        {
+          question: 'Se pueden integrar pagos online?',
+          answer:
+            'Si. Integramos pasarelas y checkouts para ecommerce, donaciones y cobros segun la necesidad de la organizacion.',
+        },
+        {
+          question: 'Incluye panel administrativo?',
+          answer:
+            'Si. Desarrollamos backoffice a medida para controlar contenidos, operaciones, pagos y procesos internos.',
+        },
+        {
+          question: 'Brindan soporte continuo?',
+          answer:
+            'Si. Acompanamos con mantenimiento, soporte, monitoreo y mejoras evolutivas para sostener la plataforma en el tiempo.',
+        },
+      ],
+    },
   },
 ];
 
