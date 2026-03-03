@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X, Brain } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, systemTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -29,12 +31,17 @@ export default function Navbar() {
     { name: 'Inicio', href: '#home' },
     { name: 'Nosotros', href: '#about' },
     { name: 'Servicios', href: '#services' },
+    { name: 'Partners', href: '#partners' },
     { name: 'Proyectos', href: '#portfolio' },
     { name: 'Contacto', href: '#contact' },
   ];
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  const getMenuHref = (href: string) => {
+    return pathname === '/' ? href : `/${href}`;
   };
 
   // Don't render theme toggle until mounted to avoid hydration mismatch
@@ -70,7 +77,7 @@ export default function Navbar() {
                 {menuItems.map((item) => (
                   <motion.a
                     key={item.name}
-                    href={item.href}
+                    href={getMenuHref(item.href)}
                     className="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors theme-transition"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -137,7 +144,7 @@ export default function Navbar() {
               {menuItems.map((item) => (
                 <motion.a
                   key={item.name}
-                  href={item.href}
+                  href={getMenuHref(item.href)}
                   className="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors theme-transition"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -186,7 +193,7 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
+                href={getMenuHref(item.href)}
                 className="text-secondary hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors theme-transition"
                 onClick={() => setIsOpen(false)}
               >
