@@ -15,7 +15,6 @@ export default function PricingSection() {
       icon: ShoppingCart,
       title: 'Tienda E-commerce',
       description: 'Tienda online completa con carrito de compras, MercadoPago integrado, gestión de inventario y panel administrativo.',
-      price: 'ARS 300,000',
       features: [
         'Diseño responsivo',
         'Carrito de compras',
@@ -32,7 +31,6 @@ export default function PricingSection() {
       icon: FileText,
       title: 'Landing Page',
       description: 'Página de aterrizaje optimizada para conversiones con diseño atractivo y llamadas a la acción efectivas.',
-      price: 'ARS 100,000',
       features: [
         'Diseño único',
         'Optimizada para conversión',
@@ -49,7 +47,6 @@ export default function PricingSection() {
       icon: PenTool,
       title: 'Sitio Web Blog',
       description: 'Sitio web de blog profesional con sistema de gestión de contenido, categorías, comentarios y herramientas SEO avanzadas.',
-      price: 'ARS 250,000',
       features: [
         'Sistema de gestión de contenido',
         'Categorías y etiquetas',
@@ -66,7 +63,6 @@ export default function PricingSection() {
       icon: Code,
       title: 'Desarrollo Personalizado',
       description: 'Desarrollo personalizado según tus necesidades específicas. Desde aplicaciones web hasta integraciones complejas.',
-      price: 'Cotización',
       features: [
         'Análisis de requerimientos',
         'Arquitectura personalizada',
@@ -113,27 +109,16 @@ export default function PricingSection() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`relative glass-card-hover rounded-2xl p-8 group overflow-hidden ${service.bgGradient} ${
-                service.popular ? 'ring-2 ring-purple-500/50' : ''
-              }`}
+              className={`relative glass-card-hover rounded-2xl p-8 group overflow-hidden flex flex-col h-full ${service.bgGradient}`}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              {/* Popular Badge */}
-              {service.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 mt-4">
-                  <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                    Más Popular
-                  </div>
-                </div>
-              )}
-
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
                 {/* Icon */}
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} p-4 mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
                   <service.icon className="w-8 h-8 text-white" />
@@ -150,15 +135,7 @@ export default function PricingSection() {
                 </p>
                 
                 {/* Price */}
-                <div className="mb-6">
-                  <div className="text-3xl font-bold text-white mb-1">
-                    {service.price}
-                  </div>
-                  {service.price !== 'Cotización' && (
-                    <div className="text-gray-400 text-sm">Precio inicial</div>
-                  )}
-                </div>
-                
+
                 {/* Features */}
                 <ul className="space-y-3 mb-8">
                   {service.features.map((feature, featureIndex) => (
@@ -171,11 +148,11 @@ export default function PricingSection() {
                 
                 {/* CTA Button */}
                 <Button
-                  className={`w-full btn-gradient text-white py-3 font-semibold group/btn ${
-                    service.popular ? 'neon-glow' : ''
+                  className={`w-full btn-glass text-white py-3 font-semibold group/btn mt-auto ${
+                     ''
                   }`}
                 >
-                  {service.price === 'Cotización' ? 'Solicitar Cotización' : 'Comenzar Proyecto'}
+                  {'Comenzar Proyecto'}
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>

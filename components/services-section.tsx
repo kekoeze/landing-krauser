@@ -11,13 +11,14 @@ export default function ServicesSection() {
 
   const services = [
     {
-      icon: Brain,
-      title: 'Inteligencia Artificial',
-      description: 'Integraciones inteligentes con ChatGPT, Gemini y Claude para automatizar y optimizar tus procesos de negocio.',
-      features: ['Chatbots inteligentes', 'Análisis de datos', 'Automatización de procesos'],
-      gradient: 'from-purple-600 to-blue-600',
+      icon: Smartphone,
+      title: 'Desarrollo Web',
+      description: 'Creamos sitios web modernos y responsivos, desde landing pages hasta complejas aplicaciones web, optimizados para el rendimiento y la experiencia del usuario.',
+      features: ['Landing Pages', 'Sitios Corporativos', 'Aplicaciones Web'],
+      gradient: 'from-teal-600 to-green-600',
       bgGradient: 'gradient-bg-1',
     },
+
     {
       icon: ShoppingCart,
       title: 'Ecommerce a Medida',
@@ -29,17 +30,17 @@ export default function ServicesSection() {
     {
       icon: Cloud,
       title: 'Soluciones en la Nube',
-      description: 'Infraestructura escalable en AWS y Google Cloud para el crecimiento de tu empresa.',
+      description: 'Infraestructura escalable en AWS, Google Cloud para el crecimiento de tu empresa.',
       features: ['Escalabilidad automática', 'Monitoreo 24/7', 'Backup automático'],
       gradient: 'from-cyan-600 to-teal-600',
       bgGradient: 'gradient-bg-3',
     },
     {
-      icon: Smartphone,
-      title: 'Aplicaciones Móviles',
-      description: 'Aplicaciones móviles y web que brindan experiencias excepcionales en cualquier dispositivo.',
-      features: ['Multiplataforma', 'Offline first', 'Push notifications'],
-      gradient: 'from-teal-600 to-green-600',
+      icon: Brain,
+      title: 'Inteligencia Artificial',
+      description: 'Integraciones inteligentes con ChatGPT, Gemini y Claude para automatizar y optimizar tus procesos de negocio.',
+      features: ['Chatbots inteligentes' ,'Automatización de procesos'],
+      gradient: 'from-purple-600 to-blue-600',
       bgGradient: 'gradient-bg-1',
     },
     {
