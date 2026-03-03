@@ -104,11 +104,11 @@ export default function NvidiaPartnerPage({ partner }: NvidiaPartnerPageProps) {
                 Espacio de marca
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-slate-300/80 bg-slate-950 px-8 py-10 shadow-[0_20px_40px_rgba(15,23,42,0.18)] dark:border-white/[0.08]">
-                <span className="block text-center text-3xl font-semibold tracking-[0.35em] text-white">
+              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-slate-100 px-8 py-10 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08] dark:bg-slate-950">
+                <span className="block text-center text-3xl font-semibold tracking-[0.35em] text-slate-950 dark:text-white">
                   NVIDIA
                 </span>
-                <span className="mt-4 block text-center text-xs uppercase tracking-[0.22em] text-slate-300">
+                <span className="mt-4 block text-center text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
                   Placeholder tipografico
                 </span>
               </div>
@@ -217,7 +217,7 @@ export default function NvidiaPartnerPage({ partner }: NvidiaPartnerPageProps) {
                     key={capability.title}
                     className="rounded-2xl border border-slate-200/80 bg-white/75 p-6 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg dark:bg-white dark:text-slate-950">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-white">

@@ -136,12 +136,12 @@ export default function JetBrainsPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-700/80 dark:text-fuchsia-200/80">
                 Espacio de marca
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-white/10 bg-[linear-gradient(145deg,rgba(17,24,39,1),rgba(30,41,59,0.96))] px-8 py-10">
+              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(226,232,240,0.92))] px-8 py-10 dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(17,24,39,1),rgba(30,41,59,0.96))]">
                 <div className="grid grid-cols-[14px,1fr] gap-5">
                   <div className="flex flex-col gap-2">
                     <span className="h-3 rounded-full bg-fuchsia-500"></span>
@@ -149,17 +149,17 @@ export default function JetBrainsPartnerPage({
                     <span className="h-3 rounded-full bg-blue-500"></span>
                   </div>
                   <div>
-                    <span className="block text-3xl font-semibold tracking-[0.28em] text-white">
+                    <span className="block text-3xl font-semibold tracking-[0.28em] text-slate-950 dark:text-white">
                       JETBRAINS
                     </span>
-                    <span className="mt-4 block text-xs uppercase tracking-[0.22em] text-slate-300">
+                    <span className="mt-4 block text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
                       Placeholder tipografico
                     </span>
                   </div>
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-slate-300">
+              <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 No usamos assets oficiales si no estan disponibles internamente. Este bloque queda listo para incorporar piezas aprobadas manualmente.
               </p>
 
@@ -167,12 +167,12 @@ export default function JetBrainsPartnerPage({
                 {partner.additionalInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                    className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-white/[0.04]"
                   >
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
+                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {info.label}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-white">
+                    <p className="mt-2 text-sm font-medium text-slate-900 dark:text-white">
                       {info.value}
                     </p>
                   </div>
@@ -217,7 +217,7 @@ export default function JetBrainsPartnerPage({
 
             <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(250,245,255,0.9),rgba(239,246,255,0.88))] p-8 dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(88,28,135,0.08),rgba(30,64,175,0.08))]">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg dark:bg-white dark:text-slate-950">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                   <Sparkles className="h-5 w-5" />
                 </div>
                 <div>
@@ -270,7 +270,7 @@ export default function JetBrainsPartnerPage({
                     key={capability.title}
                     className="rounded-2xl border border-slate-200/80 bg-white/75 p-6 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg dark:bg-white dark:text-slate-950">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-white">
@@ -322,8 +322,8 @@ export default function JetBrainsPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-fuchsia-700/80 dark:text-fuchsia-200/80">
                 Siguiente paso
               </p>
 
@@ -331,7 +331,7 @@ export default function JetBrainsPartnerPage({
                 Si necesitas desarrollo profesional, este partnership suma una capa real de valor
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 Trabajamos con herramientas y procesos pensados para sostener calidad, velocidad y criterio tecnico. Si estas evaluando un proyecto, podemos definir el mejor camino para construirlo.
               </p>
 

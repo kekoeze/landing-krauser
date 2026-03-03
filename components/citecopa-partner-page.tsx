@@ -70,7 +70,7 @@ function ModuleCard({
 
   return (
     <div className="rounded-3xl border border-slate-200/80 bg-white/75 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)] dark:border-white/[0.06] dark:bg-white/[0.03]">
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg dark:bg-white dark:text-slate-950">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
         <Icon className="h-5 w-5" />
       </div>
       <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-white">
@@ -168,8 +168,8 @@ export default function CitecopaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
                 Impacto institucional
               </p>
 
@@ -177,7 +177,7 @@ export default function CitecopaPartnerPage({
                 Tecnologia aplicada a una organizacion con foco social
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 Este proyecto integra comunicacion institucional, administracion interna, ecommerce y donaciones en una sola plataforma para mejorar operacion, transparencia y sostenibilidad.
               </p>
 
@@ -185,12 +185,12 @@ export default function CitecopaPartnerPage({
                 {partner.additionalInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                    className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-white/[0.04]"
                   >
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
+                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {info.label}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-white">
+                    <p className="mt-2 text-sm font-medium text-slate-900 dark:text-white">
                       {info.value}
                     </p>
                   </div>
@@ -256,7 +256,7 @@ export default function CitecopaPartnerPage({
 
             <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(236,253,245,0.9),rgba(247,254,231,0.88))] p-8 dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(6,95,70,0.08),rgba(77,124,15,0.08))]">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg dark:bg-white dark:text-slate-950">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
                 <div>
@@ -313,8 +313,8 @@ export default function CitecopaPartnerPage({
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
                 {foundationPage.impactTitle}
               </p>
 
@@ -322,7 +322,7 @@ export default function CitecopaPartnerPage({
                 Operacion real con impacto medible
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 La plataforma acompana administracion, captacion de fondos y sostenibilidad institucional en una operacion concreta y continua.
               </p>
 
@@ -360,7 +360,7 @@ export default function CitecopaPartnerPage({
                       key={point}
                       className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/75 p-5 dark:border-white/[0.06] dark:bg-white/[0.03]"
                     >
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 dark:bg-white dark:text-slate-950">
                         <Icon className="h-4 w-4" />
                       </div>
                       <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-200">
@@ -372,8 +372,8 @@ export default function CitecopaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(6,78,59,0.96))] p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.92),rgba(236,253,245,0.92),rgba(248,250,252,0.92))] p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(6,78,59,0.96))] dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
                 Testimonio
               </p>
 
@@ -381,11 +381,11 @@ export default function CitecopaPartnerPage({
                 "{foundationPage.testimonial.quote}"
               </blockquote>
 
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+              <div className="mt-8 border-t border-slate-200/80 pt-6 dark:border-white/10">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950 dark:text-white">
                   {foundationPage.testimonial.author}
                 </p>
-                <p className="mt-2 text-sm text-slate-300">
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   {foundationPage.testimonial.role}
                 </p>
               </div>
@@ -409,8 +409,8 @@ export default function CitecopaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
                 Siguiente paso
               </p>
 
@@ -418,7 +418,7 @@ export default function CitecopaPartnerPage({
                 Si tu organizacion necesita una plataforma integral, podemos construirla
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 Este caso resume nuestra capacidad para unir gestion, pagos, contenidos y soporte en una sola implementacion institucional lista para evolucionar.
               </p>
 

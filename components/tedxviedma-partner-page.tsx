@@ -139,8 +139,8 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
                 Operacion integral
               </p>
 
@@ -148,7 +148,7 @@ export default function TedxViedmaPartnerPage({
                 Desarrollo, infraestructura y continuidad en una misma capa
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 Este caso combina software a medida, gestion operativa, despliegues y soporte continuo para sostener una experiencia institucional con exigencia real.
               </p>
 
@@ -156,12 +156,12 @@ export default function TedxViedmaPartnerPage({
                 {partner.additionalInfo.map((info) => (
                   <div
                     key={info.label}
-                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                    className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-white/[0.04]"
                   >
-                    <p className="text-xs uppercase tracking-[0.18em] text-slate-400">
+                    <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                       {info.label}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-white">
+                    <p className="mt-2 text-sm font-medium text-slate-900 dark:text-white">
                       {info.value}
                     </p>
                   </div>
@@ -285,8 +285,8 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
                 Impacto
               </p>
 
@@ -294,7 +294,7 @@ export default function TedxViedmaPartnerPage({
                 Operacion real, volumen real
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 El proyecto no solo organiza contenido; resuelve coordinacion, registro, visibilidad y administracion en un entorno con demanda real y necesidad de estabilidad.
               </p>
 
@@ -330,8 +330,8 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(127,29,29,0.96))] p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.92),rgba(254,242,242,0.92),rgba(248,250,252,0.92))] p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(127,29,29,0.96))] dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
                 Testimonio
               </p>
 
@@ -339,11 +339,11 @@ export default function TedxViedmaPartnerPage({
                 "{caseStudy.testimonial.quote}"
               </blockquote>
 
-              <div className="mt-8 border-t border-white/10 pt-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+              <div className="mt-8 border-t border-slate-200/80 pt-6 dark:border-white/10">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-950 dark:text-white">
                   {caseStudy.testimonial.author}
                 </p>
-                <p className="mt-2 text-sm text-slate-300">
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   {caseStudy.testimonial.role}
                 </p>
               </div>
@@ -367,8 +367,8 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-slate-950 p-8 text-white shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08]">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-200/80">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
                 Siguiente paso
               </p>
 
@@ -376,7 +376,7 @@ export default function TedxViedmaPartnerPage({
                 Si necesitas una plataforma institucional compleja, podemos construirla
               </h2>
 
-              <p className="mt-5 leading-relaxed text-slate-300">
+              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
                 Este caso resume nuestra capacidad para resolver producto, infraestructura y soporte en una misma implementacion. Si tu organizacion necesita algo similar, podemos definir el alcance y llevarlo a produccion.
               </p>
 

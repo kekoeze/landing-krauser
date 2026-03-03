@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-slate-100 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="gradient-text">Lo que dicen nuestros clientes</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-gray-300 max-w-3xl mx-auto">
             Casos de éxito reales de empresas que confiaron en nosotros para su transformación digital.
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed italic">
+              <p className="text-lg md:text-xl text-slate-600 dark:text-gray-300 mb-8 leading-relaxed italic">
                 "{testimonials[currentIndex].text}"
               </p>
               
@@ -101,13 +101,13 @@ export default function TestimonialsSection() {
               <div className="flex items-center justify-center space-x-4">
                 <div className="text-4xl">{testimonials[currentIndex].avatar}</div>
                 <div>
-                  <h4 className="text-white font-bold text-lg">
+                  <h4 className="text-slate-900 dark:text-white font-bold text-lg">
                     {testimonials[currentIndex].name}
                   </h4>
-                  <p className="text-purple-400 font-medium">
+                  <p className="text-purple-600 dark:text-purple-400 font-medium">
                     {testimonials[currentIndex].position}
                   </p>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-slate-500 dark:text-gray-400 text-sm">
                     {testimonials[currentIndex].company}
                   </p>
                 </div>
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
               onClick={prevTestimonial}
               className="p-3 glass-effect rounded-full hover:neon-glow transition-all duration-300"
             >
-              <ChevronLeft className="w-6 h-6 text-white" />
+              <ChevronLeft className="w-6 h-6 text-slate-900 dark:text-white" />
             </button>
             
             <div className="flex space-x-2">
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-purple-500' : 'bg-gray-600'
+                    index === currentIndex ? 'bg-purple-500' : 'bg-slate-300 dark:bg-gray-600'
                   }`}
                 />
               ))}
@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
               onClick={nextTestimonial}
               className="p-3 glass-effect rounded-full hover:neon-glow transition-all duration-300"
             >
-              <ChevronRight className="w-6 h-6 text-white" />
+              <ChevronRight className="w-6 h-6 text-slate-900 dark:text-white" />
             </button>
           </div>
         </div>
@@ -154,15 +154,15 @@ export default function TestimonialsSection() {
         >
           <div className="text-center">
             <div className="text-4xl font-bold gradient-text mb-2">98%</div>
-            <div className="text-gray-400">Satisfacción del cliente</div>
+            <div className="text-slate-500 dark:text-gray-400">Satisfacción del cliente</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-            <div className="text-gray-400">Proyectos completados</div>
+            <div className="text-slate-500 dark:text-gray-400">Proyectos completados</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold gradient-text mb-2">300%</div>
-            <div className="text-gray-400">Crecimiento promedio</div>
+            <div className="text-slate-500 dark:text-gray-400">Crecimiento promedio</div>
           </div>
         </motion.div>
       </div>
