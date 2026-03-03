@@ -75,7 +75,7 @@ export default function CustomProjectsSection() {
       client: 'Tienda Minorista',
       category: 'Sistema Empresarial',
       type: 'Producto Principal',
-      description: 'Nuestro producto estrella es el avanzado Sistema de Gestión Comercial, fruto de más de    dos años de desarrollo. Este software está diseñado para optimizar de manera integral sus operaciones comerciales y ofrecerle una visión detallada y precisa de toda su actividad comercial.',
+      description: "Nuestro producto estrella es el avanzado Sistema de Gestión Comercial, fruto de más de dos años de desarrollo. Este software está diseñado para optimizar de manera integral sus operaciones comerciales y ofrecerle una visión detallada y precisa de toda su actividad comercial.",
       image: '/Imagen de WhatsApp 2025-07-07 a las 17.52.56_c511e788.jpg',
       clientNeed: 'Los comercios minoristas enfrentan una limitación crítica: la fragmentación de sus sistemas. La gestión moderna exige una plataforma centralizada que supere los sistemas de Punto de Venta tradicionales.',
       solution: 'Desarrollamos un sistema TPV robusto con arquitectura escalable, integraciones de pago, gestión completa de inventario y catálogo web público para consultas remotas.',

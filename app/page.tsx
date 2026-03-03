@@ -7,14 +7,13 @@ import ServicesSection from '@/components/services-section';
 import PartnersSection from '@/components/partners-section';
 import PortfolioSection from '@/components/portfolio-section';
 import CustomProjectsSection from '@/components/custom-projects-section';
-import PricingSection from '@/components/pricing-section';
 import WhyUsSection from '@/components/why-us-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen surface-primary text-primary overflow-x-hidden theme-transition">
+    <main className="min-h-screen surface-primary text-primary overflow-x-clip theme-transition">
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -22,7 +21,6 @@ export default function Home() {
       <PartnersSection />
       <PortfolioSection />
       <CustomProjectsSection />
-      <PricingSection />
       <WhyUsSection />
       <ContactSection />
       <Footer />

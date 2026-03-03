@@ -30,7 +30,6 @@ export default function Navbar() {
     { name: 'Nosotros', href: '#about' },
     { name: 'Servicios', href: '#services' },
     { name: 'Proyectos', href: '#portfolio' },
-    { name: 'Precios', href: '#pricing' },
     { name: 'Contacto', href: '#contact' },
   ];
 
