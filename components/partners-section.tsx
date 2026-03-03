@@ -177,7 +177,7 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
                 <div className="mt-6 pt-6 border-t border-slate-300/70 dark:border-gray-700/50 flex items-center justify-between text-sm text-slate-500 dark:text-gray-400">
                   <span>Ver detalles</span>
                   <span className="text-violet-600 dark:text-purple-400 flex items-center gap-2 group-hover:text-violet-500 dark:group-hover:text-purple-300 transition-colors">
-                    Conocer mas
+                    {partner.cardActionLabel ?? 'Conocer mas'}
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>

@@ -37,7 +37,7 @@ export default function ServicesSection() {
         'Formularios de contacto',
         'Integración con analytics',
         'Carga ultra rápida',
-        'Soporte 1 mes'
+        'Canal de soporte'
       ],
       gradient: 'from-blue-600 to-purple-600',
       bgGradient: 'gradient-bg-2',
