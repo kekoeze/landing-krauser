@@ -134,7 +134,7 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
             aria-label={`Ver partner ${partner.name}`}
           >
             <div
-              className={`glass-card-hover isolate overflow-hidden rounded-2xl border border-slate-300/70 dark:border-white/[0.08] shadow-[0_20px_48px_rgba(148,163,184,0.28),0_8px_22px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_48px_rgba(4,10,26,0.28),0_6px_16px_rgba(4,10,26,0.18)] transition-shadow duration-500 hover:shadow-[0_24px_56px_rgba(148,163,184,0.34),0_10px_24px_rgba(15,23,42,0.14)] dark:hover:shadow-[0_24px_56px_rgba(4,10,26,0.32),0_8px_18px_rgba(4,10,26,0.22)] p-8 md:p-10 group relative ${partner.cardGradient}`}
+              className={`glass-card-hover isolate overflow-hidden rounded-2xl border border-slate-300/70 dark:border-white/[0.08] shadow-[0_20px_48px_rgba(148,163,184,0.28),0_8px_22px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_48px_rgba(4,10,26,0.28),0_6px_16px_rgba(4,10,26,0.18)] transition-shadow duration-500 hover:backdrop-blur-none hover:shadow-[0_24px_56px_rgba(148,163,184,0.34),0_10px_24px_rgba(15,23,42,0.14)] dark:hover:shadow-[0_24px_56px_rgba(4,10,26,0.32),0_8px_18px_rgba(4,10,26,0.22)] p-8 md:p-10 group relative ${partner.cardGradient}`}
             >
               <div className="pointer-events-none absolute -inset-[2px] rounded-[18px] bg-[linear-gradient(135deg,rgba(255,255,255,0.72)_0%,rgba(255,255,255,0.14)_34%,rgba(125,211,252,0.12)_66%,rgba(255,255,255,0.42)_100%)] opacity-70 blur-xl transition-opacity duration-500 group-hover:opacity-85 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.10)_0%,rgba(148,163,184,0.03)_30%,rgba(96,165,250,0.05)_62%,rgba(255,255,255,0.07)_100%)] dark:opacity-45 dark:group-hover:opacity-60"></div>
               <div className="absolute inset-0 rounded-2xl bg-[linear-gradient(135deg,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.28)_24%,rgba(191,219,254,0.20)_58%,rgba(255,255,255,0.62)_100%)] dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.03)_24%,rgba(96,165,250,0.04)_58%,rgba(255,255,255,0.09)_100%)]"></div>
@@ -142,6 +142,7 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
                 className="absolute inset-px rounded-[15px] bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(244,247,251,0.90)_100%)] dark:bg-[linear-gradient(180deg,rgba(8,13,24,0.94)_0%,rgba(10,16,30,0.88)_100%)]"
                 style={{ opacity: surfaceOpacity }}
               />
+              <div className="absolute inset-px rounded-[15px] bg-white/0 transition-colors duration-300 group-hover:bg-white/18 dark:group-hover:bg-slate-950/20"></div>
               <div className="absolute inset-px rounded-[15px] border border-slate-200/90 dark:border-white/[0.065]"></div>
               <div className="absolute inset-[2px] rounded-[14px] border border-slate-200/70 dark:border-white/[0.035]"></div>
               <motion.div
