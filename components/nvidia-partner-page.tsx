@@ -75,7 +75,7 @@ export default function NvidiaPartnerPage({ partner }: NvidiaPartnerPageProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-white/75 via-white/28 to-transparent dark:from-white/[0.08] dark:via-white/[0.03] dark:to-transparent"></div>
 
               <div className="relative z-10">
-                <span className="inline-flex rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">
+                <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-purple-300">
                   {detail.badge}
                 </span>
 
@@ -156,7 +156,7 @@ export default function NvidiaPartnerPage({ partner }: NvidiaPartnerPageProps) {
               <ul className="mt-8 space-y-4">
                 {detail.allianceBenefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-purple-400" />
                     <span className="text-sm leading-relaxed text-slate-600 dark:text-gray-300">
                       {benefit}
                     </span>

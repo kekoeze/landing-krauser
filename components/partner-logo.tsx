@@ -8,6 +8,7 @@ const sizeStyles = {
   sm: { wrapper: 'w-12 h-12 p-2', text: 'text-xs', image: 20 },
   md: { wrapper: 'w-16 h-16 p-3', text: 'text-sm', image: 28 },
   lg: { wrapper: 'w-24 h-24 p-4', text: 'text-lg', image: 44 },
+  xl: { wrapper: 'w-32 h-32 p-5', text: 'text-xl', image: 60 },
 };
 
 type PartnerLogoProps = {

@@ -22,7 +22,7 @@ function TedxAction({
       rel={link.external ? 'noreferrer' : undefined}
       className={
         primary
-          ? 'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-red-600 to-red-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(220,38,38,0.22)] transition-transform hover:-translate-y-0.5'
+          ? 'inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white'
           : 'inline-flex items-center justify-center rounded-xl border border-slate-200/80 bg-white/75 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:text-slate-950 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-gray-200 dark:hover:text-white'
       }
     >
@@ -41,7 +41,7 @@ function ModuleCard({
 }) {
   return (
     <div className="rounded-3xl border border-slate-200/80 bg-white/75 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)] dark:border-white/[0.06] dark:bg-white/[0.03]">
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-red-600/10 text-sm font-semibold text-red-700 dark:text-red-300">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500/10 text-sm font-semibold text-violet-700 dark:text-purple-300">
         {String(index + 1).padStart(2, '0')}
       </span>
       <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-white">
@@ -105,17 +105,19 @@ export default function TedxViedmaPartnerPage({
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/#partners"
-            className="inline-flex items-center text-sm text-red-700 transition-colors hover:text-red-600 dark:text-red-300 dark:hover:text-red-200"
+            className="inline-flex items-center text-sm text-violet-600 transition-colors hover:text-violet-500 dark:text-purple-400 dark:hover:text-purple-300"
           >
             Volver a partners
           </Link>
 
           <div className="mt-8 grid gap-8 xl:grid-cols-[1.1fr,0.9fr]">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-[radial-gradient(circle_at_top_left,rgba(239,68,68,0.16),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.09),transparent_48%),linear-gradient(145deg,rgba(255,255,255,0.88),rgba(255,255,255,0.68))] p-8 md:p-10 dark:border-white/[0.08] dark:bg-[radial-gradient(circle_at_top_left,rgba(239,68,68,0.15),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.35),transparent_48%),linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]">
+            <div
+              className={`relative overflow-hidden rounded-3xl border border-slate-200/80 p-8 md:p-10 dark:border-white/[0.08] ${partner.cardGradient}`}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/10 to-transparent dark:from-white/[0.05] dark:via-white/[0.02] dark:to-transparent"></div>
 
               <div className="relative z-10">
-                <span className="inline-flex rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-red-700 dark:text-red-300">
+                <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-purple-300">
                   {caseStudy.badge}
                 </span>
 
@@ -140,7 +142,7 @@ export default function TedxViedmaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Operacion integral
               </p>
 
@@ -215,7 +217,7 @@ export default function TedxViedmaPartnerPage({
               <ul className="mt-8 space-y-4">
                 {caseStudy.infrastructureItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600 dark:text-red-400" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-purple-400" />
                     <span className="text-sm leading-relaxed text-slate-600 dark:text-gray-300">
                       {item}
                     </span>
@@ -224,7 +226,9 @@ export default function TedxViedmaPartnerPage({
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.86),rgba(254,242,242,0.92),rgba(248,250,252,0.92))] p-8 dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(127,29,29,0.09),rgba(15,23,42,0.10))]">
+            <div
+              className={`rounded-3xl border border-slate-200/80 p-8 dark:border-white/[0.08] ${partner.cardGradient}`}
+            >
               <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-gray-400">
                 Continuidad operativa
               </p>
@@ -271,7 +275,7 @@ export default function TedxViedmaPartnerPage({
                     key={pillar.title}
                     className="rounded-2xl border border-slate-200/80 bg-white/75 p-5 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
-                    <p className="text-xs uppercase tracking-[0.16em] text-red-700 dark:text-red-300">
+                    <p className="text-xs uppercase tracking-[0.16em] text-violet-700 dark:text-purple-300">
                       Eje {String(index + 1).padStart(2, '0')}
                     </p>
                     <h3 className="mt-3 text-lg font-semibold text-slate-950 dark:text-white">
@@ -286,7 +290,7 @@ export default function TedxViedmaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Impacto
               </p>
 
@@ -330,8 +334,10 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.92),rgba(254,242,242,0.92),rgba(248,250,252,0.92))] p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(127,29,29,0.96))] dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
+            <div
+              className={`rounded-3xl border border-slate-200/80 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:text-white ${partner.cardGradient}`}
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Testimonio
               </p>
 
@@ -368,7 +374,7 @@ export default function TedxViedmaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-red-700/80 dark:text-red-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>
 

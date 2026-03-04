@@ -8,6 +8,7 @@ import {
   type MotionValue,
 } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { Partner } from '@/lib/partners';
@@ -151,10 +152,23 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
               />
 
               <motion.div className="relative z-10" style={{ opacity: contentOpacity }}>
-                <PartnerLogo
-                  partner={partner}
-                  className="mb-6 group-hover:scale-110"
-                />
+                {partner.logo.src ? (
+                  <div className="relative mb-6 h-12 w-full max-w-[160px] transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:max-w-[180px]">
+                    <Image
+                      src={partner.logo.src}
+                      alt={partner.logo.alt}
+                      fill
+                      sizes="(max-width: 640px) 160px, 180px"
+                      className="object-contain object-left"
+                    />
+                  </div>
+                ) : (
+                  <PartnerLogo
+                    partner={partner}
+                    size="md"
+                    className="mb-6 group-hover:scale-110"
+                  />
+                )}
 
                 <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-gray-400 mb-3">
                   {partner.industry}

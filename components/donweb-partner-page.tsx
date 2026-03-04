@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -32,7 +33,7 @@ function DonWebLinkButton({
       rel={link.external ? 'noreferrer' : undefined}
       className={
         primary
-          ? 'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(16,185,129,0.2)] transition-transform hover:-translate-y-0.5'
+          ? 'inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white'
           : 'inline-flex items-center justify-center rounded-xl border border-slate-200/80 bg-white/75 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:text-slate-950 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-gray-200 dark:hover:text-white'
       }
     >
@@ -51,7 +52,7 @@ function DonWebUseCaseCard({
 }) {
   return (
     <div className="glass-card rounded-3xl border border-slate-200/80 p-6 dark:border-white/[0.08]">
-      <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-300">
+      <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-purple-300">
         Caso {String(index + 1).padStart(2, '0')}
       </span>
       <h3 className="mt-5 text-xl font-semibold text-slate-950 dark:text-white">
@@ -101,7 +102,7 @@ export default function DonWebPartnerPage({
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/#partners"
-            className="inline-flex items-center text-sm text-cyan-700 transition-colors hover:text-cyan-600 dark:text-cyan-300 dark:hover:text-cyan-200"
+            className="inline-flex items-center text-sm text-violet-600 transition-colors hover:text-violet-500 dark:text-purple-400 dark:hover:text-purple-300"
           >
             Volver a partners
           </Link>
@@ -113,7 +114,7 @@ export default function DonWebPartnerPage({
               <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/25 to-transparent dark:from-white/[0.08] dark:via-white/[0.03] dark:to-transparent"></div>
 
               <div className="relative z-10">
-                <span className="inline-flex rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700 dark:text-cyan-300">
+                <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-purple-300">
                   {detail.badge}
                 </span>
 
@@ -139,21 +140,19 @@ export default function DonWebPartnerPage({
 
             <div className="glass-card rounded-3xl border border-slate-200/80 p-8 dark:border-white/[0.08]">
               <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-gray-400">
-                Espacio de marca
+                Infraestructura Regional
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-slate-100 px-8 py-10 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08] dark:bg-slate-950">
-                <span className="block text-center text-3xl font-semibold tracking-[0.32em] text-slate-950 dark:text-white">
-                  DONWEB
-                </span>
-                <span className="mt-4 block text-center text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
-                  Slot preparado para activos aprobados
-                </span>
+              <div className="mt-6 rounded-3xl border border-slate-200/80 bg-slate-100   shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08] ">
+                <Image
+                  src="/donweb.png"
+                  alt="DonWeb"
+                  width={320}
+                  height={110}
+                  className="mx-auto h-auto w-full "
+                  priority
+                />
               </div>
-
-              <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-                Esta pagina evita depender de logos o badges externos y deja un espacio listo para cargar activos de marca cuando corresponda.
-              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {partner.additionalInfo.map((info) => (
@@ -194,7 +193,7 @@ export default function DonWebPartnerPage({
               <ul className="mt-8 space-y-4">
                 {detail.allianceBenefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-purple-400" />
                     <span className="text-sm leading-relaxed text-slate-600 dark:text-gray-300">
                       {benefit}
                     </span>
@@ -207,7 +206,9 @@ export default function DonWebPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-br from-cyan-500/10 via-white/70 to-emerald-500/10 p-8 dark:border-white/[0.08] dark:from-cyan-500/10 dark:via-white/[0.03] dark:to-emerald-500/10">
+            <div
+              className={`rounded-3xl border border-slate-200/80 p-8 dark:border-white/[0.08] ${partner.cardGradient}`}
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                   <Server className="h-5 w-5" />
@@ -228,7 +229,7 @@ export default function DonWebPartnerPage({
                     key={highlight}
                     className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/75 p-4 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
-                    <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-xs font-semibold text-cyan-700 dark:text-cyan-300">
+                    <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-semibold text-violet-700 dark:text-purple-300">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <p className="text-sm font-medium leading-relaxed text-slate-700 dark:text-gray-200">
@@ -315,7 +316,7 @@ export default function DonWebPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_24px_60px_rgba(15,23,42,0.22)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-cyan-700/80 dark:text-cyan-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>
 

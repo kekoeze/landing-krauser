@@ -139,6 +139,8 @@ export const partners: Partner[] = [
       'Trabajamos con DonWeb como socio estrategico dentro de su Programa de Partners para integrar infraestructura, hosting y servicios cloud en proyectos web, ecommerce y operaciones digitales que requieren una base confiable para crecer.',
     cardGradient: 'gradient-bg-1',
     logo: {
+      src: '/donweb_short.png',
+      // src: '/donweb.png',
       alt: 'DonWeb',
       initials: 'DW',
       gradient: 'from-teal-500 to-emerald-500',
@@ -275,7 +277,8 @@ export const partners: Partner[] = [
       'En TEDxViedma desarrollamos integralmente el ecosistema tecnologico: plataforma a medida, modulos administrativos, infraestructura, despliegues y soporte continuo para sostener una experiencia estable antes, durante y despues del evento.',
     cardGradient: 'gradient-bg-2',
     logo: {
-      alt: 'TEDxViedma',
+      src: '/tedxviedma_short.png',
+      alt: 'TEDxViedma logo',
       initials: 'TV',
       gradient: 'from-blue-500 to-cyan-500',
     },
@@ -492,6 +495,7 @@ export const partners: Partner[] = [
     cardGradient: 'gradient-bg-3',
     logo: {
       alt: 'JetBrains',
+      src: '/jetbrains_short.png',
       initials: 'JB',
       gradient: 'from-purple-500 to-blue-500',
     },
@@ -629,6 +633,7 @@ export const partners: Partner[] = [
     cardGradient: 'gradient-bg-1',
     logo: {
       alt: 'Mercado Pago',
+      src: '/mercadopago_short.png',
       initials: 'MP',
       gradient: 'from-rose-500 to-orange-500',
     },
@@ -780,6 +785,7 @@ export const partners: Partner[] = [
     cardGradient: 'gradient-bg-2',
     logo: {
       alt: 'NVIDIA',
+      src: '/nvidia_short.png',
       initials: 'NV',
       gradient: 'from-emerald-500 to-lime-500',
     },
@@ -910,6 +916,7 @@ export const partners: Partner[] = [
     cardGradient: 'gradient-bg-3',
     logo: {
       alt: 'Fundacion CiTeCopa',
+      src: '/citecopa_short.png',
       initials: 'FC',
       gradient: 'from-green-500 to-lime-500',
     },

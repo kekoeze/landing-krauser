@@ -39,7 +39,7 @@ function CitecopaAction({
       rel={link.external ? 'noreferrer' : undefined}
       className={
         primary
-          ? 'inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_36px_rgba(16,185,129,0.22)] transition-transform hover:-translate-y-0.5'
+          ? 'inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white'
           : 'inline-flex items-center justify-center rounded-xl border border-slate-200/80 bg-white/75 px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:text-slate-950 dark:border-white/[0.08] dark:bg-white/[0.04] dark:text-gray-200 dark:hover:text-white'
       }
     >
@@ -134,17 +134,19 @@ export default function CitecopaPartnerPage({
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/#partners"
-            className="inline-flex items-center text-sm text-emerald-700 transition-colors hover:text-emerald-600 dark:text-emerald-300 dark:hover:text-emerald-200"
+            className="inline-flex items-center text-sm text-violet-600 transition-colors hover:text-violet-500 dark:text-purple-400 dark:hover:text-purple-300"
           >
             Volver a partners
           </Link>
 
           <div className="mt-8 grid gap-8 xl:grid-cols-[1.1fr,0.9fr]">
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(163,230,53,0.16),transparent_42%),linear-gradient(150deg,rgba(255,255,255,0.9),rgba(255,255,255,0.72))] p-8 md:p-10 dark:border-white/[0.08] dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(163,230,53,0.10),transparent_42%),linear-gradient(150deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))]">
+            <div
+              className={`relative overflow-hidden rounded-3xl border border-slate-200/80 p-8 md:p-10 dark:border-white/[0.08] ${partner.cardGradient}`}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/10 to-transparent dark:from-white/[0.05] dark:via-white/[0.02] dark:to-transparent"></div>
 
               <div className="relative z-10">
-                <span className="inline-flex rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-emerald-700 dark:text-emerald-300">
+                <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-violet-700 dark:text-purple-300">
                   {foundationPage.badge}
                 </span>
 
@@ -169,7 +171,7 @@ export default function CitecopaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Impacto institucional
               </p>
 
@@ -245,7 +247,7 @@ export default function CitecopaPartnerPage({
               <ul className="mt-8 space-y-4">
                 {foundationPage.donationItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-purple-400" />
                     <span className="text-sm leading-relaxed text-slate-600 dark:text-gray-300">
                       {item}
                     </span>
@@ -254,7 +256,9 @@ export default function CitecopaPartnerPage({
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.88),rgba(236,253,245,0.9),rgba(247,254,231,0.88))] p-8 dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(255,255,255,0.05),rgba(6,95,70,0.08),rgba(77,124,15,0.08))]">
+            <div
+              className={`rounded-3xl border border-slate-200/80 p-8 dark:border-white/[0.08] ${partner.cardGradient}`}
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-900 shadow-lg dark:bg-white dark:text-slate-950">
                   <ShieldCheck className="h-5 w-5" />
@@ -304,7 +308,7 @@ export default function CitecopaPartnerPage({
               <ul className="mt-8 space-y-4">
                 {foundationPage.supportItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-600 dark:text-purple-400" />
                     <span className="text-sm leading-relaxed text-slate-600 dark:text-gray-300">
                       {item}
                     </span>
@@ -314,7 +318,7 @@ export default function CitecopaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 {foundationPage.impactTitle}
               </p>
 
@@ -372,8 +376,10 @@ export default function CitecopaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-[linear-gradient(160deg,rgba(255,255,255,0.92),rgba(236,253,245,0.92),rgba(248,250,252,0.92))] p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(15,23,42,0.98),rgba(6,78,59,0.96))] dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
+            <div
+              className={`rounded-3xl border border-slate-200/80 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.26)] dark:border-white/[0.08] dark:text-white ${partner.cardGradient}`}
+            >
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Testimonio
               </p>
 
@@ -410,7 +416,7 @@ export default function CitecopaPartnerPage({
             </div>
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-700/80 dark:text-emerald-200/80">
+              <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>
 
