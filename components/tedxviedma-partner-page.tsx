@@ -43,7 +43,7 @@ function ModuleCard({
   return (
     <div className="rounded-3xl border border-slate-200/80 bg-white/75 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)] dark:border-white/[0.06] dark:bg-white/[0.03]">
       <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500/10 text-sm font-semibold text-violet-700 dark:text-purple-300">
-        {String(index + 1).padStart(2, '0')}
+        {String(index + 1).padStart(2)}
       </span>
       <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-white">
         {module.title}
@@ -189,7 +189,7 @@ export default function TedxViedmaPartnerPage({
                 {caseStudy.deliveryTitle}
               </h2>
               <p className="mt-4 leading-relaxed text-slate-600 dark:text-gray-300">
-                El sistema fue pensado como una plataforma completa y no como un sitio aislado. Cada modulo responde a una necesidad operativa concreta del equipo y del evento.
+                El sistema fue pensado como una plataforma completa y no como un sitio aislado. Cada módulo responde a una necesidad operativa concreta del equipo, de los organizadores y del evento, incluyendo la gestión interna para coordinar la operación.
               </p>
             </div>
 
@@ -238,7 +238,7 @@ export default function TedxViedmaPartnerPage({
               </p>
 
               <h2 className="mt-4 text-2xl font-bold text-slate-950 dark:text-white">
-                Relacion tecnologica sostenida en el tiempo
+                Relación tecnológica sostenida en el tiempo
               </h2>
 
               <div className="mt-6 grid gap-4">
@@ -248,7 +248,7 @@ export default function TedxViedmaPartnerPage({
                     className="rounded-2xl border border-slate-200/80 bg-white/80 p-4 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-gray-400">
-                      Pilar {String(index + 1).padStart(2, '0')}
+                      Pilar {String(index + 1).padStart(2)}
                     </p>
                     <p className="mt-2 text-sm font-medium text-slate-700 dark:text-gray-200">
                       {highlight}
@@ -280,7 +280,7 @@ export default function TedxViedmaPartnerPage({
                     className="rounded-2xl border border-slate-200/80 bg-white/75 p-5 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
                     <p className="text-xs uppercase tracking-[0.16em] text-violet-700 dark:text-purple-300">
-                      Eje {String(index + 1).padStart(2, '0')}
+                      Eje {String(index + 1).padStart(2)}
                     </p>
                     <h3 className="mt-3 text-lg font-semibold text-slate-950 dark:text-white">
                       {pillar.title}
@@ -299,11 +299,11 @@ export default function TedxViedmaPartnerPage({
               </p>
 
               <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-                Operacion real, volumen real
+                Operación real, volumen real
               </h2>
 
               <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
-                El proyecto no solo organiza contenido; resuelve coordinacion, registro, visibilidad y administracion en un entorno con demanda real y necesidad de estabilidad.
+                El proyecto no solo organiza contenido; resuelve coordinación, registro, visibilidad y administración en un entorno con demanda real y necesidad de estabilidad.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -387,7 +387,7 @@ export default function TedxViedmaPartnerPage({
               </h2>
 
               <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
-                Este caso resume nuestra capacidad para resolver producto, infraestructura y soporte en una misma implementacion. Si tu organizacion necesita algo similar, podemos definir el alcance y llevarlo a produccion.
+                Este caso resume nuestra capacidad para resolver producto, infraestructura y soporte en una misma implementación. Si tu organización necesita algo similar, podemos definir el alcance y llevarlo a producción.
               </p>
 
               <div className="mt-8 flex flex-col gap-4">

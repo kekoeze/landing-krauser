@@ -212,19 +212,16 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <div className="glass-card rounded-xl p-6 text-center">
-            <div className="text-2xl mb-3">💳</div>
             <h4 className="text-white font-bold mb-2">Planes de Pago</h4>
             <p className="text-gray-400 text-sm">Financiación disponible hasta 12 cuotas</p>
           </div>
           
           <div className="glass-card rounded-xl p-6 text-center">
-            <div className="text-2xl mb-3">🚀</div>
             <h4 className="text-white font-bold mb-2">Entrega Rápida</h4>
             <p className="text-gray-400 text-sm">Proyectos completados en 2-4 semanas promedio</p>
           </div>
           
           <div className="glass-card rounded-xl p-6 text-center">
-            <div className="text-2xl mb-3">🛡️</div>
             <h4 className="text-white font-bold mb-2">Garantía Total</h4>
             <p className="text-gray-400 text-sm">30 días de garantía en todos nuestros proyectos</p>
           </div>

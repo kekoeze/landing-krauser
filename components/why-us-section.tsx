@@ -76,7 +76,7 @@ export default function WhyUsSection() {
               transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-xl mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="bg-gradient-to-r  p-4 rounded-xl mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <advantage.icon className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">

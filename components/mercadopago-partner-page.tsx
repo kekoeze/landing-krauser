@@ -134,6 +134,20 @@ export default function MercadoPagoPartnerPage({
                   {paymentPage.heroDescription}
                 </p>
 
+                <div className="mt-6 max-w-2xl rounded-2xl border border-violet-500/15 bg-white/70 p-4 backdrop-blur-sm dark:border-white/[0.08] dark:bg-white/[0.04]">
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-violet-700 dark:text-purple-300">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </span>
+                    <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-200 md:text-base">
+                      <span className="font-semibold text-slate-950 dark:text-white">
+                        Krauser es Mercado Pago Bronze Partner
+                      </span>{' '}
+                      y acompaña implementaciones oficiales con una capa extra de criterio tecnico, soporte y optimizacion comercial.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                   {paymentPage.heroLinks.map((link, index) => (
                     <MercadoPagoAction
@@ -345,7 +359,7 @@ export default function MercadoPagoPartnerPage({
               </h2>
 
               <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
-                Podemos ayudarte a integrar Mercado Pago, optimizar tu checkout y acompanar la operacion comercial y tecnica con mas contexto y velocidad de respuesta.
+                Podemos ayudarte a integrar Mercado Pago, optimizar tu checkout y acompañar la operacion comercial y tecnica con mas contexto y velocidad de respuesta.
               </p>
 
               <div className="mt-8 flex flex-col gap-4">

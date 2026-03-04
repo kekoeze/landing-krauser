@@ -331,7 +331,7 @@ export default function CitecopaPartnerPage({
               </h2>
 
               <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
-                La plataforma acompana administracion, captacion de fondos y sostenibilidad institucional en una operacion concreta y continua.
+                La plataforma acompaña administracion, captacion de fondos y sostenibilidad institucional en una operacion concreta y continua.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">

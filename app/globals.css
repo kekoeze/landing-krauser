@@ -110,7 +110,7 @@
 @layer utilities {
   /* Vibrant gradients that work in both themes */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary/90 via-secondary/80 to-primary/90 bg-clip-text text-transparent;
   }
   
   .gradient-text-alt {

@@ -6,7 +6,6 @@ import AboutSection from '@/components/about-section';
 import ServicesSection from '@/components/services-section';
 import PartnersSection from '@/components/partners-section';
 import PortfolioSection from '@/components/portfolio-section';
-import CustomProjectsSection from '@/components/custom-projects-section';
 import WhyUsSection from '@/components/why-us-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
@@ -20,7 +19,6 @@ export default function Home() {
       <ServicesSection />
       <PartnersSection />
       <PortfolioSection />
-      <CustomProjectsSection />
       <WhyUsSection />
       <ContactSection />
       <Footer />

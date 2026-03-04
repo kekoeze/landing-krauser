@@ -135,9 +135,9 @@ export const partners: Partner[] = [
     subtitle: 'Programa de Partners DonWeb',
     industry: 'Hosting, Cloud y Dominios',
     shortDescription:
-      'Partner a traves del Programa de Partners DonWeb para acompanar hosting, dominios y despliegues con foco en estabilidad operativa.',
+      'Partner a través del Programa de Partners DonWeb para acompañar hosting, dominios y despliegues con foco en estabilidad operativa.',
     longDescription:
-      'Trabajamos con DonWeb como socio estrategico dentro de su Programa de Partners para integrar infraestructura, hosting y servicios cloud en proyectos web, ecommerce y operaciones digitales que requieren una base confiable para crecer.',
+      'Trabajamos con DonWeb como socio estratégico dentro de su Programa de Partners para integrar infraestructura, hosting y servicios cloud en proyectos web, ecommerce y operaciones digitales que requieren una base confiable para crecer.',
     cardGradient: 'gradient-bg-1',
     logo: {
       src: '/donweb_short.png',
@@ -151,15 +151,15 @@ export const partners: Partner[] = [
       'Hosting Web y WordPress',
       'Cloud & VPS',
       'Soluciones para revendedores',
-      'Optimizacion y performance',
-      'Soporte tecnico dedicado',
+      'Optimización y performance',
+      'Soporte técnico dedicado',
     ],
     additionalInfo: [
       {
         label: 'Modalidad',
-        value: 'Partner a traves del Programa de Partners DonWeb',
+        value: 'Partner a través del Programa de Partners DonWeb',
       },
-      { label: 'Categoria', value: 'Infraestructura digital' },
+      { label: 'Categoría', value: 'Infraestructura digital' },
       { label: 'Enfoque', value: 'Hosting, cloud y performance' },
       {
         label: 'Perfil',
@@ -173,7 +173,7 @@ export const partners: Partner[] = [
     detailPage: {
       badge: 'Programa de Partners DonWeb',
       heroDescription:
-        'Trabajamos como partner a traves del Programa de Partners DonWeb para integrar hosting, dominios y cloud en proyectos que necesitan una base estable, soporte coordinado y margen real de crecimiento.',
+        'Trabajamos como partner a través del Programa de Partners DonWeb para integrar hosting, dominios y cloud en proyectos que necesitan una base estable, soporte coordinado y margen real de crecimiento.',
       heroLinks: [
         {
           label: 'Conocer Programa de Partners DonWeb',
@@ -187,15 +187,15 @@ export const partners: Partner[] = [
       ],
       allianceTitle: 'Sobre la alianza',
       allianceDescription:
-        'DonWeb trabaja sobre servicios de hosting, dominios y cloud para equipos que necesitan operar y escalar presencia digital. Nuestra participacion en su Programa de Partners nos permite coordinar infraestructura, despliegue y soporte segun el alcance de cada implementacion, sin afirmar niveles o beneficios que dependan de condiciones particulares.',
+        'DonWeb trabaja sobre servicios de hosting, dominios y cloud para equipos que necesitan operar y escalar presencia digital. Nuestra participación en su Programa de Partners nos permite coordinar infraestructura, despliegue y soporte según el alcance de cada implementación, sin afirmar niveles o beneficios que dependan de condiciones particulares.',
       allianceBenefits: [
-        'Acceso a soporte especializado para ordenar decisiones de provision y despliegue.',
-        'Integracion de soluciones de hosting y cloud dentro de proyectos web o empresariales.',
-        'Base tecnica mas clara para escalar sitios, ecommerce y aplicaciones a medida.',
-        'Acompanamiento en migraciones, performance y continuidad operativa.',
+        'Acceso a soporte especializado para ordenar decisiones de provisión y despliegue.',
+        'Integración de soluciones de hosting y cloud dentro de proyectos web o empresariales.',
+        'Base técnica más clara para escalar sitios, ecommerce y aplicaciones a medida.',
+        'Acompañamiento en migraciones, performance y continuidad operativa.',
       ],
       allianceLink: {
-        label: 'Mas informacion del programa',
+        label: 'Más información del programa',
         href: 'https://donweb.com/site/sp/argentina/plataforma-resellers',
         external: true,
       },
@@ -208,61 +208,61 @@ export const partners: Partner[] = [
         {
           title: 'Cloud & VPS',
           description:
-            'Definimos y desplegamos infraestructura para aplicaciones y servicios que necesitan mas control, recursos dedicados o crecimiento progresivo.',
+            'Definimos y desplegamos infraestructura para aplicaciones y servicios que necesitan más control, recursos dedicados o crecimiento progresivo.',
         },
         {
           title: 'Soluciones para revendedores',
           description:
-            'Ordenamos esquemas de reventa y administracion de cuentas cuando el negocio necesita centralizar provision, facturacion o multiples clientes.',
+            'Ordenamos esquemas de reventa y administración de cuentas cuando el negocio necesita centralizar provisión, facturación o múltiples clientes.',
         },
         {
-          title: 'Optimizacion y performance',
+          title: 'Optimización y performance',
           description:
-            'Ajustamos configuracion, capas de cache y buenas practicas de despliegue para mejorar tiempos de carga, estabilidad y continuidad.',
+            'Ajustamos configuración, capas de cache y buenas prácticas de despliegue para mejorar tiempos de carga, estabilidad y continuidad.',
         },
         {
-          title: 'Soporte tecnico dedicado',
+          title: 'Soporte técnico dedicado',
           description:
-            'Acompanamos incidentes, cambios de infraestructura y decisiones operativas con una mesa tecnica alineada al alcance real del proyecto.',
+            'Acompañamos incidentes, cambios de infraestructura y decisiones operativas con una mesa técnica alineada al alcance real del proyecto.',
         },
       ],
       useCases: [
         {
           title: 'Lanzamiento de ecommerce con hosting administrado',
           description:
-            'Montamos la base de infraestructura, dominio y correo para una tienda online que necesitaba salir rapido y operar con una plataforma ordenada desde el dia uno.',
+            'Montamos la base de infraestructura, dominio y correo para una tienda online que necesitaba salir rápido y operar con una plataforma ordenada desde el día uno.',
         },
         {
-          title: 'Migracion de WordPress con mejora de performance',
+          title: 'Migración de WordPress con mejora de performance',
           description:
-            'Planificamos la migracion de un sitio de alto trafico, revisamos configuracion y aplicamos ajustes para reducir tiempos de carga sin interrumpir el negocio.',
+            'Planificamos la migración de un sitio de alto tráfico, revisamos configuración y aplicamos ajustes para reducir tiempos de carga sin interrumpir el negocio.',
         },
         {
-          title: 'Entorno cloud para aplicacion en crecimiento',
+          title: 'Entorno cloud para aplicación en crecimiento',
           description:
-            'Desplegamos un entorno con mas margen de recursos y escalabilidad para una aplicacion que paso de una etapa inicial a una operacion con demanda sostenida.',
+            'Desplegamos un entorno con más margen de recursos y escalabilidad para una aplicación que paso de una etapa inicial a una operación con demanda sostenida.',
         },
       ],
       faq: [
         {
-          question: 'Que significa ser partner de DonWeb?',
+          question: 'Qué significa ser partner de DonWeb?',
           answer:
-            'Significa que trabajamos como socio estrategico dentro del Programa de Partners DonWeb para articular infraestructura y servicios segun cada proyecto.',
+            'Significa que trabajamos como socio estratégico dentro del Programa de Partners DonWeb para articular infraestructura y servicios según cada proyecto.',
         },
         {
-          question: 'Que beneficios recibe el cliente?',
+          question: 'Qué beneficios recibe el cliente?',
           answer:
-            'Recibe una implementacion mas ordenada entre estrategia, provision tecnica, soporte y escalabilidad, con una base pensada para continuidad operativa.',
+            'Recibe una implementación más ordenada entre estrategia, provisión técnica, soporte y escalabilidad, con una base pensada para continuidad operativa.',
         },
         {
-          question: 'Que tipo de servicios podemos ofrecer juntos?',
+          question: 'Qué tipo de servicios podemos ofrecer juntos?',
           answer:
             'Podemos trabajar hosting web, WordPress, cloud, VPS, migraciones, performance y soluciones para revendedores dentro del alcance definido para cada necesidad.',
         },
         {
           question: 'Incluye venta directa de dominios o servidores?',
           answer:
-            'La provision final depende del servicio requerido y del esquema comercial aplicable. Nuestro foco principal es consultoria, implementacion e integracion tecnica.',
+            'La provisión final depende del servicio requerido y del esquema comercial aplicable. Nuestro foco principal es consultoría, implementación e integración técnica.',
         },
       ],
     },
@@ -270,13 +270,13 @@ export const partners: Partner[] = [
   {
     slug: 'tedxviedma',
     name: 'TEDxViedma',
-    subtitle: 'Partner Tecnologico Integral',
+    subtitle: 'Partner Tecnológico Integral',
     cardActionLabel: 'Ver caso',
-    industry: 'Eventos, Plataforma y Operacion Digital',
+    industry: 'Eventos, Plataforma y Operación Digital',
     shortDescription:
-      'Desarrollo completo del sistema, infraestructura y soporte continuo para una operacion digital de evento end-to-end.',
+      'Desarrollo completo del sistema, infraestructura y soporte continuo para una operación digital de evento end-to-end.',
     longDescription:
-      'En TEDxViedma desarrollamos integralmente el ecosistema tecnologico: plataforma a medida, modulos administrativos, infraestructura, despliegues y soporte continuo para sostener una experiencia estable antes, durante y despues del evento.',
+      'En TEDxViedma desarrollamos integralmente el ecosistema tecnológico: plataforma a medida, módulos administrativos, infraestructura, despliegues y soporte continuo para sostener una experiencia estable antes, durante y después del evento.',
     cardGradient: 'gradient-bg-2',
     logo: {
       src: '/tedxviedma_short.png',
@@ -289,12 +289,12 @@ export const partners: Partner[] = [
       'Plataforma institucional a medida',
       'Infraestructura y despliegues',
       'Panel administrativo y automatizaciones',
-      'Soporte tecnico continuo',
-      'Estabilidad para jornadas de alto trafico',
+      'Soporte técnico continuo',
+      'Estabilidad para jornadas de alto tráfico',
     ],
     additionalInfo: [
-      { label: 'Modalidad', value: 'Partner Tecnologico Integral' },
-      { label: 'Categoria', value: 'Caso de exito institucional' },
+      { label: 'Modalidad', value: 'Partner Tecnológico Integral' },
+      { label: 'Categoría', value: 'Caso de éxito institucional' },
       { label: 'Enfoque', value: 'Desarrollo, infraestructura y soporte' },
       { label: 'Perfil', value: 'Plataforma digital para evento en vivo' },
     ],
@@ -303,7 +303,7 @@ export const partners: Partner[] = [
       href: '/#contact',
     },
     caseStudyPage: {
-      badge: 'Partner Tecnologico Integral',
+      badge: 'Partner Tecnológico Integral',
       heroDescription:
         'Desde Krauser desarrollamos, implementamos y mantenemos el ecosistema digital completo de TEDxViedma, combinando software a medida, infraestructura, soporte continuo y criterio operativo para un evento de alta exigencia.',
       heroLinks: [
@@ -321,107 +321,107 @@ export const partners: Partner[] = [
         {
           title: 'Landing institucional',
           description:
-            'Construimos la presencia principal del evento con foco en narrativa, agenda, speakers y conversion de inscriptos.',
+            'Construimos la presencia principal del evento con foco en narrativa, agenda, speakers y conversión de inscriptos.',
         },
         {
-          title: 'Sistema de inscripcion al streaming',
+          title: 'Sistema de inscripción al streaming',
           description:
-            'Disenamos el flujo de registro y acceso para centralizar altas, validaciones y seguimiento del streaming.',
+            'Diseñamos el flujo de registro y acceso para centralizar altas, validaciones y seguimiento del streaming.',
         },
         {
-          title: 'Gestion de oradores',
+          title: 'Gestión de oradores',
           description:
-            'Centralizamos la carga, actualizacion y administracion de speakers dentro de una operacion ordenada.',
+            'Centralizamos la carga, actualización y administración de speakers dentro de una operación ordenada.',
         },
         {
-          title: 'Gestion de auspiciadores',
+          title: 'Gestión de auspiciadores',
           description:
-            'Armamos un modulo para administrar sponsors, visibilidad, piezas y orden de exhibicion.',
+            'Armamos un módulo para administrar sponsors, visibilidad, piezas y orden de exhibición.',
         },
         {
-          title: 'Gestion de inscriptos',
+          title: 'Gestión de inscriptos',
           description:
             'Unificamos altas, consulta y control de participantes para reducir carga operativa manual.',
         },
         {
           title: 'ABM de contenidos multimedia',
           description:
-            'Habilitamos la administracion de assets, piezas visuales y contenido multimedia desde el panel.',
+            'Habilitamos la administración de assets, piezas visuales y contenido multimedia desde el panel.',
         },
         {
-          title: 'Internacionalizacion (i18n)',
+          title: 'Internacionalización (i18n)',
           description:
-            'Preparamos la plataforma para contenidos multiidioma y una experiencia mas amplia segun el publico.',
+            'Preparamos la plataforma para contenidos multiidioma y una experiencia más amplia según el público.',
         },
         {
           title: 'Streaming embebido',
           description:
-            'Integramos la experiencia de transmision dentro del ecosistema digital para evitar friccion externa.',
+            'Integramos la experiencia de transmisión dentro del ecosistema digital para evitar fricción externa.',
         },
         {
           title: 'Panel administrativo',
           description:
-            'Concentramos la operacion en un backoffice con permisos, gestion de contenido y control operativo.',
+            'Concentramos la operación en un backoffice con permisos, gestión de contenido y control operativo.',
         },
         {
           title: 'Automatizaciones internas',
           description:
-            'Reducimos tareas repetitivas con automatizaciones orientadas a coordinacion y ejecucion del evento.',
+            'Reducimos tareas repetitivas con automatizaciones orientadas a coordinación y ejecución del evento.',
         },
       ],
       infrastructureTitle: 'Infraestructura y soporte',
       infrastructureDescription:
-        'El alcance no se limita al desarrollo. Tambien sostenemos la capa operativa para que la plataforma funcione con continuidad: provision, despliegues, monitoreo, mantenimiento y capacidad de respuesta cuando el evento exige cero margen de error.',
+        'El alcance no se limita al desarrollo. También sostenemos la capa operativa para que la plataforma funcione con continuidad: provisión, despliegues, monitoreo, mantenimiento y capacidad de respuesta cuando el evento exige cero margen de error.',
       infrastructureItems: [
-        'Provision de infraestructura para hosting y operacion digital.',
-        'Gestion de despliegues y actualizaciones controladas.',
+        'Provisión de infraestructura para hosting y operación digital.',
+        'Gestión de despliegues y actualizaciones controladas.',
         'Monitoreo y mantenimiento preventivo de la plataforma.',
-        'Soporte tecnico continuo antes, durante y despues del evento.',
-        'Mejoras evolutivas segun nuevas necesidades del equipo organizador.',
-        'Garantia de estabilidad y acompanamiento en ventanas criticas.',
+        'Soporte técnico continuo antes, durante y después del evento.',
+        'Mejoras evolutivas según nuevas necesidades del equipo organizador.',
+        'Garantía de estabilidad y acompañamiento en ventanas críticas.',
       ],
-      architectureTitle: 'Arquitectura y tecnologia',
+      architectureTitle: 'Arquitectura y tecnología',
       architectureDescription:
-        'Planteamos una arquitectura pensada para un evento real: experiencia clara para usuarios, administracion simple para el equipo interno y una base tecnica que soporte crecimiento, cambios y alta demanda sin sacrificar orden.',
+        'Planteamos una arquitectura pensada para un evento real: experiencia clara para usuarios, administración simple para el equipo interno y una base técnica que soporte crecimiento, cambios y alta demanda sin sacrificar orden.',
       architecturePillars: [
         {
           title: 'Stack orientado a producto',
           description:
-            'Seleccionamos tecnologia enfocada en velocidad de iteracion, mantenibilidad y buena experiencia de uso.',
+            'Seleccionamos tecnología enfocada en velocidad de iteración, mantenibilidad y buena experiencia de uso.',
         },
         {
           title: 'Escalabilidad operativa',
           description:
-            'La estructura acompana picos de trafico, nuevas secciones y evoluciones del evento sin rehacer la base.',
+            'La estructura acompaña picos de tráfico, nuevas secciones y evoluciones del evento sin rehacer la base.',
         },
         {
           title: 'Seguridad y control',
           description:
-            'Ordenamos accesos, panel y flujos internos para proteger la operacion y reducir errores manuales.',
+            'Ordenamos accesos, panel y flujos internos para proteger la operación y reducir errores manuales.',
         },
         {
           title: 'Performance y estabilidad',
           description:
-            'Optimizamos carga, despliegue y comportamiento general para sostener una experiencia mas confiable.',
+            'Optimizamos carga, despliegue y comportamiento general para sostener una experiencia más confiable.',
         },
         {
           title: 'Experiencia de usuario',
           description:
-            'La interfaz prioriza claridad, navegacion y conversion para asistentes, equipo y stakeholders.',
+            'La interfaz prioriza claridad, navegación y conversión para asistentes, equipo y stakeholders.',
         },
       ],
       impactMetrics: [
         {
-          value: '2.500+',
+          value: '1.000+',
           label: 'Inscriptos gestionados',
           description:
-            'Registro y administracion centralizada para acceso y seguimiento del evento.',
+            'Registro y administración centralizada para acceso y seguimiento del evento.',
         },
         {
           value: '10',
           label: 'Oradores coordinados',
           description:
-            'Gestion digital de perfiles, datos y actualizaciones dentro del flujo operativo.',
+            'Gestión digital de perfiles, datos y actualizaciones dentro del flujo operativo.',
         },
         {
           value: '+40',
@@ -439,20 +439,20 @@ export const partners: Partner[] = [
           value: '1',
           label: 'Ecosistema unificado',
           description:
-            'Landing, admin, streaming y operacion integrados en una misma base tecnologica.',
+            'Landing, admin, streaming y operación integrados en una misma base tecnológica.',
         },
       ],
-      proofTitle: 'Que demuestra este proyecto',
+      proofTitle: 'Qué demuestra este proyecto',
       proofPoints: [
         'Capacidad para desarrollar software institucional completamente a medida.',
-        'Experiencia en plataformas de gestion con multiples modulos y actores.',
+        'Experiencia en plataformas de gestión con múltiples módulos y actores.',
         'Criterio para montar infraestructura y operar despliegues con continuidad.',
-        'Soporte continuo para procesos donde la operacion no se puede cortar.',
-        'Capacidad de trabajo con eventos, camaras, fundaciones y organismos.',
+        'Soporte continuo para procesos donde la operación no se puede cortar.',
+        'Capacidad de trabajo con eventos, cámaras, fundaciones y organismos.',
       ],
       testimonial: {
         quote:
-          'Krauser se convirtio en un socio tecnologico clave para TEDxViedma, resolviendo tanto la plataforma como la continuidad operativa con una mirada integral.',
+          'Krauser se convirtió en un socio tecnológico clave para TEDxViedma, resolviendo tanto la plataforma como la continuidad operativa con una mirada integral.',
         author: 'Equipo organizador',
         role: 'TEDxViedma',
       },
@@ -460,27 +460,27 @@ export const partners: Partner[] = [
         {
           question: 'Desarrollan sistemas completos para eventos?',
           answer:
-            'Si. Podemos cubrir discovery, diseno funcional, desarrollo, backoffice, automatizaciones y operacion de plataformas para eventos.',
+            'Sí. Podemos cubrir discovery, diseño funcional, desarrollo, backoffice, automatizaciones y operación de plataformas para eventos.',
         },
         {
           question: 'Incluyen infraestructura y soporte?',
           answer:
-            'Si. Podemos sumar provision, despliegues, monitoreo, mantenimiento y acompanamiento tecnico segun criticidad y alcance.',
+            'Sí. Podemos sumar provisión, despliegues, monitoreo, mantenimiento y acompañamiento técnico según criticidad y alcance.',
         },
         {
           question: 'Escala para eventos grandes?',
           answer:
-            'La arquitectura se define para soportar crecimiento, picos de trafico y una operacion coordinada con mas volumen.',
+            'La arquitectura se define para soportar crecimiento, picos de tráfico y una operación coordinada con más volumen.',
         },
         {
           question: 'Incluye panel administrativo?',
           answer:
-            'Si. Disenamos paneles a medida para que el equipo gestione contenidos, registros, modulos y tareas operativas.',
+            'Sí. Diseñamos paneles a medida para que el equipo gestione contenidos, registros, módulos y tareas operativas.',
         },
         {
           question: 'Brindan mantenimiento continuo?',
           answer:
-            'Si. Trabajamos con soporte continuo y mejoras evolutivas para sostener estabilidad y adaptacion a nuevas necesidades.',
+            'Sí. Trabajamos con soporte continuo y mejoras evolutivas para sostener estabilidad y adaptación a nuevas necesidades.',
         },
       ],
     },
@@ -488,13 +488,13 @@ export const partners: Partner[] = [
   {
     slug: 'jetbrains',
     name: 'JetBrains',
-    subtitle: 'Partner Tecnologico - JetBrains',
+    subtitle: 'Partner Tecnológico - JetBrains',
     cardActionLabel: 'Ver partner',
     industry: 'Herramientas de Desarrollo',
     shortDescription:
-      'Partner tecnologico de JetBrains para potenciar desarrollo profesional, calidad de codigo y entrega consistente de software.',
+      'Partner tecnológico de JetBrains para potenciar desarrollo profesional, calidad de código y entrega consistente de software.',
     longDescription:
-      'Como partner tecnologico de JetBrains, trabajamos con herramientas lideres para fortalecer nuestro flujo de desarrollo, aplicar mejores practicas y entregar software mas robusto a clientes que necesitan equipos y procesos profesionales.',
+      'Como partner tecnológico de JetBrains, trabajamos con herramientas líderes para fortalecer nuestro flujo de desarrollo, aplicar mejores prácticas y entregar software más robusto a clientes que necesitan equipos y procesos profesionales.',
     cardGradient: 'gradient-bg-3',
     logo: {
       alt: 'JetBrains',
@@ -504,28 +504,28 @@ export const partners: Partner[] = [
       variant: 'balanced',
     },
     highlights: [
-      'Mayor calidad de codigo',
+      'Mayor calidad de código',
       'Mejores tiempos de entrega',
       'Arquitecturas robustas',
-      'Desarrollo con herramientas lideres del mercado',
+      'Desarrollo con herramientas líderes del mercado',
     ],
     additionalInfo: [
-      { label: 'Categoria', value: 'Developer tools' },
+      { label: 'Categoría', value: 'Developer tools' },
       {
         label: 'Modalidad',
         value: 'Miembro del programa JetBrains Partners',
       },
       { label: 'Enfoque', value: 'Desarrollo profesional de software' },
-      { label: 'Aporte', value: 'Herramientas, practicas y productividad' },
+      { label: 'Aporte', value: 'Herramientas, prácticas y productividad' },
     ],
     cta: {
       label: 'Nuestros Servicios de Desarrollo',
       href: '/#services',
     },
     detailPage: {
-      badge: 'Partner Tecnologico',
+      badge: 'Partner Tecnológico',
       heroDescription:
-        'Somos partner tecnologico de JetBrains y trabajamos con sus soluciones lideres para potenciar nuestro desarrollo de software, mejorar procesos de engineering y dar mejores resultados a nuestros clientes.',
+        'Somos partner tecnológico de JetBrains y trabajamos con sus soluciones líderes para potenciar nuestro desarrollo de software, mejorar procesos de engineering y dar mejores resultados a nuestros clientes.',
       heroLinks: [
         {
           label: 'Conocer JetBrains Partners',
@@ -539,12 +539,12 @@ export const partners: Partner[] = [
       ],
       allianceTitle: 'Sobre el programa JetBrains Partners',
       allianceDescription:
-        'JetBrains desarrolla IDEs y herramientas de productividad ampliamente usadas por equipos de software profesionales. Formar parte de JetBrains Partners nos da un marco de trabajo mas solido para desarrollar con mejores herramientas, sostener buenas practicas y mantener un flujo tecnico consistente en proyectos exigentes.',
+        'JetBrains desarrolla IDEs y herramientas de productividad ampliamente usadas por equipos de software profesionales. Formar parte de JetBrains Partners nos da un marco de trabajo más sólido para desarrollar con mejores herramientas, sostener buenas prácticas y mantener un flujo técnico consistente en proyectos exigentes.',
       allianceBenefits: [
         'Acceso a licencias y herramientas premium para fortalecer el entorno de desarrollo.',
-        'Formacion, novedades y actualizaciones para mantener el equipo tecnico al dia.',
-        'Mayor visibilidad dentro de una comunidad tecnologica con foco profesional.',
-        'Integracion de mejores practicas en desarrollo, calidad y entrega.',
+        'Formación, novedades y actualizaciones para mantener el equipo técnico al día.',
+        'Mayor visibilidad dentro de una comunidad tecnológica con foco profesional.',
+        'Integración de mejores prácticas en desarrollo, calidad y entrega.',
       ],
       allianceLink: {
         label: 'Ver programa oficial',
@@ -555,71 +555,71 @@ export const partners: Partner[] = [
         {
           title: 'Desarrollo de software a medida',
           description:
-            'Disenamos e implementamos productos y sistemas adaptados al contexto de negocio de cada cliente.',
+            'Diseñamos e implementamos productos y sistemas adaptados al contexto de negocio de cada cliente.',
         },
         {
           title: 'Arquitecturas escalables',
           description:
-            'Definimos bases tecnicas preparadas para crecer en complejidad, volumen y evolucion del producto.',
+            'Definimos bases técnicas preparadas para crecer en complejidad, volumen y evolución del producto.',
         },
         {
-          title: 'Integracion continua y buenas practicas',
+          title: 'Integración continua y buenas prácticas',
           description:
             'Aplicamos procesos de desarrollo sostenibles para mejorar calidad, trazabilidad y velocidad de entrega.',
         },
         {
           title: 'Soporte y mantenimiento',
           description:
-            'Acompanamos ciclos de mejora, correccion y evolucion para sostener el software en el tiempo.',
+            'Acompañamos ciclos de mejora, corrección y evolución para sostener el software en el tiempo.',
         },
         {
-          title: 'Automatizacion de procesos',
+          title: 'Automatización de procesos',
           description:
-            'Reducimos friccion operativa con automatizaciones enfocadas en flujos internos y tareas repetitivas.',
+            'Reducimos fricción operativa con automatizaciones enfocadas en flujos internos y tareas repetitivas.',
         },
         {
           title: 'Desarrollo con herramientas JetBrains',
           description:
-            'Trabajamos con un stack de herramientas profesional que fortalece productividad, precision y consistencia tecnica.',
+            'Trabajamos con un stack de herramientas profesional que fortalece productividad, precisión y consistencia técnica.',
         },
       ],
       useCases: [
         {
-          title: 'Refactor tecnico para una plataforma en crecimiento',
+          title: 'Refactor técnico para una plataforma en crecimiento',
           description:
-            'Ordenamos una base de codigo compleja, acelerando revisiones, deteccion de problemas y estandarizacion del trabajo de equipo.',
+            'Ordenamos una base de código compleja, acelerando revisiones, detección de problemas y estandarización del trabajo de equipo.',
         },
         {
-          title: 'Pipeline de entrega mas consistente',
+          title: 'Pipeline de entrega más consistente',
           description:
-            'Mejoramos el flujo de desarrollo y despliegue para reducir retrabajo y sostener releases mas predecibles.',
+            'Mejoramos el flujo de desarrollo y despliegue para reducir retrabajo y sostener releases más predecibles.',
         },
         {
           title: 'Mantenimiento evolutivo con foco en calidad',
           description:
-            'Aplicamos un proceso continuo de mejoras tecnicas y funcionales con mas control sobre calidad, deuda tecnica y estabilidad.',
+            'Aplicamos un proceso continuo de mejoras técnicas y funcionales con más control sobre calidad, deuda técnica y estabilidad.',
         },
       ],
       faq: [
         {
-          question: 'Que significa que son partner de JetBrains?',
+          question: 'Qué significa que son partner de JetBrains?',
           answer:
             'Significa que formamos parte de JetBrains Partners y trabajamos con sus herramientas dentro de un marco profesional orientado a mejorar nuestro flujo de desarrollo.',
         },
         {
-          question: 'Como nos beneficia como clientes?',
+          question: 'Cómo nos beneficia como clientes?',
           answer:
-            'Se traduce en mejores procesos, mas consistencia tecnica y un equipo que trabaja con herramientas de referencia para entregar software de mayor calidad.',
+            'Se traduce en mejores procesos, más consistencia técnica y un equipo que trabaja con herramientas de referencia para entregar software de mayor calidad.',
         },
         {
-          question: 'Como aplican herramientas JetBrains en los proyectos?',
+          question: 'Cómo aplican herramientas JetBrains en los proyectos?',
           answer:
-            'Las usamos para acelerar desarrollo, revisar codigo con mas criterio, sostener estandares y mantener un flujo tecnico mas ordenado.',
+            'Las usamos para acelerar desarrollo, revisar código con más criterio, sostener estándares y mantener un flujo técnico más ordenado.',
         },
         {
-          question: 'Ofrecen formacion o consultoria relacionada?',
+          question: 'Ofrecen formación o consultoría relacionada?',
           answer:
-            'Podemos acompanar decisiones tecnicas, buenas practicas y procesos de desarrollo segun el contexto del equipo y del proyecto.',
+            'Podemos acompañar decisiones técnicas, buenas prácticas y procesos de desarrollo según el contexto del equipo y del proyecto.',
         },
       ],
     },
@@ -631,9 +631,9 @@ export const partners: Partner[] = [
     cardActionLabel: 'Ver partner',
     industry: 'Fintech y Pagos',
     shortDescription:
-      'Integracion avanzada, soporte prioritario y optimizacion de comisiones para operaciones de pago digitales.',
+      'Integración avanzada, soporte prioritario y optimización de comisiones para operaciones de pago digitales.',
     longDescription:
-      'Somos partner dentro del ecosistema Mercado Pago y acompanamos implementaciones tecnicas, optimizacion de checkout y gestion estrategica de soluciones de pago para negocios que necesitan vender mejor y operar con menos friccion.',
+      'Somos partner dentro del ecosistema Mercado Pago y acompañamos implementaciones técnicas, optimización de checkout y gestión estratégica de soluciones de pago para negocios que necesitan vender mejor y operar con menos fricción.',
     cardGradient: 'gradient-bg-1',
     logo: {
       alt: 'Mercado Pago',
@@ -643,28 +643,28 @@ export const partners: Partner[] = [
       variant: 'square',
     },
     highlights: [
-      'Mayor velocidad para salir a produccion',
-      'Flujos de pago mas ordenados y estables',
-      'Checkout optimizado para conversion',
-      'Acompanamiento tecnico y comercial',
+      'Mayor velocidad para salir a producción',
+      'Flujos de pago más ordenados y estables',
+      'Checkout optimizado para conversión',
+      'Acompañamiento técnico y comercial',
     ],
     additionalInfo: [
-      { label: 'Categoria', value: 'Pagos digitales' },
+      { label: 'Categoría', value: 'Pagos digitales' },
       {
         label: 'Modalidad',
         value: 'Partner dentro del ecosistema Mercado Pago',
       },
-      { label: 'Enfoque', value: 'Checkout, cobros y optimizacion' },
-      { label: 'Cobertura', value: 'Implementacion y acompanamiento' },
+      { label: 'Enfoque', value: 'Checkout, cobros y optimización' },
+      { label: 'Cobertura', value: 'Implementación y acompañamiento' },
     ],
     cta: {
-      label: 'Solicitar integracion',
+      label: 'Solicitar integración',
       href: '/#contact',
     },
     paymentPage: {
       badge: 'Partner de Pagos Digitales',
       heroDescription:
-        'Integramos, optimizamos y gestionamos soluciones de pago con Mercado Pago, brindando acompanamiento tecnico y comercial para resolver checkout, conversion y operacion con mayor agilidad.',
+        'Integramos, optimizamos y gestionamos soluciones de pago con Mercado Pago, brindando acompañamiento técnico y comercial para resolver checkout, conversión y operación con mayor agilidad.',
       heroLinks: [
         {
           label: 'Ver programa de Partners',
@@ -672,13 +672,13 @@ export const partners: Partner[] = [
           external: true,
         },
         {
-          label: 'Solicitar integracion',
+          label: 'Solicitar integración',
           href: '/#contact',
         },
       ],
       allianceTitle: 'Sobre nuestra alianza con Mercado Pago',
       allianceDescription:
-        'Trabajamos como partner dentro del ecosistema Mercado Pago para implementar integraciones completas, ordenar procesos de cobro digitales y acompanar decisiones tecnicas y comerciales que impactan conversion, aprobacion y continuidad operativa. Seguimos sus directrices tecnicas y usamos ese marco para acelerar integraciones y resolver incidencias con mas contexto.',
+        'Trabajamos como partner dentro del ecosistema Mercado Pago para implementar integraciones completas, ordenar procesos de cobro digitales y acompañar decisiones técnicas y comerciales que impactan conversión, aprobación y continuidad operativa. Seguimos sus directrices técnicas y usamos ese marco para acelerar integraciones y resolver incidencias con más contexto.',
       allianceLink: {
         label: 'Conocer programa oficial',
         href: 'https://www.mercadopago.com.ar/partners/es/',
@@ -688,91 +688,91 @@ export const partners: Partner[] = [
         {
           title: 'Soporte prioritario con ejecutivo asignado',
           description:
-            'A traves de nuestra relacion con Mercado Pago gestionamos un canal mas directo para escalar consultas y situaciones especificas de clientes, con seguimiento mas agil segun el caso y el alcance de la cuenta.',
+            'A través de nuestra relación con Mercado Pago gestionamos un canal más directo para escalar consultas y situaciones específicas de clientes, con seguimiento más ágil según el caso y el alcance de la cuenta.',
         },
         {
-          title: 'Acompanamiento en configuraciones avanzadas',
+          title: 'Acompañamiento en configuraciones avanzadas',
           description:
-            'Revisamos medios de pago, configuracion de checkout, reglas de cobro y flujos de conversion para que la implementacion responda mejor al negocio.',
+            'Revisamos medios de pago, configuración de checkout, reglas de cobro y flujos de conversión para que la implementación responda mejor al negocio.',
         },
         {
-          title: 'Evaluacion de condiciones preferenciales',
+          title: 'Evaluación de condiciones preferenciales',
           description:
-            'Analizamos la posibilidad de gestionar mejoras en tasas o condiciones comerciales para cuentas con volumen operativo relevante. Sujeto a evaluacion y criterios de Mercado Pago.',
+            'Analizamos la posibilidad de gestionar mejoras en tasas o condiciones comerciales para cuentas con volumen operativo relevante. Sujeto a evaluación y criterios de Mercado Pago.',
         },
       ],
-      operationsTitle: 'Que resolvemos como partner',
+      operationsTitle: 'Qué resolvemos como partner',
       operations: [
         {
-          title: 'Integracion completa de checkout',
+          title: 'Integración completa de checkout',
           description:
             'Implementamos experiencias de cobro en web y aplicaciones con foco en seguridad, velocidad y consistencia operativa.',
         },
         {
-          title: 'Optimizacion de conversion',
+          title: 'Optimización de conversión',
           description:
-            'Ajustamos configuraciones y flujos para reducir friccion y mejorar el rendimiento del checkout.',
+            'Ajustamos configuraciones y flujos para reducir fricción y mejorar el rendimiento del checkout.',
         },
         {
-          title: 'Automatizacion y estados de pago',
+          title: 'Automatización y estados de pago',
           description:
-            'Integramos notificaciones, conciliacion y procesos internos para que el negocio reaccione mejor al ciclo de cobro.',
+            'Integramos notificaciones, conciliación y procesos internos para que el negocio reaccione mejor al ciclo de cobro.',
         },
         {
           title: 'Soporte post-lanzamiento',
           description:
-            'Acompanamos incidentes, ajustes y evoluciones para sostener estabilidad luego de la salida a produccion.',
+            'Acompañamos incidentes, ajustes y evoluciones para sostener estabilidad luego de la salida a producción.',
         },
         {
-          title: 'Consultoria comercial y tecnica',
+          title: 'Consultoría comercial y técnica',
           description:
-            'Combinamos mirada tecnica y operativa para decidir como implementar y evolucionar la capa de pagos.',
+            'Combinamos mirada técnica y operativa para decidir cómo implementar y evolucionar la capa de pagos.',
         },
       ],
       clientBenefitsTitle: 'Beneficios concretos para clientes',
       clientBenefits: [
-        'Mayor calidad en la implementacion de cobros y checkouts.',
-        'Mejores tiempos de resolucion ante dudas o incidencias.',
-        'Arquitecturas de pago mas robustas y sostenibles.',
+        'Mayor calidad en la implementación de cobros y checkouts.',
+        'Mejores tiempos de resolución ante dudas o incidencias.',
+        'Arquitecturas de pago más robustas y sostenibles.',
         'Desarrollo alineado a directrices y herramientas del ecosistema Mercado Pago.',
       ],
       useCases: [
         {
           title: 'Checkout optimizado para ecommerce en crecimiento',
           description:
-            'Implementamos y ajustamos el flujo de pago para reducir pasos, mejorar conversion y sostener una operacion de cobro mas predecible.',
+            'Implementamos y ajustamos el flujo de pago para reducir pasos, mejorar conversión y sostener una operación de cobro más predecible.',
         },
         {
-          title: 'Integracion de cobros con procesos internos',
+          title: 'Integración de cobros con procesos internos',
           description:
-            'Conectamos estados de pago, validaciones y automatizaciones para que ventas, soporte y operacion trabajen con menos friccion.',
+            'Conectamos estados de pago, validaciones y automatizaciones para que ventas, soporte y operación trabajen con menos fricción.',
         },
         {
-          title: 'Acompanamiento comercial en una cuenta de mayor volumen',
+          title: 'Acompañamiento comercial en una cuenta de mayor volumen',
           description:
-            'Analizamos configuracion, performance y posibilidades de mejora para escalar el uso de Mercado Pago con mejor soporte y mas contexto de negocio.',
+            'Analizamos configuración, performance y posibilidades de mejora para escalar el uso de Mercado Pago con mejor soporte y más contexto de negocio.',
         },
       ],
       faq: [
         {
-          question: 'Que significa que sean partner de Mercado Pago?',
+          question: 'Qué significa que sean partner de Mercado Pago?',
           answer:
-            'Significa que trabajamos dentro de su ecosistema de partners para implementar soluciones de pago y acompanar a clientes con un marco tecnico y comercial mas solido.',
+            'Significa que trabajamos dentro de su ecosistema de partners para implementar soluciones de pago y acompañar a clientes con un marco técnico y comercial más sólido.',
         },
         {
-          question: 'Como nos beneficia como clientes?',
+          question: 'Cómo nos beneficia como clientes?',
           answer:
-            'Se traduce en integraciones mas ordenadas, mejor acompanamiento y una gestion mas agil frente a configuraciones o incidencias de pago.',
+            'Se traduce en integraciones más ordenadas, mejor acompañamiento y una gestión más ágil frente a configuraciones o incidencias de pago.',
         },
         {
           question: 'Pueden ayudar con soporte e integraciones avanzadas?',
           answer:
-            'Si. Cubrimos implementacion, optimizacion, automatizaciones y soporte continuo segun la complejidad de cada operacion.',
+            'Sí. Cubrimos implementación, optimización, automatizaciones y soporte continuo según la complejidad de cada operación.',
         },
         {
           question: 'Pueden gestionar mejoras de condiciones o comisiones?',
           answer:
-            'Podemos evaluar y gestionar esa posibilidad en cuentas seleccionadas segun volumen, actividad y criterio comercial de Mercado Pago. No es un beneficio garantizado.',
+            'Podemos evaluar y gestionar esa posibilidad en cuentas seleccionadas según volumen, actividad y criterio comercial de Mercado Pago. No es un beneficio garantizado.',
         },
       ],
     },
@@ -782,11 +782,11 @@ export const partners: Partner[] = [
     name: 'NVIDIA',
     subtitle: 'NVIDIA Connect (ISV Program)',
     featured: true,
-    industry: 'IA, GPU y Computacion Acelerada',
+    industry: 'IA, GPU y Computación Acelerada',
     shortDescription:
-      'Partner a traves del programa NVIDIA Connect para acompanar soluciones de IA, vision y workloads acelerados con foco de negocio.',
+      'Partner a través del programa NVIDIA Connect para acompañar soluciones de IA, visión y workloads acelerados con foco de negocio.',
     longDescription:
-      'Trabajamos como partner a traves del programa NVIDIA Connect (ISV) para ayudar a equipos que necesitan acelerar desarrollo, validacion tecnica y salida a mercado en productos basados en IA.',
+      'Trabajamos como partner a través del programa NVIDIA Connect (ISV) para ayudar a equipos que necesitan acelerar desarrollo, validación técnica y salida a mercado en productos basados en IA.',
     cardGradient: 'gradient-bg-2',
     logo: {
       alt: 'NVIDIA',
@@ -798,15 +798,15 @@ export const partners: Partner[] = [
     highlights: [
       'AI y GenAI aplicada',
       'Computer Vision',
-      'Optimizacion de performance',
+      'Optimización de performance',
       'Deploy en cloud',
       'Soluciones empresariales aceleradas',
     ],
     additionalInfo: [
       { label: 'Modalidad', value: 'Partner via NVIDIA Connect (ISV)' },
-      { label: 'Categoria', value: 'IA y computacion acelerada' },
-      { label: 'Enfoque', value: 'Innovacion y time-to-market' },
-      { label: 'Perfil', value: 'Implementacion orientada a negocio' },
+      { label: 'Categoría', value: 'IA y computación acelerada' },
+      { label: 'Enfoque', value: 'Innovación y time-to-market' },
+      { label: 'Perfil', value: 'Implementación orientada a negocio' },
     ],
     cta: {
       label: 'Hablemos de tu proyecto',
@@ -815,7 +815,7 @@ export const partners: Partner[] = [
     detailPage: {
       badge: 'NVIDIA Connect for ISVs',
       heroDescription:
-        'Krauser es partner a traves del programa NVIDIA Connect para ISVs, acompanando iniciativas que necesitan acelerar desarrollo, validacion tecnica y ejecucion de soluciones de IA sin prometer niveles o certificaciones no verificadas.',
+        'Krauser es partner a través del programa NVIDIA Connect para ISVs, acompañando iniciativas que necesitan acelerar desarrollo, validación técnica y ejecución de soluciones de IA sin prometer niveles o certificaciones no verificadas.',
       heroLinks: [
         {
           label: 'Conocer NVIDIA Connect',
@@ -829,11 +829,11 @@ export const partners: Partner[] = [
       ],
       allianceTitle: 'Sobre la alianza',
       allianceDescription:
-        'NVIDIA Connect es un programa orientado a ISVs que busca impulsar innovacion y aceleracion tecnologica. Lo usamos como marco para trabajar con mas recursos de desarrollo, mejor contexto tecnico y un camino mas ordenado hacia implementaciones listas para negocio.',
+        'NVIDIA Connect es un programa orientado a ISVs que busca impulsar innovación y aceleración tecnológica. Lo usamos como marco para trabajar con más recursos de desarrollo, mejor contexto técnico y un camino más ordenado hacia implementaciones listas para negocio.',
       allianceBenefits: [
         'Recursos de desarrollo para acelerar pruebas y validaciones.',
-        'Entrenamiento tecnico para fortalecer decisiones de implementacion.',
-        'Guia tecnica para ordenar arquitectura y despliegue.',
+        'Entrenamiento técnico para fortalecer decisiones de implementación.',
+        'Guía técnica para ordenar arquitectura y despliegue.',
         'Acceso a oportunidades del ecosistema en contextos relevantes.',
       ],
       allianceLink: {
@@ -845,39 +845,39 @@ export const partners: Partner[] = [
         {
           title: 'AI / GenAI',
           description:
-            'Diseno e implementacion de asistentes, automatizaciones y experiencias generativas con foco en productividad y operaciones.',
+            'Diseño e implementación de asistentes, automatizaciones y experiencias generativas con foco en productividad y operaciones.',
         },
         {
           title: 'Computer Vision',
           description:
-            'Pipelines de deteccion, analitica e inspeccion visual para escenarios industriales, comerciales y operativos.',
+            'Pipelines de detección, analítica e inspección visual para escenarios industriales, comerciales y operativos.',
         },
         {
-          title: 'Optimizacion de performance',
+          title: 'Optimización de performance',
           description:
             'Ajuste de inferencia, arquitectura y consumo para mejorar rendimiento, costo y estabilidad.',
         },
         {
           title: 'Deploy en cloud',
           description:
-            'Puesta en produccion de workloads acelerados con monitoreo, observabilidad y criterios de escalado.',
+            'Puesta en producción de workloads acelerados con monitoreo, observabilidad y criterios de escalado.',
         },
         {
           title: 'Soluciones empresariales aceleradas',
           description:
-            'Integracion de IA aplicada en procesos, productos y plataformas que necesitan velocidad de adopcion.',
+            'Integración de IA aplicada en procesos, productos y plataformas que necesitan velocidad de adopción.',
         },
       ],
       useCases: [
         {
           title: 'Asistente corporativo con GenAI',
           description:
-            'Implementamos un asistente con contexto interno para soporte, operaciones y consulta documental, reduciendo friccion operativa.',
+            'Implementamos un asistente con contexto interno para soporte, operaciones y consulta documental, reduciendo fricción operativa.',
         },
         {
-          title: 'Analitica visual en tiempo real',
+          title: 'Analítica visual en tiempo real',
           description:
-            'Desarrollamos un flujo de vision para deteccion de eventos y control visual con alertas y tableros de seguimiento.',
+            'Desarrollamos un flujo de visión para detección de eventos y control visual con alertas y tableros de seguimiento.',
         },
         {
           title: 'Capa de inferencia para producto digital',
@@ -887,69 +887,69 @@ export const partners: Partner[] = [
       ],
       faq: [
         {
-          question: 'Que implica ser partner a traves de NVIDIA Connect?',
+          question: 'Qué implica ser partner a través de NVIDIA Connect?',
           answer:
             'Implica que trabajamos dentro del marco del programa NVIDIA Connect para ISVs, enfocado en acelerar desarrollo y salida a mercado.',
         },
         {
-          question: 'Que beneficio obtiene el cliente?',
+          question: 'Qué beneficio obtiene el cliente?',
           answer:
-            'El cliente obtiene un equipo que combina ejecucion tecnica con foco de negocio para construir soluciones aceleradas con mayor claridad y menor friccion.',
+            'El cliente obtiene un equipo que combina ejecución técnica con foco de negocio para construir soluciones aceleradas con mayor claridad y menor fricción.',
         },
         {
           question: 'Venden hardware o licencias de NVIDIA?',
           answer:
-            'No. Nuestro foco esta en estrategia, desarrollo, integracion y despliegue. La provision final depende del alcance de cada proyecto.',
+            'No. Nuestro foco está en estrategia, desarrollo, integración y despliegue. La provisión final depende del alcance de cada proyecto.',
         },
         {
-          question: 'Como trabajan soluciones aceleradas?',
+          question: 'Cómo trabajan soluciones aceleradas?',
           answer:
-            'Partimos de discovery, definimos arquitectura, validamos rapidamente y luego avanzamos a una implementacion preparada para produccion.',
+            'Partimos de discovery, definimos arquitectura, validamos rápidamente y luego avanzamos a una implementación preparada para producción.',
         },
       ],
     },
   },
   {
     slug: 'citecopa',
-    name: 'Fundacion CiTeCopa',
-    subtitle: 'Partner Tecnologico - Plataforma Integral',
+    name: 'Fundación CiTeCopa',
+    subtitle: 'Partner Tecnológico - Plataforma Integral',
     cardActionLabel: 'Ver caso',
-    industry: 'Fundacion, Educacion y Gestion Social',
+    industry: 'Fundación, Educación y Gestión Social',
     shortDescription:
-      'Desarrollo completo de plataforma institucional, ecommerce y sistema de gestion con donaciones integradas.',
+      'Desarrollo completo de plataforma institucional, ecommerce y sistema de gestión con donaciones integradas.',
     longDescription:
-      'Desarrollamos integralmente el ecosistema digital de Fundacion CiTeCopa: plataforma institucional, sistema de gestion, ecommerce solidario y procesamiento de donaciones para sostener una operacion institucional con foco social.',
+      'Desarrollamos integralmente el ecosistema digital de Fundación CiTeCopa: plataforma institucional, sistema de gestión, ecommerce solidario y procesamiento de donaciones para sostener una operación institucional con foco social.',
     cardGradient: 'gradient-bg-3',
     logo: {
-      alt: 'Fundacion CiTeCopa',
+      alt: 'Fundación CiTeCopa',
       src: '/citecopa_short.png',
       initials: 'FC',
       gradient: 'from-green-500 to-lime-500',
       variant: 'wide',
     },
     highlights: [
-      'Plataforma institucional y gestion centralizada',
+      'Plataforma institucional y gestión centralizada',
       'Ecommerce solidario y donaciones online',
       'Pagos digitales seguros y trazables',
-      'Soporte tecnico continuo e infraestructura',
+      'Soporte técnico continuo e infraestructura',
     ],
     additionalInfo: [
-      { label: 'Categoria', value: 'Caso de exito institucional' },
-      { label: 'Modalidad', value: 'Partner Tecnologico' },
-      { label: 'Enfoque', value: 'ONG, gestion y donaciones digitales' },
-      { label: 'Perfil', value: 'Plataforma integral para fundacion' },
+      { label: 'Categoría', value: 'Caso de éxito institucional' },
+      { label: 'Modalidad', value: 'Partner Tecnológico' },
+      { label: 'Enfoque', value: 'ONG, gestión y donaciones digitales' },
+      { label: 'Perfil', value: 'Plataforma integral para fundación' },
     ],
     cta: {
       label: 'Desarrollar plataforma similar',
       href: '/#contact',
     },
     foundationPage: {
-      badge: 'Partner Tecnologico',
+      badge: 'Partner Tecnológico',
       heroDescription:
-        'Desarrollamos el ecosistema digital completo de Fundacion CiTeCopa, incluyendo gestion institucional, ecommerce y sistema de donaciones online para una operacion transparente, trazable y preparada para crecer.',
+        'Desarrollamos el ecosistema digital completo de Fundación CiTeCopa, incluyendo gestión institucional, ecommerce y sistema de donaciones online para una operación transparente, trazable y preparada para crecer.',
       heroLinks: [
         {
-          label: 'Visitar Fundacion',
+          label: 'Visitar Fundación',
           href: 'https://citecopa.org.ar/',
           external: true,
         },
@@ -963,27 +963,27 @@ export const partners: Partner[] = [
         {
           title: 'Landing institucional dinamica',
           description:
-            'Construimos una presencia institucional flexible para comunicar programas, novedades y actividades de la fundacion.',
+            'Construimos una presencia institucional flexible para comunicar programas, novedades y actividades de la fundación.',
         },
         {
           title: 'Blog autoadministrable',
           description:
-            'Integramos un modulo de contenidos para publicar noticias, avances y acciones con autonomia editorial.',
+            'Integramos un módulo de contenidos para publicar noticias, avances y acciones con autonomía editorial.',
         },
         {
-          title: 'Sistema de gestion de alumnos',
+          title: 'Sistema de gestión de alumnos',
           description:
-            'Centralizamos altas, seguimiento y administracion de alumnos en un flujo mas ordenado para el equipo interno.',
+            'Centralizamos altas, seguimiento y administración de alumnos en un flujo más ordenado para el equipo interno.',
         },
         {
-          title: 'Gestion de ingresos y egresos',
+          title: 'Gestión de ingresos y egresos',
           description:
             'Digitalizamos movimientos financieros para dar mayor control, orden administrativo y visibilidad operativa.',
         },
         {
-          title: 'Registro y administracion de donaciones',
+          title: 'Registro y administración de donaciones',
           description:
-            'Unificamos la recepcion y trazabilidad de donaciones dentro de un sistema preparado para seguimiento continuo.',
+            'Unificamos la recepción y trazabilidad de donaciones dentro de un sistema preparado para seguimiento continuo.',
         },
         {
           title: 'Panel administrativo completo',
@@ -993,10 +993,10 @@ export const partners: Partner[] = [
         {
           title: 'Ecommerce solidario',
           description:
-            'Montamos una capa de venta alineada al modelo de sostenibilidad y captacion de fondos de la fundacion.',
+            'Montamos una capa de venta alineada al modelo de sostenibilidad y captación de fondos de la fundación.',
         },
         {
-          title: 'Integracion de checkout con Mercado Pago',
+          title: 'Integración de checkout con Mercado Pago',
           description:
             'Implementamos cobros y donaciones con un flujo seguro, simple y conectado al ecosistema operativo.',
         },
@@ -1008,23 +1008,23 @@ export const partners: Partner[] = [
       ],
       donationTitle: 'Sistema de Donaciones y Pagos',
       donationDescription:
-        'La solucion incluye una capa especifica para pagos y donaciones: checkout integrado con Mercado Pago, registro de ordenes, seguimiento de transacciones y control administrativo para dar seguridad, transparencia y trazabilidad de fondos.',
+        'La solución incluye una capa específica para pagos y donaciones: checkout integrado con Mercado Pago, registro de órdenes, seguimiento de transacciones y control administrativo para dar seguridad, transparencia y trazabilidad de fondos.',
       donationItems: [
         'Checkout con Mercado Pago integrado.',
         'Procesamiento seguro de pagos y donaciones online.',
-        'Gestion de ordenes y estados dentro del sistema.',
-        'Registro automatico de transacciones para seguimiento.',
-        'Panel administrativo para control y conciliacion.',
+        'Gestión de órdenes y estados dentro del sistema.',
+        'Registro automático de transacciones para seguimiento.',
+        'Panel administrativo para control y conciliación.',
         'Mayor transparencia y trazabilidad de fondos.',
       ],
       supportTitle: 'Infraestructura y soporte',
       supportDescription:
-        'Ademas del desarrollo, sostenemos la operacion con infraestructura, monitoreo y soporte continuo. Esto permite que la plataforma funcione con estabilidad, se actualice con criterio y evolucione junto a las necesidades de la organizacion.',
+        'Además del desarrollo, sostenemos la operación con infraestructura, monitoreo y soporte continuo. Esto permite que la plataforma funcione con estabilidad, se actualice con criterio y evolucione junto a las necesidades de la organización.',
       supportItems: [
-        'Provision de infraestructura para la operacion institucional.',
+        'Provisión de infraestructura para la operación institucional.',
         'Mantenimiento continuo y correcciones sobre la plataforma.',
-        'Actualizaciones evolutivas segun nuevas necesidades.',
-        'Soporte tecnico para equipo interno y operacion diaria.',
+        'Actualizaciones evolutivas según nuevas necesidades.',
+        'Soporte técnico para equipo interno y operación diaria.',
         'Monitoreo de estabilidad y seguimiento preventivo.',
       ],
       impactTitle: 'Impacto del proyecto',
@@ -1033,66 +1033,66 @@ export const partners: Partner[] = [
           value: '420+',
           label: 'Alumnos gestionados',
           description:
-            'Seguimiento centralizado de alumnos y procesos vinculados a la operacion educativa.',
+            'Seguimiento centralizado de alumnos y procesos vinculados a la operación educativa.',
         },
         {
-          value: '1.300+',
+          value: '200+',
           label: 'Donaciones procesadas',
           description:
             'Donaciones registradas con control administrativo y trazabilidad dentro de la plataforma.',
         },
         {
-          value: '2.100+',
+          value: '500¿+',
           label: 'Transacciones registradas',
           description:
-            'Cobros, ordenes y movimientos procesados con mayor orden institucional.',
+            'Cobros, órdenes y movimientos procesados con mayor orden institucional.',
         },
         {
           value: '68%',
           label: 'Procesos internos automatizados',
           description:
-            'Reduccion de tareas manuales en administracion, control y seguimiento.',
+            'Reduccion de tareas manuales en administración, control y seguimiento.',
         },
       ],
-      proofTitle: 'Que demuestra este proyecto',
+      proofTitle: 'Qué demuestra este proyecto',
       proofPoints: [
         'Capacidad para desarrollar plataformas digitales para ONG y fundaciones.',
         'Experiencia integrando ecommerce y sistemas de donaciones online.',
-        'Criterio para ordenar sistemas administrativos internos con tecnologia a medida.',
-        'Implementacion de pagos digitales seguros, transparentes y trazables.',
-        'Construccion de soluciones institucionales escalables con soporte continuo.',
+        'Criterio para ordenar sistemas administrativos internos con tecnología a medida.',
+        'Implementación de pagos digitales seguros, transparentes y trazables.',
+        'Construcción de soluciones institucionales escalables con soporte continuo.',
       ],
       testimonial: {
         quote:
-          'Krauser nos ayudo a consolidar una plataforma integral que conecta gestion, sostenibilidad y transparencia en una sola base tecnologica.',
+          'Krauser nos ayudó a consolidar una plataforma integral que conecta gestión, sostenibilidad y transparencia en una sola base tecnológica.',
         author: 'Equipo institucional',
-        role: 'Fundacion CiTeCopa',
+        role: 'Fundación CiTeCopa',
       },
       faq: [
         {
           question: 'Desarrollan plataformas para fundaciones?',
           answer:
-            'Si. Disenamos plataformas institucionales para ONG, fundaciones y organizaciones que necesitan gestion, contenidos y procesos digitales integrados.',
+            'Sí. Diseñamos plataformas institucionales para ONG, fundaciones y organizaciones que necesitan gestión, contenidos y procesos digitales integrados.',
         },
         {
           question: 'Incluye sistema de donaciones?',
           answer:
-            'Si. Podemos implementar recepcion de donaciones, registro de transacciones y seguimiento administrativo dentro del mismo ecosistema.',
+            'Sí. Podemos implementar recepción de donaciones, registro de transacciones y seguimiento administrativo dentro del mismo ecosistema.',
         },
         {
           question: 'Se pueden integrar pagos online?',
           answer:
-            'Si. Integramos pasarelas y checkouts para ecommerce, donaciones y cobros segun la necesidad de la organizacion.',
+            'Sí. Integramos pasarelas y checkouts para ecommerce, donaciones y cobros según la necesidad de la organización.',
         },
         {
           question: 'Incluye panel administrativo?',
           answer:
-            'Si. Desarrollamos backoffice a medida para controlar contenidos, operaciones, pagos y procesos internos.',
+            'Sí. Desarrollamos backoffice a medida para controlar contenidos, operaciones, pagos y procesos internos.',
         },
         {
           question: 'Brindan soporte continuo?',
           answer:
-            'Si. Acompanamos con mantenimiento, soporte, monitoreo y mejoras evolutivas para sostener la plataforma en el tiempo.',
+            'Sí. Acompañamos con mantenimiento, soporte, monitoreo y mejoras evolutivas para sostener la plataforma en el tiempo.',
         },
       ],
     },

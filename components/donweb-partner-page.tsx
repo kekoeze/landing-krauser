@@ -251,7 +251,7 @@ export default function DonWebPartnerPage({
             </h2>
 
             <p className="mt-4 max-w-3xl leading-relaxed text-slate-600 dark:text-gray-300">
-              Traducimos necesidades comerciales en decisiones de infraestructura mas claras: provision, despliegue, performance y acompanamiento para operar con menos friccion.
+              Traducimos necesidades comerciales en decisiones de infraestructura mas claras: provision, despliegue, performance y acompañamiento para operar con menos friccion.
             </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
