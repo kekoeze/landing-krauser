@@ -315,7 +315,7 @@ export default function DonWebPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_24px_60px_rgba(15,23,42,0.22)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_24px_60px_rgba(15,23,42,0.22)] dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.12)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>

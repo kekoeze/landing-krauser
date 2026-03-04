@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import type { Partner, PartnerCapability, PartnerFaq, PartnerLink, PartnerMetric } from '@/lib/partners';
@@ -143,16 +144,19 @@ export default function TedxViedmaPartnerPage({
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
-                Operacion integral
+                Evento en Vivo
               </p>
 
-              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-                Desarrollo, infraestructura y continuidad en una misma capa
-              </h2>
-
-              <p className="mt-5 leading-relaxed text-slate-600 dark:text-slate-300">
-                Este caso combina software a medida, gestion operativa, despliegues y soporte continuo para sostener una experiencia institucional con exigencia real.
-              </p>
+              <div className="mt-6 rounded-3xl border border-slate-200/80 bg-slate-100 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08]">
+                <Image
+                  src="/tedxviedma.png"
+                  alt="TEDxViedma"
+                  width={320}
+                  height={110}
+                  className="mx-auto h-auto w-full"
+                  priority
+                />
+              </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {partner.additionalInfo.map((info) => (
@@ -289,7 +293,7 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.12)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Impacto
               </p>
@@ -373,7 +377,7 @@ export default function TedxViedmaPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.12)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>

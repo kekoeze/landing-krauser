@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -101,21 +102,19 @@ export default function NvidiaPartnerPage({ partner }: NvidiaPartnerPageProps) {
 
             <div className="glass-card rounded-3xl border border-slate-200/80 p-8 dark:border-white/[0.08]">
               <p className="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-gray-400">
-                Espacio de marca
+                Aceleracion Tecnologica
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-slate-100 px-8 py-10 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08] dark:bg-slate-950">
-                <span className="block text-center text-3xl font-semibold tracking-[0.35em] text-slate-950 dark:text-white">
-                  NVIDIA
-                </span>
-                <span className="mt-4 block text-center text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
-                  Placeholder tipografico
-                </span>
+              <div className="mt-6 rounded-3xl border border-slate-200/80 bg-slate-100 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08]">
+                <Image
+                  src="/nvidia.png"
+                  alt="NVIDIA"
+                  width={320}
+                  height={110}
+                  className="mx-auto h-auto w-full"
+                  priority
+                />
               </div>
-
-              <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-                No usamos logos oficiales ni badges oficiales. Este bloque queda preparado para cargar activos aprobados manualmente cuando esten disponibles.
-              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {partner.additionalInfo.map((info) => (

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -140,30 +141,19 @@ export default function JetBrainsPartnerPage({
 
             <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
-                Espacio de marca
+                Herramientas de Desarrollo
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(226,232,240,0.92))] px-8 py-10 dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(17,24,39,1),rgba(30,41,59,0.96))]">
-                <div className="grid grid-cols-[14px,1fr] gap-5">
-                  <div className="flex flex-col gap-2">
-                    <span className="h-3 rounded-full bg-sky-400"></span>
-                    <span className="h-3 rounded-full bg-violet-500"></span>
-                    <span className="h-3 rounded-full bg-fuchsia-500"></span>
-                  </div>
-                  <div>
-                    <span className="block text-3xl font-semibold tracking-[0.28em] text-slate-950 dark:text-white">
-                      JETBRAINS
-                    </span>
-                    <span className="mt-4 block text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
-                      Placeholder tipografico
-                    </span>
-                  </div>
-                </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/80 bg-slate-100 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08]">
+                <Image
+                  src="/jetbrains.png"
+                  alt="JetBrains"
+                  width={320}
+                  height={110}
+                  className="mx-auto h-auto w-full"
+                  priority
+                />
               </div>
-
-              <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                No usamos assets oficiales si no estan disponibles internamente. Este bloque queda listo para incorporar piezas aprobadas manualmente.
-              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {partner.additionalInfo.map((info) => (
@@ -326,7 +316,7 @@ export default function JetBrainsPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.12)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>

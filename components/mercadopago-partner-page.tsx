@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -52,7 +53,7 @@ function UseCaseCard({
   return (
     <div className="glass-card rounded-3xl border border-slate-200/80 p-6 dark:border-white/[0.08]">
       <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-purple-300">
-        Caso {String(index + 1).padStart(2, '0')}
+        Caso {String(index + 1).padStart(2)}
       </span>
       <h3 className="mt-5 text-xl font-semibold text-slate-950 dark:text-white">
         {item.title}
@@ -145,32 +146,21 @@ export default function MercadoPagoPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-[linear-gradient(160deg,rgba(54,66,105,0.44),rgba(37,46,73,0.22))] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.14)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
-                Espacio de marca
+                Pagos Digitales
               </p>
 
-              <div className="mt-6 rounded-3xl border border-dashed border-slate-200/80 bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(226,232,240,0.92))] px-8 py-10 dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(17,24,39,1),rgba(30,41,59,0.96))]">
-                <div className="flex items-center gap-5">
-                  <div className="grid gap-2">
-                    <span className="h-3 w-10 rounded-full bg-sky-400"></span>
-                    <span className="h-3 w-10 rounded-full bg-violet-500"></span>
-                    <span className="h-3 w-10 rounded-full bg-fuchsia-500"></span>
-                  </div>
-                  <div>
-                    <span className="block text-3xl font-semibold tracking-[0.26em] text-slate-950 dark:text-white">
-                      MERCADO PAGO
-                    </span>
-                    <span className="mt-4 block text-xs uppercase tracking-[0.22em] text-slate-500 dark:text-slate-300">
-                      Placeholder tipografico
-                    </span>
-                  </div>
-                </div>
+              <div className="mt-6 rounded-3xl border border-slate-200/80 bg-slate-100 shadow-[0_20px_40px_rgba(148,163,184,0.18)] dark:border-white/[0.08]">
+                <Image
+                  src="/mercadopago.png"
+                  alt="Mercado Pago"
+                  width={320}
+                  height={110}
+                  className="mx-auto h-auto w-full"
+                  priority
+                />
               </div>
-
-              <p className="mt-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                No usamos logos o assets oficiales si no estan disponibles internamente. Este espacio queda preparado para cargar piezas aprobadas manualmente.
-              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {partner.additionalInfo.map((info) => (
@@ -231,7 +221,7 @@ export default function MercadoPagoPartnerPage({
                     className="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 dark:border-white/[0.06] dark:bg-white/[0.03]"
                   >
                     <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-semibold text-violet-700 dark:text-purple-300">
-                      {String(index + 1).padStart(2, '0')}
+                      {String(index + 1).padStart(2)}
                     </span>
                     <p className="text-sm font-medium leading-relaxed text-slate-700 dark:text-gray-200">
                       {benefit}
@@ -345,7 +335,7 @@ export default function MercadoPagoPartnerPage({
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-slate-950 dark:text-white">
+            <div className="rounded-3xl border border-slate-200/80 bg-white/85 p-8 text-slate-900 shadow-[0_28px_60px_rgba(15,23,42,0.24)] dark:border-white/[0.08] dark:bg-white/[0.05] dark:text-white dark:shadow-[0_20px_44px_rgba(4,10,26,0.12)] dark:backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-violet-700/80 dark:text-purple-200/80">
                 Siguiente paso
               </p>

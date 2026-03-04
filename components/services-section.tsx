@@ -53,7 +53,7 @@ export default function ServicesSection() {
         'Sistema de comentarios',
         'Newsletter integrado',
         'SEO avanzado',
-        'Soporte 2 meses'
+        'Soporte extendido'
       ],
       gradient: 'from-purple-600 to-pink-600',
       bgGradient: 'gradient-bg-3',
@@ -148,11 +148,13 @@ export default function ServicesSection() {
                 
                 {/* CTA Button */}
                 <Button
-                  className={`w-full btn-glass text-white py-3 font-semibold group/btn mt-auto ${
-                     ''
-                  }`}
+                  className="w-full btn-glass text-white py-3 font-semibold group/btn mt-auto hover:bg-white/10 transition-all duration-300"
+                  onClick={() => {
+                    const element = document.getElementById('contact');
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
-                  {'Comenzar Proyecto'}
+                  Solicitar Presupuesto
                   <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>

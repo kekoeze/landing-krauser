@@ -114,6 +114,7 @@ export type Partner = {
     alt: string;
     initials: string;
     gradient: string;
+    variant?: 'wide' | 'balanced' | 'square';
   };
   highlights: string[];
   additionalInfo: Array<{
@@ -144,6 +145,7 @@ export const partners: Partner[] = [
       alt: 'DonWeb',
       initials: 'DW',
       gradient: 'from-teal-500 to-emerald-500',
+      variant: 'balanced',
     },
     highlights: [
       'Hosting Web y WordPress',
@@ -281,6 +283,7 @@ export const partners: Partner[] = [
       alt: 'TEDxViedma logo',
       initials: 'TV',
       gradient: 'from-blue-500 to-cyan-500',
+      variant: 'wide',
     },
     highlights: [
       'Plataforma institucional a medida',
@@ -415,13 +418,13 @@ export const partners: Partner[] = [
             'Registro y administracion centralizada para acceso y seguimiento del evento.',
         },
         {
-          value: '18',
+          value: '10',
           label: 'Oradores coordinados',
           description:
             'Gestion digital de perfiles, datos y actualizaciones dentro del flujo operativo.',
         },
         {
-          value: '12',
+          value: '+40',
           label: 'Sponsors administrados',
           description:
             'Control de presencia institucional, piezas y espacios dentro de la plataforma.',
@@ -498,6 +501,7 @@ export const partners: Partner[] = [
       src: '/jetbrains_short.png',
       initials: 'JB',
       gradient: 'from-purple-500 to-blue-500',
+      variant: 'balanced',
     },
     highlights: [
       'Mayor calidad de codigo',
@@ -636,6 +640,7 @@ export const partners: Partner[] = [
       src: '/mercadopago_short.png',
       initials: 'MP',
       gradient: 'from-rose-500 to-orange-500',
+      variant: 'square',
     },
     highlights: [
       'Mayor velocidad para salir a produccion',
@@ -693,7 +698,7 @@ export const partners: Partner[] = [
         {
           title: 'Evaluacion de condiciones preferenciales',
           description:
-            'En clientes seleccionados y segun volumen o actividad, podemos gestionar la evaluacion de mejoras en condiciones comerciales o comisiones. No es un beneficio automatico ni garantizado.',
+            'Analizamos la posibilidad de gestionar mejoras en tasas o condiciones comerciales para cuentas con volumen operativo relevante. Sujeto a evaluacion y criterios de Mercado Pago.',
         },
       ],
       operationsTitle: 'Que resolvemos como partner',
@@ -788,6 +793,7 @@ export const partners: Partner[] = [
       src: '/nvidia_short.png',
       initials: 'NV',
       gradient: 'from-emerald-500 to-lime-500',
+      variant: 'square',
     },
     highlights: [
       'AI y GenAI aplicada',
@@ -919,6 +925,7 @@ export const partners: Partner[] = [
       src: '/citecopa_short.png',
       initials: 'FC',
       gradient: 'from-green-500 to-lime-500',
+      variant: 'wide',
     },
     highlights: [
       'Plataforma institucional y gestion centralizada',

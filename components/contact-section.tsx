@@ -133,7 +133,7 @@ export default function ContactSection() {
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-green-400 transition-colors">
-                WhatsApp Directo
+                WhatsApp
               </h3>
               <p className="text-secondary text-sm mb-4">
                 Chateá con nosotros ahora mismo
@@ -158,7 +158,7 @@ export default function ContactSection() {
                 <Mail className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-2">
-                Email Profesional
+                Email
               </h3>
               <p className="text-secondary text-sm mb-4">
                 Formulario detallado para tu proyecto

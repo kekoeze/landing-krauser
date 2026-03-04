@@ -14,6 +14,7 @@ import { ArrowRight } from 'lucide-react';
 import type { Partner } from '@/lib/partners';
 import { partners } from '@/lib/partners';
 import PartnerLogo from '@/components/partner-logo';
+import { cn } from '@/lib/utils';
 
 const STACK_PEEK_OFFSET = 20;
 const STACK_SCALE_STEP = 0.05;
@@ -35,6 +36,37 @@ type CardMotionState = {
   surfaceOpacity: number;
   veilOpacity: number;
 };
+
+function getPartnerLogoFrameClass(variant: Partner['logo']['variant']) {
+  switch (variant) {
+    case 'wide':
+      return 'h-12 max-w-[168px] sm:h-14 sm:max-w-[188px]';
+    case 'square':
+      return 'h-14 max-w-[104px] sm:h-16 sm:max-w-[116px]';
+    default:
+      return 'h-14 max-w-[128px] sm:h-16 sm:max-w-[144px]';
+  }
+}
+
+function getPartnerLogoSizes(variant: Partner['logo']['variant']) {
+  switch (variant) {
+    case 'wide':
+      return ' 168px, 188px';
+    case 'square':
+      return ' 104px, 116px';
+    default:
+      return ' 128px, 144px';
+  }
+}
+
+function getPartnerLogoImageClass(variant: Partner['logo']['variant']) {
+  switch (variant) {
+    case 'square':
+      return 'object-contain object-center p-3 sm:p-3.5';
+    default:
+      return 'object-contain object-center p-2.5 sm:p-3';
+  }
+}
 
 function getCardMotionState(
   progressValue: number,
@@ -94,6 +126,7 @@ type PartnerCardProps = {
 };
 
 function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
+  const logoVariant = partner.logo.variant ?? 'balanced';
   const scale = useTransform(progress, (value) =>
     getCardMotionState(value, index, total).scale
   );
@@ -153,13 +186,18 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
 
               <motion.div className="relative z-10" style={{ opacity: contentOpacity }}>
                 {partner.logo.src ? (
-                  <div className="relative mb-6 h-12 w-full max-w-[160px] transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:max-w-[180px]">
+                  <div
+                    className={cn(
+                      'relative mb-6 w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.98)_0%,rgba(241,245,249,0.92)_100%)] shadow-[0_10px_24px_rgba(148,163,184,0.14)] ring-1 ring-white/70 transition-transform duration-300 group-hover:scale-110 dark:border-white/[0.08] dark:bg-[linear-gradient(180deg,rgba(30,41,59,0.82)_0%,rgba(15,23,42,0.9)_100%)] dark:shadow-[0_10px_24px_rgba(2,8,23,0.22)] dark:ring-white/[0.05]',
+                      getPartnerLogoFrameClass(logoVariant)
+                    )}
+                  >
                     <Image
                       src={partner.logo.src}
                       alt={partner.logo.alt}
                       fill
-                      sizes="(max-width: 640px) 160px, 180px"
-                      className="object-contain object-left"
+                      sizes={getPartnerLogoSizes(logoVariant)}
+                      className={getPartnerLogoImageClass(logoVariant)}
                     />
                   </div>
                 ) : (
