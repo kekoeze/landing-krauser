@@ -149,7 +149,7 @@ export default function LoadingScreen() {
           {[0, 1, 2].map((index) => (
             <motion.div
               key={index}
-              className="w-2 h-2 bg-purple-500 rounded-full"
+              className="w-2 h-2 bg-blue-500 rounded-full"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.5, 1, 0.5]

@@ -48,7 +48,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="glass-effect-strong p-8 rounded-2xl relative overflow-hidden gradient-bg-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-transparent to-blue-600/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-blue-600/10"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-primary mb-4">Nuestra Misión</h3>
                 <p className="text-secondary leading-relaxed">
@@ -60,12 +60,12 @@ export default function AboutSection() {
             </div>
 
             <div className="glass-effect-strong p-8 rounded-2xl relative overflow-hidden gradient-bg-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-blue-600/10"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold text-primary mb-4">Nuestros Valores</h3>
                 <ul className="space-y-3 text-secondary">
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3 shadow-lg shadow-purple-500/50"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 shadow-lg shadow-blue-500/50"></div>
                     <span><strong>Innovación:</strong> Siempre a la vanguardia de la tecnología</span>
                   </li>
                   <li className="flex items-center">
@@ -73,7 +73,7 @@ export default function AboutSection() {
                     <span><strong>Transparencia:</strong> Comunicación clara y directa</span>
                   </li>
                   <li className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mr-3 shadow-lg shadow-purple-500/50"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 shadow-lg shadow-blue-500/50"></div>
                     <span><strong>Calidad:</strong> Excelencia en cada línea de código</span>
                   </li>
                 </ul>
@@ -97,11 +97,11 @@ export default function AboutSection() {
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
               >
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                 
                 <div className="relative z-10">
-                  <stat.icon className="w-8 h-8 text-purple-500 mx-auto mb-3 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-300" />
-                  <div className="text-3xl font-bold text-primary mb-2 group-hover:text-purple-400 transition-colors">{stat.value}</div>
+                  <stat.icon className="w-8 h-8 text-blue-500 mx-auto mb-3 group-hover:scale-110 group-hover:text-blue-400 transition-all duration-300" />
+                  <div className="text-3xl font-bold text-primary mb-2 group-hover:text-blue-400 transition-colors">{stat.value}</div>
                   <div className="text-sm text-muted group-hover:text-secondary transition-colors">{stat.label}</div>
                 </div>
               </motion.div>

@@ -191,7 +191,7 @@ export default function ServicesSection() {
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white glass-effect"
+                  className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white glass-effect"
                   onClick={() => {
                     const element = document.getElementById('portfolio');
                     element?.scrollIntoView({ behavior: 'smooth' });

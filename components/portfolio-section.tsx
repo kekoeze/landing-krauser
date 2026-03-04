@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   type LucideIcon,
   ExternalLink,
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
 type AgileProject = {
   id: number;
@@ -36,49 +37,49 @@ type AgileProject = {
 const agileProjects: AgileProject[] = [
   {
     id: 1,
-    title: 'Azulmia - Tienda Artesanal',
-    category: 'Ecommerce',
-    type: 'Tienda online de artesanías personalizadas',
+    title: 'Evan - Sistema de gestión comercial',
+    category: 'SaaS',
+    type: 'Plataforma integral de gestión comercial',
     description:
-      'Azulmia Artesanías integra una tienda online orientada al cliente con un panel de administración completo, permitiendo vender artesanías personalizadas, mantener el catálogo actualizado, controlar stock y gestionar imágenes, categorías y consultas desde un solo entorno.',
-    image: '/kLHsavcOy8 copy copy.jpg',
+        'Evan centraliza y automatiza la operación comercial en un solo entorno, integrando inteligencia artificial, ecommerce en tiempo real, control de stock, ventas, créditos y facturación electrónica.',
+    image: '/dashboard-evan.jpg',
     features: [
-      'Catálogo online con vinchas, pulseras, decoraciones y accesorios personalizados',
-      'Organización por categorías temáticas, búsqueda y galería visual de productos',
-      'Precios visibles, stock disponible y pagos seguros con Mercado Pago, tarjetas y transferencias',
-      'Formulario de contacto para pedidos personalizados, cotizaciones y consultas directas',
-      'Panel administrativo para crear, editar y eliminar productos con control de stock',
-      'Gestión interna de categorías, imágenes, actividad reciente y accesos rápidos operativos',
+      'Inteligencia artificial integrada para optimizar catálogos y recomendaciones',
+      'Gestión de ventas con métricas avanzadas y reportes en tiempo real',
+      'Ecommerce sincronizado instantáneamente con stock y precios',
+      'Administración de créditos, fiados y pagos pendientes',
+      'Control de inventario con alertas automáticas e inteligencia de stock',
+      'Integración con ARCA y supervisión en tiempo real del negocio',
     ],
-    technologies: ['Ecommerce', 'Panel admin', 'Mercado Pago', 'Gestión de stock'],
-    gradient: 'from-orange-600 to-red-600',
-    bgGradient: 'gradient-bg-1',
+    technologies: ['IA', 'Ecommerce', 'Analytics', 'Integraciones'],
+    gradient: 'from-blue-600 to-emerald-600',
+    bgGradient: 'gradient-bg-2',
     icon: ShoppingCart,
-    url: 'https://azulmia.store/',
-    badgeLabel: 'Tienda Online',
+    url: 'https://webevan.krauser.com.ar/#/pages/landing',
+    badgeLabel: 'SaaS Inteligente',
   },
   {
     id: 2,
     title: 'Plataforma de Blog',
-    category: 'Implementación Ágil',
-    type: 'Gestión de Contenido',
+    category: 'Software a medida',
+    type: 'Plataforma editorial para posicionamiento y captación',
     description:
-      'Plataforma editorial profesional con sistema de gestión de contenidos, organización por categorías, comentarios y herramientas SEO.',
+      'Solución editorial pensada para publicar contenido con rapidez, ordenar la información, mejorar el posicionamiento orgánico y convertir visitas en una audiencia activa para la marca.',
     image: '/blog.png',
     features: [
-      'Editor de contenido enriquecido',
-      'Sistema de categorías y etiquetas',
-      'Gestión de comentarios',
-      'Integración con newsletter',
-      'Funciones avanzadas de SEO',
-      'Integración con redes sociales',
+      'Panel autogestionable para crear, editar y publicar artículos sin depender de terceros',
+      'Organización por categorías y etiquetas para mejorar navegación y descubrimiento de contenido',
+      'Espacio de comentarios para fortalecer comunidad e interacción con la audiencia',
+      'Captación de suscriptores mediante integración con newsletter y formularios de registro',
+      'Optimización SEO para aumentar visibilidad en buscadores y atraer tráfico calificado',
+      'Difusión integrada en redes sociales para amplificar el alcance de cada publicación',
     ],
-    technologies: ['PHP', 'MySQL', 'CSS3', 'JavaScript'],
+    technologies: ['Autogestión', 'SEO', 'Newsletter', 'Comunidad digital'],
     gradient: 'from-purple-600 to-pink-600',
     bgGradient: 'gradient-bg-3',
     icon: PenTool,
     url: 'https://tiny-strudel-111dfb.netlify.app/',
-    badgeLabel: 'Entrega Ágil',
+    badgeLabel: 'Contenido que convierte',
   },
   {
     id: 3,
@@ -103,29 +104,7 @@ const agileProjects: AgileProject[] = [
     url: '/partners/tedxviedma#alcance',
     badgeLabel: 'Partner Tecnológico',
   },
-  {
-    id: 4,
-    title: 'Evan - Sistema de gestión comercial',
-    category: 'SaaS',
-    type: 'Plataforma integral de gestión comercial',
-    description:
-      'Evan centraliza y automatiza la operación comercial en un solo entorno, integrando inteligencia artificial, ecommerce en tiempo real, control de stock, ventas, créditos y facturación electrónica.',
-    image: '/dashboard-evan.jpg',
-    features: [
-      'Inteligencia artificial integrada para optimizar catálogos y recomendaciones',
-      'Gestión de ventas con métricas avanzadas y reportes en tiempo real',
-      'Ecommerce sincronizado instantáneamente con stock y precios',
-      'Administración de créditos, fiados y pagos pendientes',
-      'Control de inventario con alertas automáticas e inteligencia de stock',
-      'Integración con ARCA y supervisión en tiempo real del negocio',
-    ],
-    technologies: ['IA', 'Ecommerce', 'Analytics', 'Integraciones'],
-    gradient: 'from-blue-600 to-emerald-600',
-    bgGradient: 'gradient-bg-2',
-    icon: ShoppingCart,
-    url: 'https://webevan.krauser.com.ar/#/pages/landing',
-    badgeLabel: 'SaaS Inteligente',
-  },
+
   {
     id: 5,
     title: 'Academia bogado - Padel',
@@ -194,14 +173,42 @@ const agileProjects: AgileProject[] = [
     icon: UtensilsCrossed,
     url: '/#contact',
     badgeLabel: 'Food SaaS',
-  }
-
+  },
+  {
+    id: 4,
+    title: 'Azulmia - Tienda Artesanal',
+    category: 'Ecommerce',
+    type: 'Tienda online de artesanías personalizadas',
+    description:
+        'Azulmia Artesanías integra una tienda online orientada al cliente con un panel de administración completo, permitiendo vender artesanías personalizadas, mantener el catálogo actualizado, controlar stock y gestionar imágenes, categorías y consultas desde un solo entorno.',
+    image: '/kLHsavcOy8 copy copy.jpg',
+    features: [
+      'Catálogo online con vinchas, pulseras, decoraciones y accesorios personalizados',
+      'Organización por categorías temáticas, búsqueda y galería visual de productos',
+      'Precios visibles, stock disponible y pagos seguros con Mercado Pago, tarjetas y transferencias',
+      'Formulario de contacto para pedidos personalizados, cotizaciones y consultas directas',
+      'Panel administrativo para crear, editar y eliminar productos con control de stock',
+      'Gestión interna de categorías, imágenes, actividad reciente y accesos rápidos operativos',
+    ],
+    technologies: ['Ecommerce', 'Panel admin', 'Mercado Pago', 'Gestión de stock'],
+    gradient: 'from-orange-600 to-red-600',
+    bgGradient: 'gradient-bg-1',
+    icon: ShoppingCart,
+    url: 'https://azulmia.store/',
+    badgeLabel: 'Tienda Online',
+  },
 ];
 
 export default function PortfolioSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [currentProject, setCurrentProject] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  const { theme, systemTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % agileProjects.length);
@@ -212,6 +219,14 @@ export default function PortfolioSection() {
   };
 
   const currentProj = agileProjects[currentProject];
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const isLightTheme = mounted && currentTheme === 'light';
+  const featuredPanelBackground = isLightTheme
+    ? 'bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(248,250,252,0.94)_32%,rgba(219,234,254,0.84)_72%,rgba(224,242,254,0.76)_100%)]'
+    : currentProj.bgGradient;
+  const featuredPanelOverlay = isLightTheme
+    ? 'bg-gradient-to-br from-sky-200/35 via-blue-200/10 to-transparent'
+    : 'bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent';
 
   return (
     <section id="portfolio" className="py-20 relative">
@@ -252,8 +267,8 @@ export default function PortfolioSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="grid lg:grid-cols-2 gap-0">
-              <div className={`relative h-96 lg:h-auto overflow-hidden ${currentProj.bgGradient}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent"></div>
+              <div className={`relative h-96 lg:h-auto overflow-hidden ${featuredPanelBackground}`}>
+                <div className={`absolute inset-0 ${featuredPanelOverlay}`}></div>
                 <motion.div
                   key={currentProj.id}
                   initial={{ opacity: 0, scale: 1.05 }}
@@ -292,8 +307,8 @@ export default function PortfolioSection() {
                 </div>
               </div>
 
-              <div className={`p-8 lg:p-12 relative ${currentProj.bgGradient}`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent"></div>
+              <div className={`p-8 lg:p-12 relative ${featuredPanelBackground}`}>
+                <div className={`absolute inset-0 ${featuredPanelOverlay}`}></div>
 
                 <motion.div
                   key={currentProj.id}
@@ -321,7 +336,7 @@ export default function PortfolioSection() {
                     <ul className="space-y-2">
                       {currentProj.features.map((feature) => (
                         <li key={feature} className="flex items-start text-sm text-gray-300">
-                          <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
                           {feature}
                         </li>
                       ))}
@@ -360,7 +375,7 @@ export default function PortfolioSection() {
                 key={project.id}
                 onClick={() => setCurrentProject(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentProject ? 'bg-purple-500 scale-125' : 'bg-gray-600 hover:bg-gray-500'
+                  index === currentProject ? 'bg-blue-500 scale-125' : 'bg-gray-600 hover:bg-gray-500'
                 }`}
                 aria-label={`Ver ${project.title}`}
               />
@@ -377,7 +392,7 @@ export default function PortfolioSection() {
               <motion.div
                 key={project.id}
                 className={`glass-card-hover rounded-xl overflow-hidden group cursor-pointer ${
-                  index === currentProject ? 'ring-2 ring-purple-500/50' : ''
+                  index === currentProject ? 'ring-2 ring-blue-500/50' : ''
                 }`}
                 whileHover={{ scale: 1.02, y: -5 }}
                 onClick={() => setCurrentProject(index)}

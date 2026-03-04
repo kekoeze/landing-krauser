@@ -119,7 +119,7 @@ export default async function PartnerPage({ params }: PartnerPageProps) {
               <ul className="space-y-3">
                 {partner.highlights.map((highlight) => (
                   <li key={highlight} className="flex items-center text-sm text-gray-300">
-                    <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3"></span>
+                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
                     {highlight}
                   </li>
                 ))}

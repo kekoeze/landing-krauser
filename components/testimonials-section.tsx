@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-purple-500' : 'bg-slate-300 dark:bg-gray-600'
+                    index === currentIndex ? 'bg-blue-500' : 'bg-slate-300 dark:bg-gray-600'
                   }`}
                 />
               ))}
