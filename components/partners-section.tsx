@@ -226,11 +226,13 @@ function PartnerCard({ partner, index, total, progress }: PartnerCardProps) {
                   {partner.shortDescription}
                 </p>
 
-                <div className="mt-6 pt-6 border-t border-slate-300/70 dark:border-gray-700/50 flex items-center justify-between text-sm text-slate-500 dark:text-gray-400">
-                  <span>Ver detalles</span>
-                  <span className="text-violet-600 dark:text-purple-400 flex items-center gap-2 group-hover:text-violet-500 dark:group-hover:text-purple-300 transition-colors">
+                <div className="mt-6 flex items-center justify-between border-t border-slate-300/70 pt-6 text-sm text-slate-500 transition-colors duration-300 group-hover:border-slate-400/80 dark:border-gray-700/50 dark:text-gray-400 dark:group-hover:border-gray-600/60">
+                  <span className="rounded-full border border-transparent bg-white/35 px-3 py-1 font-medium text-slate-500 transition-all duration-300 group-hover:border-slate-300/90 group-hover:bg-white/70 group-hover:text-slate-700 hover:border-violet-500 hover:bg-violet-500 hover:text-white dark:bg-white/[0.03] dark:group-hover:border-white/[0.08] dark:group-hover:bg-white/[0.06] dark:group-hover:text-slate-200 dark:hover:border-purple-400 dark:hover:bg-purple-500 dark:hover:text-white">
+                    Ver detalles
+                  </span>
+                  <span className="flex items-center gap-2 rounded-full border border-violet-200/70 bg-violet-500/8 px-3 py-1 font-semibold text-violet-600 transition-all duration-300 group-hover:gap-3 group-hover:border-violet-300 group-hover:bg-violet-500/14 group-hover:text-violet-500 hover:gap-3 hover:border-violet-300 hover:bg-violet-500/16 hover:text-violet-500 dark:border-purple-400/25 dark:bg-purple-500/10 dark:text-purple-400 dark:group-hover:border-purple-400/40 dark:group-hover:bg-purple-500/16 dark:group-hover:text-purple-300 dark:hover:border-purple-400/45 dark:hover:bg-purple-500/18 dark:hover:text-purple-300">
                     {partner.cardActionLabel ?? 'Conocer mas'}
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 hover:translate-x-1" />
                   </span>
                 </div>
               </motion.div>
