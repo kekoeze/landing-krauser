@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { ThemeProvider } from '@/providers/theme-provider';
+import WhatsAppFab from '@/components/whatsapp-fab';
 
 
 export const metadata: Metadata = {
@@ -17,16 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es">
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
+        <WhatsAppFab />
       </body>
     </html>
   );

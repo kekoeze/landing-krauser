@@ -388,7 +388,7 @@ export default function CitecopaPartnerPage({
               </p>
 
               <blockquote className="mt-6 text-2xl font-semibold leading-relaxed md:text-3xl">
-                "{foundationPage.testimonial.quote}"
+                &quot;{foundationPage.testimonial.quote}&quot;
               </blockquote>
 
               <div className="mt-8 border-t border-slate-200/80 pt-6 dark:border-white/10">

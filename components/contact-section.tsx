@@ -5,6 +5,8 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Mail, Send, MessageCircle, User, Loader2, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SectionHeader from '@/components/section-header';
+import ParallaxSection from '@/components/parallax-section';
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -90,99 +92,67 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 relative ">
-      {/* Floating Orbs Background */}
-      <div className="absolute inset-0">
-        <div className="floating-orb-1 -top-40 -right-40"></div>
-        <div className="floating-orb-2 bottom-1/4 -left-48"></div>
-        <div className="floating-orb-3 top-1/3 left-1/4"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Contactanos</span>
-          </h2>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">
-            ¿Tenés un proyecto en mente? Escribinos y conversemos sobre cómo podemos ayudarte.
-          </p>
-        </motion.div>
+    <ParallaxSection id="contact" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={ref} className="mb-16">
+          <SectionHeader
+            title="Contacto"
+            subtitle="Contanos qué querés construir. Respondemos con una propuesta clara y los próximos pasos."
+          />
+        </div>
 
-        {/* Contact Options */}
-        <motion.div
-          className="flex flex-col md:flex-row gap-6 justify-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
-          {/* WhatsApp Contact */}
+        <div className="grid gap-8 lg:grid-cols-2">
           <motion.div
-            className="glass-effect-strong rounded-2xl p-6 max-w-sm mx-auto md:mx-0 relative overflow-hidden gradient-bg-2 group cursor-pointer"
-            whileHover={{ scale: 1.02, y: -5 }}
-            onClick={handleWhatsAppContact}
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="rounded-3xl border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_55px_rgba(15,23,42,0.14)]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 via-green-500/5 to-transparent"></div>
-            <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl mb-4 group-hover:scale-110 transition-transform">
-                <Phone className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-green-400 transition-colors">
-                WhatsApp
-              </h3>
-              <p className="text-secondary text-sm mb-4">
-                Chateá con nosotros ahora mismo
-              </p>
-              <div className="text-green-400 font-semibold text-sm">
-                +54 2920 707402
-              </div>
-              <div className="mt-3 text-xs text-muted">
-                Respuesta inmediata en horario comercial
-              </div>
+            <h3 className="text-2xl font-bold text-slate-900">Hablemos</h3>
+            <p className="mt-3 text-sm text-slate-600">
+              Si ya tenés una idea, mandanos un mensaje. Si no, te ayudamos a definir alcance, tiempos y prioridades.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <button
+                type="button"
+                onClick={handleWhatsAppContact}
+                className="w-full rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-left shadow-[0_12px_26px_rgba(15,23,42,0.10)] hover:shadow-[0_14px_32px_rgba(15,23,42,0.14)] transition-shadow"
+              >
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-[color:hsl(var(--secondary))]" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">WhatsApp</p>
+                    <p className="text-sm text-slate-600">+54 2920 707402</p>
+                  </div>
+                </div>
+              </button>
+
+              <a
+                href="mailto:contacto@krauser.com.ar"
+                className="block w-full rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-left shadow-[0_12px_26px_rgba(15,23,42,0.10)] hover:shadow-[0_14px_32px_rgba(15,23,42,0.14)] transition-shadow"
+              >
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-[color:hsl(var(--secondary))]" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">Email</p>
+                    <p className="text-sm text-slate-600">contacto@krauser.com.ar</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="mt-8 rounded-2xl bg-slate-50 px-5 py-4 text-sm text-slate-600">
+              Tip: contanos objetivo, plazo y referencia visual. Con eso podemos estimar más rápido.
             </div>
           </motion.div>
 
-          {/* Email Contact */}
           <motion.div
-            className="glass-effect-strong rounded-2xl p-6 max-w-sm mx-auto md:mx-0 relative overflow-hidden gradient-bg-3"
-            whileHover={{ scale: 1.02, y: -5 }}
+            className="rounded-3xl border border-slate-200/80 bg-white/80 p-8 md:p-10 shadow-[0_20px_55px_rgba(15,23,42,0.14)]"
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent"></div>
-            <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl mb-4">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-2">
-                Email
-              </h3>
-              <p className="text-secondary text-sm mb-4">
-                Formulario detallado para tu proyecto
-              </p>
-              <div className="text-purple-400 font-semibold text-sm">
-                contacto@krauser.com.ar
-              </div>
-              <div className="mt-3 text-xs text-muted">
-                Respuesta en menos de 24 horas
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Contact Form */}
-        <motion.div
-          className="glass-effect-strong rounded-2xl p-8 md:p-12 relative overflow-hidden gradient-bg-1 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent"></div>
-          
-          <div className="relative z-10">
             {/* Success Message */}
             {showSuccess && (
               <motion.div
@@ -228,15 +198,8 @@ export default function ContactSection() {
             )}
             
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl mb-4">
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">
-                Envíanos un mensaje
-              </h3>
-              <p className="text-secondary">
-                Completá el formulario y te responderemos a la brevedad
-              </p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Envíanos un mensaje</h3>
+              <p className="text-slate-600">Completá el formulario y te respondemos a la brevedad.</p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -300,7 +263,7 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full btn-gradient text-white py-4 font-semibold text-lg group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-gradient text-white py-4 font-semibold text-base group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>
@@ -316,51 +279,13 @@ export default function ContactSection() {
                 )}
               </Button>
 
-              {/* WhatsApp Alternative */}
-              <div className="mt-4 text-center">
-                <div className="flex items-center justify-center mb-3">
-                  <div className="flex-1 h-px bg-purple-500/20"></div>
-                  <span className="px-4 text-sm text-muted">o</span>
-                  <div className="flex-1 h-px bg-purple-500/20"></div>
-                </div>
-                <Button
-                  type="button"
-                  onClick={handleWhatsAppContact}
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 font-semibold transition-all duration-300 hover:scale-105 group"
-                >
-                  <Phone className="mr-2 w-5 h-5" />
-                  Contactar por WhatsApp
-                  <div className="ml-2 group-hover:translate-x-1 transition-transform">💬</div>
-                </Button>
+              <div className="mt-4 text-center text-xs text-slate-500">
+                Al enviar aceptás que te contactemos para coordinar una propuesta.
               </div>
             </form>
-
-            {/* Contact Email Display */}
-            <div className="mt-8 pt-6 border-t border-purple-500/20">
-              <div className="text-center">
-                <p className="text-sm text-muted mb-4">También podés contactarnos directamente:</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="mailto:contacto@krauser.com.ar"
-                    className="inline-flex items-center text-purple-400 hover:text-purple-300 font-semibold transition-colors group"
-                  >
-                    <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    contacto@krauser.com.ar
-                  </a>
-                  <button
-                    onClick={handleWhatsAppContact}
-                    className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold transition-colors group"
-                  >
-                    <Phone className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                    +54 2920 707402
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
+          </motion.div>
+        </div>
       </div>
-    </section>
+    </ParallaxSection>
   );
 }

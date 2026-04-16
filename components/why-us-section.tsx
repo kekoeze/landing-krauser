@@ -3,20 +3,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Check, X, Crown, Zap, Shield, Clock } from 'lucide-react';
+import { Crown, Zap, Shield, Clock } from 'lucide-react';
+import SectionHeader from '@/components/section-header';
+import ParallaxSection from '@/components/parallax-section';
+import { Button } from '@/components/ui/button';
 
 export default function WhyUsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-
-  const comparisons = [
-    { feature: 'Desarrollo a medida', us: true, others: false },
-    { feature: 'IA real implementada', us: true, others: false },
-    { feature: 'Soporte 24/7', us: true, others: false },
-    { feature: 'Escalabilidad garantizada', us: true, others: true },
-    { feature: 'Código de calidad', us: true, others: true },
-    { feature: 'Precios competitivos', us: true, others: false },
-  ];
 
   const advantages = [
     {
@@ -42,47 +36,39 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <section className="py-20">
+    <ParallaxSection className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">¿Por qué elegirnos?</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            No somos una agencia más. Somos tus socios tecnológicos en la construcción del futuro digital.
-          </p>
-        </motion.div>
+        <div ref={ref} className="mb-16">
+          <SectionHeader
+            title="Trust & Why Us"
+            subtitle="Un equipo chico, enfoque premium y procesos ágiles para entregar software robusto."
+          />
+        </div>
 
 
         {/* Advantages Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
         >
           {advantages.map((advantage, index) => (
             <motion.div
               key={index}
-              className="glass-effect-strong rounded-xl p-6 group hover:neon-glow transition-all duration-300 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+              className="rounded-3xl border border-slate-200/80 bg-white/80 p-7 shadow-[0_18px_45px_rgba(15,23,42,0.12)] text-center"
+              initial={{ opacity: 0, y: 16 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.55, delay: 0.15 + index * 0.08 }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="bg-gradient-to-r  p-4 rounded-xl mx-auto mb-4 w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <advantage.icon className="w-8 h-8 text-white" />
+              <div className="mx-auto mb-4 h-14 w-14 rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 flex items-center justify-center">
+                <advantage.icon className="h-7 w-7 text-[color:hsl(var(--primary))]" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+              <h4 className="text-lg font-bold text-slate-900 mb-2">
                 {advantage.title}
               </h4>
-              <p className="text-gray-300 leading-relaxed text-sm">
+              <p className="text-slate-600 leading-relaxed text-sm">
                 {advantage.description}
               </p>
             </motion.div>
@@ -96,25 +82,27 @@ export default function WhyUsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="glass-effect rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-[0_20px_55px_rgba(15,23,42,0.14)] max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
               ¿Listo para transformar tu empresa?
             </h3>
-            <p className="text-gray-300 mb-6">
-              Sumate a las empresas que ya están viviendo en el futuro con nuestras soluciones.
+            <p className="text-slate-600 mb-6">
+              Contanos qué necesitás y te respondemos con una propuesta clara.
             </p>
-            <button 
-              className="btn-gradient text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 neon-glow"
+            <Button
+              variant="gradient"
+              size="lg"
+              className="px-10 py-6 font-semibold text-base"
               onClick={() => {
                 const element = document.getElementById('contact');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Comenzar ahora
-            </button>
+              Solicitar Cotización
+            </Button>
           </div>
         </motion.div>
       </div>
-    </section>
+    </ParallaxSection>
   );
 }

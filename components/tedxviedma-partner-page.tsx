@@ -346,7 +346,7 @@ export default function TedxViedmaPartnerPage({
               </p>
 
               <blockquote className="mt-6 text-2xl font-semibold leading-relaxed md:text-3xl">
-                "{caseStudy.testimonial.quote}"
+                &quot;{caseStudy.testimonial.quote}&quot;
               </blockquote>
 
               <div className="mt-8 border-t border-slate-200/80 pt-6 dark:border-white/10">

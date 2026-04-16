@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
+import SectionHeader from '@/components/section-header';
 
 export default function TestimonialsSection() {
   const ref = useRef(null);
@@ -54,22 +55,14 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-slate-100 dark:bg-slate-900">
+    <section className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Lo que dicen nuestros clientes</span>
-          </h2>
-          <p className="text-xl text-slate-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Casos de éxito reales de empresas que confiaron en nosotros para su transformación digital.
-          </p>
-        </motion.div>
+        <div ref={ref} className="mb-16">
+          <SectionHeader
+            title="Lo que dicen nuestros clientes"
+            subtitle="Casos de éxito reales de empresas que confiaron en nosotros para su transformación digital."
+          />
+        </div>
 
         <div className="relative max-w-4xl mx-auto">
           <motion.div
@@ -78,7 +71,7 @@ export default function TestimonialsSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Quote className="w-12 h-12 text-purple-500 mb-6 mx-auto" />
+            <Quote className="w-12 h-12 text-[color:hsl(var(--primary))] mb-6 mx-auto" />
             
             <motion.div
               key={currentIndex}
@@ -89,7 +82,7 @@ export default function TestimonialsSection() {
               className="text-center"
             >
               <p className="text-lg md:text-xl text-slate-600 dark:text-gray-300 mb-8 leading-relaxed italic">
-                "{testimonials[currentIndex].text}"
+                &quot;{testimonials[currentIndex].text}&quot;
               </p>
               
               <div className="flex justify-center mb-4">
@@ -104,7 +97,7 @@ export default function TestimonialsSection() {
                   <h4 className="text-slate-900 dark:text-white font-bold text-lg">
                     {testimonials[currentIndex].name}
                   </h4>
-                  <p className="text-purple-600 dark:text-purple-400 font-medium">
+                  <p className="text-[color:hsl(var(--primary))] font-medium">
                     {testimonials[currentIndex].position}
                   </p>
                   <p className="text-slate-500 dark:text-gray-400 text-sm">

@@ -20,42 +20,49 @@
 
 @layer base {
   :root {
+    /* Brand palette (exact hex from prompt) */
+    --brand-purple: #6c1aeb;
+    --brand-magenta: #c026d3;
+    --brand-body: #4a5568;
+    --brand-bg-top: #ffffff;
+    --brand-bg-bottom: #f7fafc;
+
     --rgb-white: 255 255 255;
-    --background: 218 38% 94%;
-    --foreground: 224 33% 22%;
-    --card: 218 38% 94%;
-    --card-foreground: 224 33% 22%;
-    --popover: 218 38% 94%;
-    --popover-foreground: 224 33% 22%;
-    --primary: 201 99% 56%;
+    --background: 225 40% 96%;
+    --foreground: 230 25% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 18%;
+    --primary: 268 92% 60%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 265 98% 58%;
+    --secondary: 292 88% 58%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 218 20% 90%;
-    --muted-foreground: 224 10% 45%;
-    --accent: 304 72% 55%;
+    --muted: 225 20% 90%;
+    --muted-foreground: 230 10% 45%;
+    --accent: 234 86% 62%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 218 20% 88%;
-    --input: 218 20% 88%;
-    --ring: 201 99% 56%;
-    --chart-1: 201 99% 56%;
-    --chart-2: 265 98% 58%;
-    --chart-3: 304 72% 55%;
+    --border: 225 18% 86%;
+    --input: 225 18% 86%;
+    --ring: 268 92% 60%;
+    --chart-1: 268 92% 60%;
+    --chart-2: 292 88% 58%;
+    --chart-3: 234 86% 62%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     
     /* Light mode custom variables */
-    --glass-bg: rgba(234, 238, 245, 0.25);
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --glass-shadow: rgba(37, 46, 73, 0.15);
-    --text-primary: #252e49;
-    --text-secondary: #4b5563;
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-shadow: rgba(15, 23, 42, 0.12);
+    --text-primary: #111827;
+    --text-secondary: var(--brand-body);
     --text-muted: #6b7280;
-    --surface-primary: #eaeef5;
-    --surface-secondary: #dbe1ec;
+    --surface-primary: var(--brand-bg-top);
+    --surface-secondary: #e6e9f3;
     --surface-elevated: #ffffff;
   }
   
@@ -66,22 +73,22 @@
     --card-foreground: 218 38% 94%;
     --popover: 224 33% 22%;
     --popover-foreground: 218 38% 94%;
-    --primary: 201 99% 56%;
+    --primary: 268 92% 60%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 265 98% 58%;
+    --secondary: 292 88% 58%;
     --secondary-foreground: 0 0% 98%;
     --muted: 224 33% 15%;
     --muted-foreground: 218 10% 65%;
-    --accent: 304 72% 55%;
+    --accent: 234 86% 62%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 224 33% 30%;
     --input: 224 33% 30%;
-    --ring: 201 99% 56%;
-    --chart-1: 201 99% 56%;
-    --chart-2: 265 98% 58%;
-    --chart-3: 304 72% 55%;
+    --ring: 268 92% 60%;
+    --chart-1: 268 92% 60%;
+    --chart-2: 292 88% 58%;
+    --chart-3: 234 86% 62%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     
@@ -103,14 +110,29 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
-    background: var(--surface-primary);
+    /* Fondo más limpio para no opacar los acentos violeta/rosado */
+    background: var(--brand-bg-top);
   }
 }
+
+/* Nota: no anulamos `text-white` para no romper CTAs */
 
 @layer utilities {
   /* Vibrant gradients that work in both themes */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary/90 via-secondary/80 to-primary/90 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
   .gradient-text-alt {
@@ -162,16 +184,16 @@
   }
   
   .glass-card-hover:hover {
-    background: linear-gradient(135deg, var(--glass-bg), rgba(32, 176, 254, 0.1));
-    border-color: rgba(32, 176, 254, 0.3);
+    background: linear-gradient(135deg, var(--glass-bg), rgba(139, 92, 246, 0.10));
+    border-color: rgba(139, 92, 246, 0.28);
   }
   
   /* Vibrant neon effects */
   .neon-glow {
     box-shadow: 
-      0 0 20px rgba(134, 44, 253, 0.4), 
-      0 0 40px rgba(134, 44, 253, 0.2),
-      0 0 60px rgba(134, 44, 253, 0.1);
+      0 0 20px rgba(139, 92, 246, 0.26), 
+      0 0 40px rgba(217, 70, 239, 0.14),
+      0 0 60px rgba(99, 102, 241, 0.10);
   }
 
   .neon-glow-strong {
@@ -198,32 +220,32 @@
   /* Particle backgrounds with theme support */
   .particle-bg {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(134, 44, 253, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(32, 176, 254, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(222, 61, 211, 0.1) 0%, transparent 70%);
+      radial-gradient(circle at 25% 25%, rgba(139, 92, 246, 0.14) 0%, transparent 55%),
+      radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.10) 0%, transparent 70%);
   }
 
   .gradient-bg-1 {
     background: linear-gradient(135deg, 
-      rgba(134, 44, 253, 0.1) 0%, 
-      rgba(32, 176, 254, 0.05) 50%, 
-      rgba(222, 61, 211, 0.1) 100%
+      rgba(139, 92, 246, 0.10) 0%, 
+      rgba(99, 102, 241, 0.06) 50%, 
+      rgba(217, 70, 239, 0.10) 100%
     );
   }
 
   .gradient-bg-2 {
     background: linear-gradient(225deg, 
-      rgba(32, 176, 254, 0.1) 0%, 
-      rgba(134, 44, 253, 0.05) 50%, 
-      rgba(222, 61, 211, 0.1) 100%
+      rgba(99, 102, 241, 0.10) 0%, 
+      rgba(139, 92, 246, 0.06) 50%, 
+      rgba(217, 70, 239, 0.10) 100%
     );
   }
 
   .gradient-bg-3 {
     background: linear-gradient(45deg, 
-      rgba(222, 61, 211, 0.1) 0%, 
-      rgba(134, 44, 253, 0.05) 50%, 
-      rgba(32, 176, 254, 0.1) 100%
+      rgba(217, 70, 239, 0.10) 0%, 
+      rgba(139, 92, 246, 0.06) 50%, 
+      rgba(99, 102, 241, 0.10) 100%
     );
   }
 
@@ -418,12 +440,16 @@ html {
 
 /* Enhanced button gradient with smooth microinteractions */
 .btn-gradient {
-  @apply bg-gradient-to-r from-primary/75 to-secondary/75 transition-all duration-300 relative overflow-hidden;
+  @apply transition-all duration-300 relative overflow-hidden;
+  background: linear-gradient(135deg, #6D28D9 0%, #8A2BE2 28%, #C026D3 62%, #F472B6 100%);
+  color: #ffffff !important;
   position: relative;
   transform: translateY(0);
   box-shadow: 
-    0 3px 10px rgba(134, 44, 253, 0.14),
-    0 1px 4px rgba(32, 176, 254, 0.08);
+    0 14px 30px rgba(88, 28, 135, 0.22),
+    0 10px 18px rgba(192, 38, 211, 0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 1rem;
 }
 
 .btn-gradient::before {
@@ -433,8 +459,18 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
   transition: left 0.6s ease;
+}
+
+.btn-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(255,255,255,0.14);
+  opacity: 1;
 }
 
 
@@ -449,20 +485,4 @@ html {
 }
 
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--surface-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgba(139, 92, 246, 0.5), rgba(59, 130, 246, 0.5));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, rgba(139, 92, 246, 0.7), rgba(59, 130, 246, 0.7));
-}
+/* Scrollbar: usar el estilo nativo del navegador */

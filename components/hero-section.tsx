@@ -1,74 +1,94 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ParticleBackground from './particle-background';
+import { GradientText } from '@/components/animate-ui/primitives/texts/gradient';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <ParticleBackground />
-      
-      {/* Floating Orbs Background */}
-      <div className="absolute inset-0">
-        <div className="floating-orb-1 -top-48 -left-48"></div>
-        <div className="floating-orb-2 top-1/3 -right-40"></div>
-        <div className="floating-orb-3 -bottom-32 left-1/4"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="home" className="relative overflow-hidden pt-24 pb-14 sm:pt-28">
+      {/* Fondo blanco plano (sin gradientes) */}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="grid items-center gap-10 lg:grid-cols-[1.1fr,0.9fr]"
         >
-          <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <span className="block text-primary">Desarrollamos el</span>
-            <span className="block gradient-text animate-gradient bg-gradient-to-r from-blue-500 via-purple-600 to-purple-700">
-              futuro del software
-            </span>
-          </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Soluciones con IA, ecommerce y cloud para empresas que piensan en el mañana.
-          </motion.p>
-
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative order-2 lg:order-1"
           >
-            <Button
-              size="lg"
-              className="btn-gradient text-white px-8 py-3 text-lg font-semibold group"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                element?.scrollIntoView({ behavior: 'smooth' });
+            {/* Media integrado al fondo (sin borde/sombra) */}
+            <div
+              className="relative h-[260px] w-full sm:h-[340px] md:h-[420px] lg:h-[520px]"
+              style={{
+                backgroundImage: "url('/evan-laptop.png')",
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                transform: 'translateZ(0)',
+                // Máscara para fundir bordes con el fondo y evitar efecto “foto pegada”
+                WebkitMaskImage:
+                  'radial-gradient(closest-side at 55% 50%, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%)',
+                maskImage:
+                  'radial-gradient(closest-side at 55% 50%, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%)',
               }}
-            >
-              Solicitar Cotización
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              aria-label="Evan"
+              role="img"
+            />
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.18 }}
+            className="order-1 lg:order-2"
+          >
+            <div className="max-w-md">
+              <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
+                <span className="relative inline-flex items-center gap-3">
+                  <GradientText text="EVAN" className="font-extrabold tracking-tight" neon />
+                  {/* Aurora shine encima del gradiente */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-clip-text text-transparent opacity-60 mix-blend-multiply
+                    bg-[linear-gradient(90deg,transparent_0%,rgba(192,38,211,0.98)_18%,rgba(232,121,249,0.98)_38%,rgba(192,38,211,0.98)_58%,rgba(88,28,135,0.92)_78%,transparent_100%)]
+                    bg-[length:220%_100%] animate-[aurora_3.2s_ease-in-out_infinite]"
+                  >
+                    EVAN
+                  </span>
+                  <span className="text-2xl sm:text-3xl text-[#FACC15] drop-shadow-[0_10px_22px_rgba(250,204,21,0.35)]">
+                    ★
+                  </span>
+                </span>
+              </h1>
+              <p className="mt-2 text-lg font-semibold leading-snug text-slate-900">
+                El ecosistema que gestiona tu negocio digital
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-[color:var(--brand-body)]">
+                Con evan gestionas ventas, clientes y operaciones desde un solo lugar, sin complicaciones.
+              </p>
+
+              <div className="mt-7">
+                <Button
+                  variant="gradient"
+                  size="lg"
+                  className="px-10 py-6 text-sm font-semibold tracking-wide"
+                  onClick={() => {
+                    window.open('https://webevan.krauser.com.ar/#/pages/landing', '_blank', 'noopener,noreferrer');
+                  }}
+                >
+                  SOLICITAR DEMO
+                </Button>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
     </section>
   );
 }

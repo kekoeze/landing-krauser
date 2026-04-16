@@ -3,230 +3,123 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ShoppingCart, FileText, PenTool, Code, ArrowRight, Check } from 'lucide-react';
+import { Check, Code, FileText, PenTool, ShoppingCart } from 'lucide-react';
+import SectionHeader from '@/components/section-header';
+import ParallaxSection from '@/components/parallax-section';
 import { Button } from '@/components/ui/button';
 
 export default function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-
   const services = [
     {
       icon: ShoppingCart,
       title: 'Tienda E-commerce',
-      description: 'Tienda online completa con carrito de compras, MercadoPago integrado, gestión de inventario y panel administrativo.',
+      description:
+        'Tienda online lista para vender con pagos, catálogo, carrito y panel de administración.',
       features: [
-        'Diseño responsivo',
-        'Carrito de compras',
         'MercadoPago integrado',
+        'Carrito de compras',
+        'Gestión de inventario',
         'Panel de administración',
         'SEO optimizado',
-        'Soporte 3 meses'
       ],
-      gradient: 'from-emerald-600 to-teal-600',
-      bgGradient: 'gradient-bg-1',
-      popular: true,
     },
     {
       icon: FileText,
       title: 'Landing Page',
-      description: 'Página de aterrizaje optimizada para conversiones con diseño atractivo y llamadas a la acción efectivas.',
+      description:
+        'Página enfocada a la conversión para campañas, servicios y captación de leads.',
       features: [
         'Diseño único',
         'Optimizada para conversión',
         'Formularios de contacto',
         'Integración con analytics',
         'Carga ultra rápida',
-        'Canal de soporte'
       ],
-      gradient: 'from-blue-600 to-purple-600',
-      bgGradient: 'gradient-bg-2',
-      popular: false,
     },
     {
       icon: PenTool,
       title: 'Sitio Web Blog',
-      description: 'Sitio web de blog profesional con sistema de gestión de contenido, categorías, comentarios y herramientas SEO avanzadas.',
+      description:
+        'Sitio web de blog profesional con sistema de gestión de contenido, categorías, comentarios y herramientas SEO avanzadas.',
       features: [
         'Sistema de gestión de contenido',
         'Categorías y etiquetas',
         'Sistema de comentarios',
         'Newsletter integrado',
         'SEO avanzado',
-        'Soporte extendido'
+        'Soporte extendido',
       ],
-      gradient: 'from-purple-600 to-pink-600',
-      bgGradient: 'gradient-bg-3',
-      popular: false,
     },
     {
       icon: Code,
       title: 'Desarrollo Personalizado',
-      description: 'Desarrollo personalizado según tus necesidades específicas. Desde aplicaciones web hasta integraciones complejas.',
+      description:
+        'Software a medida: integraciones, automatizaciones y sistemas internos escalables.',
       features: [
         'Análisis de requerimientos',
         'Arquitectura personalizada',
-        'Tecnologías a medida',
         'Escalabilidad garantizada',
         'Documentación completa',
-        'Soporte extendido'
+        'Soporte continuo',
       ],
-      gradient: 'from-orange-600 to-red-600',
-      bgGradient: 'gradient-bg-1',
-      popular: false,
     },
   ];
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden">
-      {/* Floating Orbs Background */}
-      <div className="absolute inset-0">
-        <div className="floating-orb-1 -top-40 -left-40"></div>
-        <div className="floating-orb-2 top-1/3 -right-48"></div>
-        <div className="floating-orb-3 -bottom-40 left-1/4"></div>
-      </div>
-      
-      {/* Background Gradient */}
-      <div className="absolute inset-0 "></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-           <span className="gradient-text">Nuestros Servicios</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-           Soluciones web profesionales diseñadas para impulsar tu presencia digital y hacer crecer tu empresa.
-          </p>
-        </motion.div>
+    <ParallaxSection id="services" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={ref} className="mb-16">
+          <SectionHeader
+            title="SERVICIOS PENSADOS PARA CRECER ONLINE"
+            subtitle="Desde presencia online hasta sistemas personalizados, creamos herramientas adaptadas a tus objetivos."
+          />
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {services.map((service, index) => (
             <motion.div
-              key={index}
-              className={`relative glass-card-hover rounded-2xl p-8 group overflow-hidden flex flex-col h-full ${service.bgGradient}`}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              key={service.title}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.7, delay: 0.05 + index * 0.08 }}
+              className="relative flex h-full flex-col rounded-3xl border border-slate-200/80 bg-white/80 p-7 shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
             >
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-              
-              <div className="relative z-10 flex flex-col h-full">
-                {/* Icon */}
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.gradient} p-4 mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
-                  <service.icon className="w-8 h-8 text-white" />
+              <div className="flex items-center gap-3">
+                <div className="h-11 w-11 rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 flex items-center justify-center">
+                  <service.icon className="h-5 w-5 text-[color:hsl(var(--primary))]" />
                 </div>
-                
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors">
+                <p className="text-sm font-bold tracking-[0.18em] text-[color:hsl(var(--primary))] uppercase">
                   {service.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-gray-300 mb-6 leading-relaxed text-sm">
-                  {service.description}
                 </p>
-                
-                {/* Price */}
-
-                {/* Features */}
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-300">
-                      <Check className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                {/* CTA Button */}
-                <Button
-                  className="w-full btn-glass text-white py-3 font-semibold group/btn mt-auto hover:bg-white/10 transition-all duration-300"
-                  onClick={() => {
-                    const element = document.getElementById('contact');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  Solicitar Presupuesto
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </div>
+
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">{service.description}</p>
+
+              <ul className="mt-5 space-y-2">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-sm text-slate-700">
+                    <Check className="mt-0.5 h-4 w-4 text-[color:hsl(var(--primary))]" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant="gradient"
+                className="mt-auto w-full font-semibold"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Solicitar Presupuesto
+              </Button>
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Info */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="glass-effect-strong rounded-2xl p-8 max-w-4xl mx-auto relative overflow-hidden gradient-bg-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-transparent"></div>
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                ¿Necesitás algo diferente?
-              </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                Cada proyecto es único. Si tenés una idea específica o necesitás una combinación de servicios, 
-                conversemos para crear la solución perfecta para tu empresa.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  className="btn-gradient text-white px-8 py-3 font-semibold"
-                  onClick={() => {
-                    const element = document.getElementById('contact');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  Consulta Personalizada
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white glass-effect"
-                  onClick={() => {
-                    const element = document.getElementById('portfolio');
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  Ver Portfolio
-                </Button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Payment Info */}
-        <motion.div
-          className="mt-12 grid md:grid-cols-3 gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <div className="glass-card rounded-xl p-6 text-center">
-            <h4 className="text-white font-bold mb-2">Planes de Pago</h4>
-            <p className="text-gray-400 text-sm">Financiación disponible hasta 12 cuotas</p>
-          </div>
-          
-          <div className="glass-card rounded-xl p-6 text-center">
-            <h4 className="text-white font-bold mb-2">Entrega Rápida</h4>
-            <p className="text-gray-400 text-sm">Proyectos completados en 2-4 semanas promedio</p>
-          </div>
-          
-          <div className="glass-card rounded-xl p-6 text-center">
-            <h4 className="text-white font-bold mb-2">Garantía Total</h4>
-            <p className="text-gray-400 text-sm">30 días de garantía en todos nuestros proyectos</p>
-          </div>
-        </motion.div>
       </div>
-    </section>
+    </ParallaxSection>
   );
 }
