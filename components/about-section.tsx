@@ -3,133 +3,153 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Award, Users, Target, Zap } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { Award, Headphones, Sparkles, Target, Users } from 'lucide-react';
 import ParallaxSection from '@/components/parallax-section';
 import { CountingNumber } from '@/components/animate-ui/primitives/texts/counting-number';
+import SectionHeader from '@/components/section-header';
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const stats = [
-    { icon: Award, value: '4+', label: 'Años de experiencia' },
-    { icon: Users, value: '50+', label: 'Proyectos completados' },
-    { icon: Target, value: '100%', label: 'Clientes satisfechos' },
-    { icon: Zap, value: '24/7', label: 'Soporte técnico' },
+  const stats: Array<{ icon: typeof Award; label: string; renderValue: ReactNode }> = [
+    {
+      icon: Award,
+      label: 'Años de experiencia',
+      renderValue: (
+        <span className="inline-flex items-baseline gap-0.5">
+          <CountingNumber number={4} fromNumber={0} delay={0.12} className="text-4xl font-black tracking-tight" />
+          <span className="text-3xl font-black">+</span>
+        </span>
+      ),
+    },
+    {
+      icon: Users,
+      label: 'Proyectos completados',
+      renderValue: (
+        <span className="inline-flex items-baseline gap-0.5">
+          <CountingNumber number={50} fromNumber={0} delay={0.18} className="text-4xl font-black tracking-tight" />
+          <span className="text-3xl font-black">+</span>
+        </span>
+      ),
+    },
+    {
+      icon: Target,
+      label: 'Clientes satisfechos',
+      renderValue: (
+        <span className="inline-flex items-baseline gap-0.5">
+          <CountingNumber number={100} fromNumber={0} delay={0.24} className="text-4xl font-black tracking-tight" />
+          <span className="text-3xl font-black">%</span>
+        </span>
+      ),
+    },
+    {
+      icon: Headphones,
+      label: 'Soporte técnico',
+      renderValue: <span className="text-4xl font-black tracking-tight">24/7</span>,
+    },
   ];
 
   return (
     <ParallaxSection id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-[color:hsl(var(--primary))]">Nosotros</span>
-          </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            Somos una agencia de desarrollo de software e IA. Construimos productos escalables para empresas que necesitan
-            velocidad, claridad y resultados.
-          </p>
-        </motion.div>
+        <div ref={ref}>
+          <SectionHeader
+            title="NOSOTROS"
+            subtitle="Somos una agencia de desarrollo de software e IA. Construimos productos escalables para empresas que necesitan velocidad, claridad y resultados."
+            className="mb-12"
+          />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="glass-effect-strong p-8 rounded-2xl relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-primary mb-4">Nuestra Misión</h3>
-                <p className="text-secondary leading-relaxed">
-                  Transformamos la manera en que las empresas argentinas interactúan con la tecnología, 
-                  creando soluciones que no solo resuelven problemas actuales, sino que anticipan 
-                  las necesidades del futuro digital.
-                </p>
-              </div>
-            </div>
-
-            <div className="glass-effect-strong p-8 rounded-2xl relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-primary mb-4">Nuestros Valores</h3>
-                <ul className="space-y-3 text-secondary">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-[color:hsl(var(--primary))] rounded-full mr-3"></div>
-                    <span><strong>Innovación:</strong> Siempre a la vanguardia de la tecnología</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-[color:hsl(var(--primary))] rounded-full mr-3"></div>
-                    <span><strong>Transparencia:</strong> Comunicación clara y directa</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-[color:hsl(var(--primary))] rounded-full mr-3"></div>
-                    <span><strong>Calidad:</strong> Excelencia en cada línea de código</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-2 gap-6"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="glass-card-hover p-6 rounded-xl text-center group relative overflow-hidden"
-                whileHover={{ scale: 1.05, y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-              >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-                
-                <div className="relative z-10">
-                  <stat.icon className="w-8 h-8 text-[color:hsl(var(--primary))] mx-auto mb-3 group-hover:scale-110 transition-all duration-300" />
-                  <div className="text-3xl font-bold text-[color:hsl(var(--primary))] mb-2 transition-colors">
-                    {stat.label === 'Proyectos completados' ? (
-                      <>
-                        <CountingNumber
-                          key="projects"
-                          number={50}
-                          fromNumber={0}
-                          padStart={false}
-                          decimalSeparator="."
-                          decimalPlaces={0}
-                          delay={0.15}
-                        />
-                        <span>+</span>
-                      </>
-                    ) : stat.label === 'Clientes satisfechos' ? (
-                      <>
-                        <CountingNumber
-                          key="satisfaction"
-                          number={100}
-                          fromNumber={0}
-                          padStart={false}
-                          decimalSeparator="."
-                          decimalPlaces={0}
-                          delay={0.22}
-                        />
-                        <span>%</span>
-                      </>
-                    ) : stat.value}
+          <div className="grid items-start gap-10 lg:grid-cols-12">
+            <motion.div
+              className="space-y-6 lg:col-span-7"
+              initial={{ opacity: 0, y: 18 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+              transition={{ duration: 0.75, delay: 0.05 }}
+            >
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(192,38,211,0.10),transparent_55%),radial-gradient(circle_at_85%_25%,rgba(108,26,235,0.10),transparent_60%)]" />
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-600">
+                    MISIÓN
                   </div>
-                  <div className="text-sm text-muted group-hover:text-secondary transition-colors">{stat.label}</div>
+                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#6C1AEB]">Nuestra Misión</h3>
+                  <p className="mt-4 text-base leading-relaxed text-[color:var(--brand-body)]">
+                    Transformamos la manera en que las empresas argentinas interactúan con la tecnología, creando soluciones
+                    que no solo resuelven problemas actuales, sino que anticipan las necesidades del futuro digital.
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              </div>
+
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(108,26,235,0.10),transparent_55%),radial-gradient(circle_at_90%_30%,rgba(192,38,211,0.08),transparent_60%)]" />
+                <div className="relative">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-600">
+                    VALORES
+                  </div>
+                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#6C1AEB]">Nuestros Valores</h3>
+
+                  <ul className="mt-5 space-y-4 text-[color:var(--brand-body)]">
+                    <li className="flex gap-3">
+                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
+                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                      </span>
+                      <p className="text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-slate-950">Innovación:</span> siempre a la vanguardia de la tecnología.
+                      </p>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
+                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                      </span>
+                      <p className="text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-slate-950">Transparencia:</span> comunicación clara y directa.
+                      </p>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
+                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                      </span>
+                      <p className="text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-slate-950">Calidad:</span> excelencia en cada línea de código.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="grid grid-cols-2 gap-4 sm:gap-5 lg:col-span-5"
+              initial={{ opacity: 0, y: 18 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+              transition={{ duration: 0.75, delay: 0.12 }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)]"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                  transition={{ duration: 0.55, delay: 0.18 + index * 0.06 }}
+                >
+                  <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.12),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(108,26,235,0.10),transparent_60%)]" />
+
+                  <div className="relative">
+                    <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
+                      <stat.icon className="h-6 w-6 text-[#C026D3]" />
+                    </div>
+
+                    <div className="text-[#6C1AEB]">{stat.renderValue}</div>
+                    <div className="mt-2 text-xs font-semibold tracking-[0.18em] text-slate-600 sm:text-sm">
+                      {stat.label.toUpperCase()}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </ParallaxSection>

@@ -8,6 +8,7 @@ import ServicesSection from '@/components/services-section';
 import PartnersSection from '@/components/partners-section';
 import PortfolioSection from '../components/portfolio-section';
 import WhyUsSection from '@/components/why-us-section';
+import FinalCtaSection from '@/components/final-cta-section';
 import Footer from '@/components/footer';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <PartnersSection />
       <PortfolioSection />
       <WhyUsSection />
+      <FinalCtaSection />
       <Footer />
     </main>
   );

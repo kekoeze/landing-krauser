@@ -1,27 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BadgeCheck, HandCoins, Timer } from "lucide-react";
 import SectionHeader from "@/components/section-header";
 import ParallaxSection from "@/components/parallax-section";
 
-const benefits = [
+type Benefit = {
+  emoji: string;
+  title: string;
+  subtitle: string;
+};
+
+const benefits: Benefit[] = [
   {
-    icon: HandCoins,
-    title: "PLANES DE PAGO",
-    subtitle: "TRANSFERENCIA / EFECTIVO",
+    emoji: "💳",
+    title: "ESTRUCTURA DE PAGOS CLARA",
+    subtitle: "Definida desde el inicio",
   },
   {
-    icon: Timer,
-    title: "ENTREGA RÁPIDA",
-    subtitle: "2 A 4 SEMANAS",
+    emoji: "📆",
+    title: "PLANIFICACIÓN POR ETAPAS",
+    subtitle: "Con tiempos estimados reales",
   },
   {
-    icon: BadgeCheck,
-    title: "GARANTÍA TOTAL",
-    subtitle: "30 DÍAS",
+    emoji: "🔒",
+    title: "CALIDAD Y RESPALDO",
+    subtitle: "En cada entrega",
   },
-] as const;
+];
 
 export default function ValuePropSection() {
   return (
@@ -29,12 +34,12 @@ export default function ValuePropSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-14">
           <SectionHeader
-            title="CREAMOS SOLUCIONES PARA HACER CRECER TU NEGOCIO"
+            title="Creamos herramientas digitales que hacen tu negocio más eficiente y rentable."
             subtitle="Desarrollamos soluciones pensadas para simplificar, optimizar y hacer crecer tu negocio."
           />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((item, index) => (
             <motion.div
               key={item.title}
@@ -42,18 +47,28 @@ export default function ValuePropSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, delay: index * 0.05 }}
-              className="rounded-3xl bg-white ring-1 ring-slate-200/70 shadow-[0_18px_44px_rgba(15,23,42,0.08)] p-8 text-center"
+              className="rounded-3xl border border-slate-200/80 bg-white p-2 text-center shadow-[0_18px_45px_rgba(15,23,42,0.10)]"
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200/70 shadow-[0_12px_26px_rgba(15,23,42,0.10)]">
-                <item.icon className="h-7 w-7 text-[color:var(--brand-magenta)]" />
-              </div>
+              <div className="rounded-[22px] bg-white p-2">
+                <div className="rounded-2xl border border-slate-200/70 bg-gradient-to-b from-white to-slate-50 p-6">
+                  <div className="mx-auto flex max-w-[220px] flex-col items-center gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
+                      <span className="text-2xl leading-none" aria-hidden="true">
+                        {item.emoji}
+                      </span>
+                    </div>
 
-              <h3 className="text-base font-extrabold tracking-[0.18em] text-[color:var(--brand-purple)]">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm font-semibold tracking-[0.12em] text-[color:var(--brand-body)]">
-                {item.subtitle}
-              </p>
+                    <div className="space-y-2">
+                      <h3 className="text-base font-extrabold tracking-[0.18em] text-[color:var(--brand-purple)]">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm font-semibold tracking-[0.12em] text-[color:var(--brand-body)]">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

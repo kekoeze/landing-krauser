@@ -13,7 +13,7 @@ export function GradientText({ text, neon = false, className }: GradientTextProp
   return (
     <span
       className={cn(
-        "bg-clip-text text-transparent",
+        "bg-clip-text text-transparent whitespace-pre-line",
         "bg-[linear-gradient(90deg,#8A2BE2_0%,#A855F7_28%,#C026D3_62%,#E879F9_100%)]",
         neon
           ? "drop-shadow-[0_0_18px_rgba(192,38,211,0.35)]"

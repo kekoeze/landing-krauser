@@ -6,7 +6,6 @@ import { useRef } from 'react';
 import { Crown, Zap, Shield, Clock } from 'lucide-react';
 import SectionHeader from '@/components/section-header';
 import ParallaxSection from '@/components/parallax-section';
-import { Button } from '@/components/ui/button';
 
 export default function WhyUsSection() {
   const ref = useRef(null);
@@ -40,8 +39,8 @@ export default function WhyUsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="mb-16">
           <SectionHeader
-            title="Trust & Why Us"
-            subtitle="Un equipo chico, enfoque premium y procesos ágiles para entregar software robusto."
+            title="¿Por qué elegirnos?"
+            subtitle="No somos una agencia más. Somos tus socios tecnológicos en la construcción del futuro digital."
           />
         </div>
 
@@ -75,33 +74,6 @@ export default function WhyUsSection() {
           ))}
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-[0_20px_55px_rgba(15,23,42,0.14)] max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              ¿Listo para transformar tu empresa?
-            </h3>
-            <p className="text-slate-600 mb-6">
-              Contanos qué necesitás y te respondemos con una propuesta clara.
-            </p>
-            <Button
-              variant="gradient"
-              size="lg"
-              className="px-10 py-6 font-semibold text-base"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Solicitar Cotización
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </ParallaxSection>
   );

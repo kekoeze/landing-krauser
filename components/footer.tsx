@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = 2026;
@@ -23,6 +23,12 @@ export default function Footer() {
       { label: "Política de privacidad", href: "#" },
     ],
   };
+
+  const socials = [
+    { label: 'Instagram', icon: Instagram },
+    { label: 'Facebook', icon: Facebook },
+    { label: 'LinkedIn', icon: Linkedin },
+  ] as const;
 
   return (
     <footer className="bg-slate-900 text-slate-200">
@@ -51,6 +57,21 @@ export default function Footer() {
               DESARROLLO DE SOFTWARE
             </p>
             <p className="mt-2 text-xs text-slate-500">Viedma, Río Negro, Argentina</p>
+
+            <div className="mt-6">
+              <p className="text-xs font-semibold tracking-[0.22em] text-slate-400">REDES SOCIALES</p>
+              <div className="mt-3 flex flex-wrap items-center gap-3">
+                {socials.map((s) => (
+                  <div
+                    key={s.label}
+                    className="inline-flex items-center gap-2 rounded-xl bg-white/5 px-3 py-2 text-sm text-slate-200"
+                  >
+                    <s.icon className="h-4 w-4 text-[color:hsl(var(--secondary))]" />
+                    <span>{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div>
