@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { GradientText } from '@/components/animate-ui/primitives/texts/gradient';
+import { GradientText } from "@/components/animate-ui/primitives/texts/gradient";
 
 export default function HeroSection() {
   return (
@@ -66,11 +66,11 @@ export default function HeroSection() {
                   <GradientText
                     text="EVAN"
                     className="pb-[0.06em] leading-none"
-                    gradient="linear-gradient(108deg, #20B0FE 0%, #8075E9 46%, #252E49 100%)"
+                    gradient="linear-gradient(108deg, #20B0FE 0%, #8075E9 42%, #DE3DD3 72%, #DE3DD3 100%)"
                     transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
                   />
                   <span
-                    className="inline-block translate-y-[0.04em] text-3xl leading-none text-[#FACC15] drop-shadow-[0_10px_22px_rgba(250,204,21,0.35)] sm:text-4xl"
+                    className="inline-block translate-y-[0.04em] text-3xl leading-none sm:text-4xl text-yellow-400 drop-shadow-[0_2px_10px_rgba(250,204,21,0.35)]"
                     aria-hidden
                   >
                     ★
@@ -90,9 +90,9 @@ export default function HeroSection() {
                   size="lg"
                   className={cn(
                     'px-6 py-5 text-xs font-semibold tracking-wide sm:px-10 sm:py-6 sm:text-sm',
-                    '!bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.18),transparent_52%),linear-gradient(135deg,#20B0FE_0%,#8075E9_42%,#DE3DD3_100%)]',
-                    '!shadow-[0_16px_34px_rgba(32,176,254,0.22),0_12px_26px_rgba(222,61,211,0.14)]',
-                    'hover:!shadow-[0_20px_55px_rgba(32,176,254,0.24),0_16px_30px_rgba(222,61,211,0.18)]',
+                    '!bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.18),transparent_52%),linear-gradient(135deg,#20B0FE_0%,#8075E9_48%,#DE3DD3_100%)]',
+                    '!shadow-[0_16px_34px_rgba(32,176,254,0.22),0_12px_26px_rgba(128,117,233,0.14),0_8px_18px_rgba(222,61,211,0.12)]',
+                    'hover:!shadow-[0_20px_55px_rgba(32,176,254,0.24),0_14px_32px_rgba(128,117,233,0.18),0_16px_30px_rgba(222,61,211,0.16)]',
                     'hover:!ring-[#8075E9]/30 focus-visible:!ring-[#DE3DD3]/40'
                   )}
                   onClick={() => {

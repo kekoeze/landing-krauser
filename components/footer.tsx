@@ -117,31 +117,41 @@ export default function Footer() {
 
           <div className="col-span-2 min-w-0 md:col-span-1 md:text-right">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-400">CONTACTO</p>
-            <div className="mt-4 flex flex-col gap-3 md:items-end">
-              <a
-                className="inline-flex w-full max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-nowrap"
-                href="https://wa.me/5492920707402?text=%C2%A1Hola!%20Quiero%20coordinar%20una%20demo%20de%20Evan."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="h-4 w-4 shrink-0 text-[#20B0FE]" strokeWidth={2.1} aria-hidden />
-                <span className="text-sm">WhatsApp</span>
-                <span className="text-sm text-slate-400">+54 2920 707402</span>
-              </a>
-              <a
-                className="inline-flex w-full max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-nowrap"
-                href="mailto:contacto@krauser.com.ar"
-              >
-                <Mail className="h-4 w-4 shrink-0 text-[#20B0FE]" strokeWidth={2.1} aria-hidden />
-                <span className="text-sm">Email</span>
-                <span className="text-sm text-slate-400">contacto@krauser.com.ar</span>
-              </a>
-              <div className="text-left text-xs text-slate-400 md:text-right">
+            <div className="mt-5 md:mt-4 md:flex md:flex-col md:items-end md:gap-3">
+              {/* Mobile: 2 columnas (WhatsApp / Email) */}
+              <div className="grid grid-cols-2 gap-3 md:flex md:flex-col md:items-end">
+                <a
+                  className="inline-flex w-full max-w-full flex-col items-start gap-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-x-2 md:gap-y-1 md:flex-nowrap"
+                  href="https://wa.me/5492920707402?text=%C2%A1Hola!%20Quiero%20coordinar%20una%20demo%20de%20Evan."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <MessageCircle className="h-4 w-4 shrink-0 text-[#20B0FE]" strokeWidth={2.1} aria-hidden />
+                    <span className="text-sm">WhatsApp</span>
+                  </span>
+                  <span className="text-xs text-slate-400 sm:text-sm">+54 2920 707402</span>
+                </a>
+                <a
+                  className="inline-flex w-full max-w-full flex-col items-start gap-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-row md:items-center md:gap-x-2 md:gap-y-1 md:flex-nowrap"
+                  href="mailto:contacto@krauser.com.ar"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <Mail className="h-4 w-4 shrink-0 text-[#20B0FE]" strokeWidth={2.1} aria-hidden />
+                    <span className="text-sm">Email</span>
+                  </span>
+                  <span className="text-xs text-slate-400 sm:text-sm">contacto@krauser.com.ar</span>
+                </a>
+              </div>
+
+              <div className="mt-4 text-left text-xs text-slate-400 md:mt-2 md:text-right">
                 Horario: 15 a 22 h (ARG)
               </div>
-              <div className="mt-2 space-y-2 text-left text-xs text-slate-400 md:text-right">
+
+              {/* Mobile: 2 columnas para legales */}
+              <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-left text-xs text-slate-400 md:mt-2 md:flex md:flex-col md:items-end md:gap-2 md:text-right">
                 {footerLinks.Resources.map((item) => (
-                  <a key={item.label} className="block hover:text-slate-200 transition-colors" href={item.href}>
+                  <a key={item.label} className="hover:text-slate-200 transition-colors" href={item.href}>
                     {item.label.toUpperCase()}
                   </a>
                 ))}
