@@ -28,12 +28,12 @@ export default function Footer() {
     {
       label: 'Instagram',
       icon: Instagram,
-      href: 'https://www.instagram.com/krauser.com.ar/',
+      href: 'https://www.instagram.com/krauser.tech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
     },
     {
       label: 'Facebook',
       icon: Facebook,
-      href: 'https://www.facebook.com/krauser.com.ar/',
+      href: 'https://www.facebook.com/profile.php?id=61555360312236',
     },
     {
       label: 'LinkedIn',
@@ -44,9 +44,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 text-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div className="grid grid-cols-2 items-start gap-x-6 gap-y-10 sm:gap-x-8 md:grid-cols-4 md:gap-x-6 md:gap-y-10 lg:gap-x-8">
+          <div className="col-span-2 min-w-0 md:col-span-1">
             <div className="flex items-center gap-3">
               <div
                 className="h-10 w-44 sm:h-11 sm:w-52"
@@ -89,7 +89,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-400">SERVICES</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-400">
               {footerLinks.Services.map((item) => (
@@ -102,7 +102,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-400">COMPANY</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-400">
               {footerLinks.Company.map((item) => (
@@ -115,11 +115,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:text-right">
+          <div className="col-span-2 min-w-0 md:col-span-1 md:text-right">
             <p className="text-xs font-semibold tracking-[0.22em] text-slate-400">CONTACTO</p>
             <div className="mt-4 flex flex-col gap-3 md:items-end">
               <a
-                className="inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 hover:bg-white/10 transition-colors"
+                className="inline-flex w-full max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-nowrap"
                 href="https://wa.me/5492920707402?text=%C2%A1Hola!%20Quiero%20coordinar%20una%20demo%20de%20Evan."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -129,17 +129,17 @@ export default function Footer() {
                 <span className="text-sm text-slate-400">+54 2920 707402</span>
               </a>
               <a
-                className="inline-flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 hover:bg-white/10 transition-colors"
+                className="inline-flex w-full max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/5 px-3 py-2.5 hover:bg-white/10 transition-colors sm:px-4 sm:py-2 md:inline-flex md:w-auto md:max-w-none md:flex-nowrap"
                 href="mailto:contacto@krauser.com.ar"
               >
                 <Mail className="h-4 w-4 shrink-0 text-[#20B0FE]" strokeWidth={2.1} aria-hidden />
                 <span className="text-sm">Email</span>
                 <span className="text-sm text-slate-400">contacto@krauser.com.ar</span>
               </a>
-              <div className="text-xs text-slate-400 md:text-right">
+              <div className="text-left text-xs text-slate-400 md:text-right">
                 Horario: 15 a 22 h (ARG)
               </div>
-              <div className="mt-2 space-y-2 text-xs text-slate-400">
+              <div className="mt-2 space-y-2 text-left text-xs text-slate-400 md:text-right">
                 {footerLinks.Resources.map((item) => (
                   <a key={item.label} className="block hover:text-slate-200 transition-colors" href={item.href}>
                     {item.label.toUpperCase()}

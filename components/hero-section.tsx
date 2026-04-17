@@ -1,13 +1,30 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+/** Degradado A en texto (clip); ángulo y paradas para que en “EVAN” se vean los 3 tonos. */
+const evanGradientTextStyle: CSSProperties = {
+  backgroundImage: "linear-gradient(108deg, #20B0FE 0%, #8075E9 42%, #DE3DD3 72%, #DE3DD3 100%)",
+  WebkitBackgroundClip: "text",
+  backgroundClip: "text",
+  color: "transparent",
+  WebkitTextFillColor: "transparent",
+};
+
+const starGradientTextStyle: CSSProperties = {
+  backgroundImage: "linear-gradient(125deg, #20B0FE 0%, #8075E9 55%, #DE3DD3 100%)",
+  WebkitBackgroundClip: "text",
+  backgroundClip: "text",
+  color: "transparent",
+  WebkitTextFillColor: "transparent",
+};
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative overflow-hidden pt-24 pb-6 sm:pt-22 sm:pb-8 lg:pt-28 lg:pb-10">
-      {/* Fondo blanco plano (sin gradientes) */}
-
+    <section id="home" className="relative overflow-hidden bg-white pt-24 pb-6 sm:pt-22 sm:pb-8 lg:pt-28 lg:pb-10">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -61,21 +78,19 @@ export default function HeroSection() {
             className="order-2 max-sm:mt-4 sm:mt-0"
           >
             <div className="max-w-none sm:max-w-md">
-              <h1 className="text-3xl font-extrabold tracking-tight sm:text-6xl">
-                <span className="relative inline-flex items-center gap-3">
-                  <span className="bg-gradient-to-r from-[#20B0FE] to-[#DE3DD3] bg-clip-text text-transparent">
-                    EVAN
-                  </span>
-                  {/* Aurora shine encima del gradiente */}
+              <h1 className="text-4xl font-black tracking-tight sm:text-6xl sm:font-extrabold">
+                <span className="relative inline-flex items-baseline gap-2 sm:gap-3">
                   <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-clip-text text-transparent opacity-60 mix-blend-multiply
-                    bg-[linear-gradient(90deg,transparent_0%,rgba(192,38,211,0.98)_18%,rgba(232,121,249,0.98)_38%,rgba(192,38,211,0.98)_58%,rgba(88,28,135,0.92)_78%,transparent_100%)]
-                    bg-[length:220%_100%] animate-[aurora_3.2s_ease-in-out_infinite]"
+                    className="inline-block bg-clip-text pb-[0.06em] leading-none"
+                    style={evanGradientTextStyle}
                   >
                     EVAN
                   </span>
-                  <span className="text-2xl sm:text-3xl text-[#FACC15] drop-shadow-[0_10px_22px_rgba(250,204,21,0.35)]">
+                  <span
+                    className="inline-block translate-y-[0.04em] bg-clip-text text-3xl leading-none sm:text-4xl"
+                    style={starGradientTextStyle}
+                    aria-hidden
+                  >
                     ★
                   </span>
                 </span>
@@ -91,7 +106,13 @@ export default function HeroSection() {
                 <Button
                   variant="gradient"
                   size="lg"
-                  className="px-6 py-5 text-xs font-semibold tracking-wide sm:px-10 sm:py-6 sm:text-sm"
+                  className={cn(
+                    'px-6 py-5 text-xs font-semibold tracking-wide sm:px-10 sm:py-6 sm:text-sm',
+                    '!bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.18),transparent_52%),linear-gradient(135deg,#20B0FE_0%,#8075E9_48%,#DE3DD3_100%)]',
+                    '!shadow-[0_16px_34px_rgba(32,176,254,0.22),0_12px_26px_rgba(128,117,233,0.14),0_8px_18px_rgba(222,61,211,0.12)]',
+                    'hover:!shadow-[0_20px_55px_rgba(32,176,254,0.24),0_14px_32px_rgba(128,117,233,0.18),0_16px_30px_rgba(222,61,211,0.16)]',
+                    'hover:!ring-[#8075E9]/30 focus-visible:!ring-[#DE3DD3]/40'
+                  )}
                   onClick={() => {
                     window.open('https://webevan.krauser.com.ar/#/pages/landing', '_blank', 'noopener,noreferrer');
                   }}

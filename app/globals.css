@@ -124,18 +124,6 @@
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
 
-  @keyframes aurora {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
   .gradient-text-alt {
     @apply bg-gradient-to-r from-primary via-blue-500 to-secondary bg-clip-text text-transparent;
   }

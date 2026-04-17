@@ -42,15 +42,15 @@ export default function PartnersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="grid gap-8 lg:grid-cols-12"
+          className="grid gap-6 max-lg:grid-cols-2 max-lg:items-start max-lg:gap-3 sm:max-lg:gap-4 lg:grid-cols-12 lg:gap-8"
         >
-          {/* Selector (RadialIntro) */}
-          <div className="lg:col-span-7">
+          {/* Selector (RadialIntro) — a la izquierda en móvil/tablet */}
+          <div className="min-w-0 max-lg:overflow-visible lg:col-span-7">
             <RadialIntro
               orbitItems={orbitItems}
               selectedId={selectedSlug || undefined}
               onSelect={(item) => setSelectedSlug(String(item.id))}
-              className="mx-auto"
+              className="max-lg:mx-0 lg:mx-auto"
               centerLogoSrc={selectedPartner?.logo.src}
               centerLogoAlt={selectedPartner?.logo.alt}
               centerEmphasis={false}
@@ -59,8 +59,8 @@ export default function PartnersSection() {
 
           {/* Detalle */}
           {selectedPartner ? (
-            <div className="lg:col-span-5">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+            <div className="min-w-0 lg:col-span-5">
+              <div className="relative max-h-[min(72vh,560px)] overflow-y-auto overflow-x-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-[0_18px_45px_rgba(15,23,42,0.10)] sm:rounded-3xl sm:p-6 lg:max-h-none lg:overflow-visible lg:p-8">
                 <div className="pointer-events-none absolute inset-0 opacity-100 bg-[radial-gradient(circle_at_20%_15%,rgba(108,26,235,0.14),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(192,38,211,0.12),transparent_60%)]" />
 
                 <div className="relative">
@@ -69,7 +69,7 @@ export default function PartnersSection() {
                       <p className="text-xs font-semibold tracking-[0.24em] text-[#C026D3] uppercase">
                         {selectedPartner.industry}
                       </p>
-                      <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-950">
+                      <h3 className="mt-2 text-lg font-extrabold tracking-tight text-slate-950 sm:text-xl lg:text-2xl">
                         {selectedPartner.name}
                       </h3>
                       {selectedPartner.subtitle ? (

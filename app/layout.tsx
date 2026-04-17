@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import ChatwootWidget from '@/components/chatwoot-widget';
 import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({
@@ -37,7 +36,6 @@ export default function RootLayout({
     <html lang="es">
       <body className={montserrat.variable}>
         {children}
-        <ChatwootWidget />
       </body>
     </html>
   );
