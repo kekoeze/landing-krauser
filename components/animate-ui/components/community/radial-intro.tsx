@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { animate, motion, useMotionValue, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -42,84 +42,6 @@ export type RadialOrbitItem = {
   src?: string;
 };
 
-type OrbitPartnerTileProps = {
-  orbitSpinDeg: ReturnType<typeof useMotionValue<number>>;
-  angleDeg: number;
-  radius: number;
-  item: RadialOrbitItem;
-  isSelected: boolean;
-  compact: boolean;
-  onPick: (item: RadialOrbitItem) => void;
-};
-
-function OrbitPartnerTile({ orbitSpinDeg, angleDeg, radius, item, isSelected, compact, onPick }: OrbitPartnerTileProps) {
-  const keepUpright = useTransform(orbitSpinDeg, (deg) => -deg);
-  const angleRad = (angleDeg * Math.PI) / 180;
-  const x = radius * Math.cos(angleRad);
-  const y = radius * Math.sin(angleRad);
-  const fallback = String(item.name ?? "")
-    .trim()
-    .slice(0, 2)
-    .toUpperCase();
-
-  return (
-    <div
-      className="absolute left-1/2 top-1/2"
-      style={{
-        transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
-      }}
-    >
-      <motion.button
-        type="button"
-        onClick={() => onPick(item)}
-        aria-pressed={isSelected}
-        style={{ rotate: keepUpright }}
-        className={cn(
-          "group relative inline-flex items-center justify-center overflow-hidden border bg-white leading-none transition-[box-shadow,transform,border-color] duration-300 hover:-translate-y-0.5",
-          compact
-            ? "h-10 w-10 rounded-xl shadow-[0_8px_22px_rgba(15,23,42,0.09)] hover:shadow-[0_10px_26px_rgba(15,23,42,0.11)]"
-            : "h-20 w-20 rounded-2xl shadow-[0_12px_36px_rgba(15,23,42,0.10)] hover:shadow-[0_14px_40px_rgba(15,23,42,0.12)]",
-          isSelected ? "border-[#C026D3]/40 ring-2 ring-[#C026D3]/25" : "border-slate-200/80"
-        )}
-      >
-        <span
-          className={cn(
-            "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300",
-            compact ? "rounded-xl" : "rounded-2xl",
-            "bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(108,26,235,0.14),transparent_55%)]",
-            isSelected ? "opacity-100" : "group-hover:opacity-100"
-          )}
-        />
-
-        {item.src ? (
-          // Use <img> to support remote URLs without Next config.
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={item.src}
-            alt={item.name}
-            className={cn(
-              "relative z-10 block max-h-[76%] max-w-[76%] shrink-0 bg-white object-contain object-center",
-              compact ? "rounded-md" : "rounded-xl"
-            )}
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-          />
-        ) : (
-          <span
-            className={cn(
-              "relative z-10 shrink-0 font-extrabold tracking-tight text-slate-800",
-              compact ? "text-[10px]" : "text-xs"
-            )}
-          >
-            {fallback}
-          </span>
-        )}
-      </motion.button>
-    </div>
-  );
-}
-
 type RadialIntroProps = {
   orbitItems: RadialOrbitItem[];
   className?: string;
@@ -143,7 +65,6 @@ export function RadialIntro({
 }: RadialIntroProps) {
   const layoutMode = useRadialLayoutMode();
   const compact = layoutMode !== "desktop";
-  const orbitSpinDeg = useMotionValue(0);
   const firstId = orbitItems[0]?.id;
   const [internalSelected, setInternalSelected] = React.useState<RadialOrbitItem["id"] | undefined>(
     defaultSelectedId ?? firstId
@@ -157,7 +78,16 @@ export function RadialIntro({
   const radius =
     layoutMode === "desktop" ? 206 : layoutMode === "tablet-compact" ? 122 : 91;
   const fallbackCenterItem = orbitItems.find((i) => i.id === currentSelected) ?? orbitItems[0];
-  const centerSrc = centerLogoSrc ?? fallbackCenterItem?.src;
+  const overrideItemSrc = React.useCallback((item: RadialOrbitItem | undefined) => {
+    if (!item) return undefined;
+    // Override solicitado: usar el logo full para CiTeCoPa.
+    if (String(item.id) === "citecopa") return "/citecopa.png";
+    return item.src;
+  }, []);
+  const centerSrc =
+    String(currentSelected) === "citecopa"
+      ? "/citecopa.png"
+      : centerLogoSrc ?? overrideItemSrc(fallbackCenterItem);
   const centerAlt = centerLogoAlt ?? fallbackCenterItem?.name ?? "Partner";
   const centerFallback = String(centerAlt ?? "")
     .trim()
@@ -166,11 +96,6 @@ export function RadialIntro({
     .map((w) => w[0])
     .join("")
     .toUpperCase();
-
-  React.useEffect(() => {
-    const controls = animate(orbitSpinDeg, 360, { duration: 50, ease: "linear", repeat: Infinity });
-    return () => controls.stop();
-  }, [orbitSpinDeg]);
 
   return (
     <div className={cn("relative w-full", compact && "overflow-visible", className)}>
@@ -226,26 +151,76 @@ export function RadialIntro({
 
         {/* Anillo con degradé de marca alrededor del logo: ver clases en globals.css */}
 
-        {/* Órbita: el anillo gira; cada tile compensa para que el logo siga derecho */}
-        <motion.div className="absolute inset-0" style={{ rotate: orbitSpinDeg }}>
+        {/* Rotating orbit */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 50, ease: "linear", repeat: Infinity }}
+        >
           {orbitItems.map((item, idx) => {
-            const angleDeg = (360 / count) * idx;
+            const angle = (360 / count) * idx;
             const isSelected = item.id === currentSelected;
+            const fallback = String(item.name ?? "").trim().slice(0, 2).toUpperCase();
 
             return (
-              <OrbitPartnerTile
+              <div
                 key={item.id}
-                orbitSpinDeg={orbitSpinDeg}
-                angleDeg={angleDeg}
-                radius={radius}
-                item={item}
-                isSelected={isSelected}
-                compact={compact}
-                onPick={(picked) => {
-                  setInternalSelected(picked.id);
-                  onSelect?.(picked);
+                className="absolute left-1/2 top-1/2"
+                style={{
+                  transform: `rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg) translate(-50%, -50%)`,
                 }}
-              />
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setInternalSelected(item.id);
+                    onSelect?.(item);
+                  }}
+                  aria-pressed={isSelected}
+                  className={cn(
+                    "group relative grid place-items-center border bg-white transition-all duration-300 hover:-translate-y-0.5",
+                    compact
+                      ? "h-12 w-12 rounded-2xl shadow-[0_10px_28px_rgba(15,23,42,0.10)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.12)]"
+                      : "h-24 w-24 rounded-3xl shadow-[0_16px_46px_rgba(15,23,42,0.12)] hover:shadow-[0_18px_48px_rgba(15,23,42,0.14)]",
+                    isSelected ? "border-[#C026D3]/40 ring-2 ring-[#C026D3]/25" : "border-slate-200/80"
+                  )}
+                >
+                  {/* tiny radial glow on hover/selected */}
+                  <span
+                    className={cn(
+                      "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300",
+                      compact ? "rounded-2xl" : "rounded-3xl",
+                      "bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(108,26,235,0.14),transparent_55%)]",
+                      isSelected ? "opacity-100" : "group-hover:opacity-100"
+                    )}
+                  />
+
+                  {overrideItemSrc(item) ? (
+                    // Use <img> to support remote URLs without Next config.
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={overrideItemSrc(item)}
+                      alt={item.name}
+                      className={cn(
+                        "relative z-10 bg-white object-contain",
+                        compact ? "h-10 w-10 rounded-xl p-1.5" : "h-16 w-16 rounded-2xl p-2"
+                      )}
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <span
+                      className={cn(
+                        "relative z-10 font-extrabold tracking-tight text-slate-800",
+                        compact ? "text-[11px]" : "text-sm"
+                      )}
+                    >
+                      {fallback}
+                    </span>
+                  )}
+                </button>
+              </div>
             );
           })}
         </motion.div>
@@ -303,22 +278,20 @@ export function RadialIntro({
 
               <div className="relative z-10 h-full w-full">
               {centerSrc ? (
-                <div className="absolute inset-2 sm:inset-3">
-                  <Image
-                    src={centerSrc}
-                    alt={centerAlt}
-                    fill
-                    sizes={
-                      compact
-                        ? layoutMode === "tablet-compact"
-                          ? "108px"
-                          : "96px"
-                        : "204px"
-                    }
-                    className="block object-contain object-center"
-                    priority
-                  />
-                </div>
+                <Image
+                  src={centerSrc}
+                  alt={centerAlt}
+                  fill
+                  sizes={
+                    compact
+                      ? layoutMode === "tablet-compact"
+                        ? "108px"
+                        : "96px"
+                      : "204px"
+                  }
+                  className="object-contain"
+                  priority
+                />
               ) : (
                 <div className="grid h-full w-full place-items-center rounded-3xl border border-slate-200/80 bg-white text-3xl font-black tracking-tight text-slate-900">
                   {centerFallback || "?"}

@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 export default function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const whatsappBase = 'https://wa.me/5492920707402';
   const services = [
     {
       icon: ShoppingCart,
@@ -70,6 +71,13 @@ export default function ServicesSection() {
     },
   ];
 
+  function getWhatsappMessage(service: { title: string; price: string; description: string }) {
+    const header = `¡Hola! Quiero solicitar ${service.title}.`;
+    const details = `\n\nServicio: ${service.title}\nPrecio: ${service.price}\n\n${service.description}`;
+    const closing = `\n\n¿Podemos coordinar una propuesta?`;
+    return `${header}${details}${closing}`;
+  }
+
   return (
     <ParallaxSection id="services" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,47 +88,57 @@ export default function ServicesSection() {
           />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
               transition={{ duration: 0.7, delay: 0.05 + index * 0.08 }}
-              className="relative flex h-full min-h-[22rem] flex-col rounded-3xl border border-slate-200/80 bg-white/80 p-8 sm:p-9 shadow-[0_18px_45px_rgba(15,23,42,0.12)] sm:min-h-[24rem] lg:min-h-[26rem]"
+              className="relative flex h-full flex-col rounded-3xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.12)] sm:p-9 lg:min-h-[26rem]"
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <div className="flex shrink-0 items-center justify-center text-[#DE3DD3]">
-                  <service.icon className="h-10 w-10" strokeWidth={2.35} aria-hidden />
+                  <service.icon className="h-7 w-7 sm:h-10 sm:w-10" strokeWidth={2.35} aria-hidden />
                 </div>
-                <p className="text-sm font-bold tracking-[0.18em] text-[color:hsl(var(--primary))] uppercase">
+                <p className="text-[11px] font-bold tracking-[0.18em] text-[#252E49] uppercase sm:text-sm">
                   {service.title}
                 </p>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-slate-600">{service.description}</p>
+              <p className="mt-4 text-xs leading-relaxed text-slate-600 sm:mt-5 sm:text-sm">
+                {service.description}
+              </p>
 
-              <ul className="mt-6 space-y-3">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3.5 text-sm text-slate-700">
-                    <Check className="mt-0.5 h-6 w-6 shrink-0 text-[#DE3DD3]" strokeWidth={2.35} aria-hidden />
+              <ul className="mt-5 space-y-2 sm:mt-6 sm:space-y-3">
+                {service.features.map((feature, featureIndex) => (
+                  <li
+                    key={feature}
+                    className={[
+                      "flex items-start gap-3 text-xs text-slate-700 sm:gap-3.5 sm:text-sm",
+                      featureIndex >= 3 ? "hidden sm:flex" : "",
+                    ].join(" ")}
+                  >
+                    <Check
+                      className="mt-0.5 h-5 w-5 shrink-0 text-[#DE3DD3] sm:h-6 sm:w-6"
+                      strokeWidth={2.35}
+                      aria-hidden
+                    />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-auto w-full pt-10">
+              <div className="mt-auto w-full pt-6 sm:pt-10">
                 <Button
                   variant="gradient"
-                  className="w-full font-semibold"
+                  className="w-full font-semibold min-h-11 sm:min-h-12 h-auto px-3 sm:px-4 py-3 sm:py-3.5 text-[11px] sm:text-sm leading-tight whitespace-normal text-center break-words"
                   onClick={() => {
-                    const element = document.getElementById('contact');
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    const message = encodeURIComponent(getWhatsappMessage(service));
+                    window.open(`${whatsappBase}?text=${message}`, '_blank', 'noopener,noreferrer');
                   }}
                 >
-                  {service.title === 'Desarrollo Personalizado'
-                    ? 'Solicitar presupuesto'
-                    : service.price}
+                  {service.price}
                 </Button>
               </div>
             </motion.div>

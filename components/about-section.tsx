@@ -64,7 +64,7 @@ export default function AboutSection() {
 
           <div className="grid items-stretch gap-10 lg:grid-cols-12">
             <motion.div
-              className="grid h-full min-h-0 gap-6 md:grid-cols-2 md:items-stretch lg:col-span-7"
+              className="grid h-full min-h-0 grid-cols-2 gap-4 sm:gap-6 md:grid-cols-2 md:items-stretch lg:col-span-7"
               initial={{ opacity: 0, y: 18 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
               transition={{ duration: 0.75, delay: 0.05 }}

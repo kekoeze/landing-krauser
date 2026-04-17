@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { GradientText } from "@/components/animate-ui/primitives/texts/gradient";
 
 type SectionHeaderProps = {
   title: string;
@@ -26,7 +24,7 @@ export default function SectionHeader({ title, subtitle, className }: SectionHea
   
 
       <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-        <GradientText text={title} className="font-bold" />
+        <span className="font-bold text-[#9933FF]">{title}</span>
       </h2>
 
       {subtitle ? (

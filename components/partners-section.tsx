@@ -60,8 +60,8 @@ export default function PartnersSection() {
           {/* Detalle */}
           {selectedPartner ? (
             <div className="min-w-0 lg:col-span-5">
-              <div className="relative max-h-[min(72vh,560px)] overflow-y-auto overflow-x-hidden rounded-2xl border border-slate-200/80 bg-white/90 p-4 shadow-[0_18px_45px_rgba(15,23,42,0.10)] sm:rounded-3xl sm:p-6 lg:max-h-none lg:overflow-visible lg:p-8">
-                <div className="pointer-events-none absolute inset-0 opacity-100 bg-[radial-gradient(circle_at_20%_15%,rgba(108,26,235,0.14),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(192,38,211,0.12),transparent_60%)]" />
+              <div className="relative max-h-[min(72vh,560px)] overflow-y-auto overflow-x-hidden   sm:p-6 lg:max-h-none lg:overflow-visible lg:p-8">
+               
 
                 <div className="relative">
                   <div className="flex items-start justify-between gap-4">

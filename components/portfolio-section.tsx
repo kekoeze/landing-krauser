@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import ProjectSlider, { type ProjectSlide } from "@/components/project-slider";
 import ParallaxSection from "@/components/parallax-section";
-import { GradientText } from "@/components/animate-ui/primitives/texts/gradient";
 
 export default function PortfolioSection() {
   const ref = useRef(null);
@@ -28,7 +27,7 @@ export default function PortfolioSection() {
       ],
       imageUrl: "/dashboard-evan.jpg",
       techTags: ["IA", "Ecommerce", "Analytics"],
-      href: "https://webevan.krauser.com.ar/#/pages/landing",
+      href: "https://webevan.krauser.com.ar/",
       usable: true,
     },
     {
@@ -69,7 +68,7 @@ export default function PortfolioSection() {
       ],
       imageUrl: "/tedxviedma_home.png",
       techTags: ["Software a medida", "Backoffice", "Infraestructura", "Automatizaciones"],
-      href: "/partners/tedxviedma",
+      href: "https://tedxviedma.com/",
     },
     {
       category: "Desarrollo a medida",
@@ -109,7 +108,7 @@ export default function PortfolioSection() {
       ],
       imageUrl: "/gympro_home.png",
       techTags: ["Dashboard", "Backoffice", "Suscripciones", "Reportes"],
-      href: "https://krauser.com.ar",
+      href: "https://gympro.krauser.com.ar/",
       usable: true,
     },
     {
@@ -130,6 +129,7 @@ export default function PortfolioSection() {
       ],
       imageUrl: "/miviandita-sistema-viandas.png",
       techTags: ["ERP", "WhatsApp", "Kanban", "Suscripciones"],
+      href: "https://miviandita.com.ar/",
       status: "process",
     },
   ];
@@ -139,9 +139,9 @@ export default function PortfolioSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-            <GradientText text="PROYECTOS QUE IMPULSAMOS, NEGOCIOS REALES" className="font-extrabold" />
+            <span className="font-extrabold text-[#9933FF]">PROYECTOS QUE IMPULSAMOS, NEGOCIOS REALES</span>
           </h2>
-          <p className="mt-4 mx-auto max-w-3xl text-base text-slate-900 md:text-lg">
+          <p className="mt-4 mx-auto max-w-3xl text-base text-[color:var(--brand-body)] md:text-lg">
             Conocé algunos de los desarrollos que ayudaron a nuestros clientes a crecer y profesionalizar su presencia
             digital.
           </p>

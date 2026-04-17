@@ -14,7 +14,7 @@ type GradientTextProps = {
 
 export function GradientText({
   text,
-  gradient = "linear-gradient(90deg,#20B0FE_0%,#8075E9_42%,#DE3DD3_72%,#20B0FE_100%)",
+  gradient = "linear-gradient(90deg, #20B0FE 0%, #8075E9 42%, #DE3DD3 72%, #20B0FE 100%)",
   neon = false,
   transition = { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
   className,
