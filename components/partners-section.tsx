@@ -28,9 +28,9 @@ export default function PartnersSection() {
   );
 
   return (
-    <ParallaxSection id="partners" className="py-20">
+    <ParallaxSection id="partners" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12">
+        <div className="mb-8">
           <SectionHeader
             title="Empresas que confían en nosotros"
             subtitle="Partners estratégicos y organizaciones con las que construimos soluciones reales."

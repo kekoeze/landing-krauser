@@ -7,9 +7,9 @@ import SectionHeader from "@/components/section-header";
 
 const stats = [
   { icon: Award, value: "4+", label: "Años de experiencia" },
-  { icon: Users, value: "50+", label: "Proyectos completados" },
+  { icon: Users, value: "13", label: "Proyectos completados" },
   { icon: Target, value: "100%", label: "Clientes satisfechos" },
-  { icon: Zap, value: "24/7", label: "Soporte técnico" },
+  { icon: Zap, value: "15 a 22 h", label: "Soporte técnico" },
 ];
 
 export default function ResultsSection() {
@@ -17,9 +17,9 @@ export default function ResultsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-20">
+    <section className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="mb-12">
+        <div ref={ref} className="mb-8">
           <SectionHeader
             title="Resultados que respaldan nuestro trabajo"
             subtitle="Enfoque en claridad, performance y conversiones. Menos “efectos”, más negocio."

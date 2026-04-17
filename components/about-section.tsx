@@ -18,9 +18,9 @@ export default function AboutSection() {
       icon: Award,
       label: 'Años de experiencia',
       renderValue: (
-        <span className="inline-flex items-baseline gap-0.5">
-          <CountingNumber number={4} fromNumber={0} delay={0.12} className="text-4xl font-black tracking-tight" />
-          <span className="text-3xl font-black">+</span>
+        <span className="inline-flex items-baseline gap-0.5 font-bold text-[#252E49]">
+          <CountingNumber number={4} fromNumber={0} delay={0.12} className="text-4xl tracking-tight" />
+          <span className="text-3xl">+</span>
         </span>
       ),
     },
@@ -28,9 +28,8 @@ export default function AboutSection() {
       icon: Users,
       label: 'Proyectos completados',
       renderValue: (
-        <span className="inline-flex items-baseline gap-0.5">
-          <CountingNumber number={50} fromNumber={0} delay={0.18} className="text-4xl font-black tracking-tight" />
-          <span className="text-3xl font-black">+</span>
+        <span className="inline-flex items-baseline gap-0.5 font-bold text-[#252E49]">
+          <CountingNumber number={13} fromNumber={0} delay={0.18} className="text-4xl tracking-tight" />
         </span>
       ),
     },
@@ -38,81 +37,85 @@ export default function AboutSection() {
       icon: Target,
       label: 'Clientes satisfechos',
       renderValue: (
-        <span className="inline-flex items-baseline gap-0.5">
-          <CountingNumber number={100} fromNumber={0} delay={0.24} className="text-4xl font-black tracking-tight" />
-          <span className="text-3xl font-black">%</span>
+        <span className="inline-flex items-baseline gap-0.5 font-bold text-[#252E49]">
+          <CountingNumber number={100} fromNumber={0} delay={0.24} className="text-4xl tracking-tight" />
+          <span className="text-3xl">%</span>
         </span>
       ),
     },
     {
       icon: Headphones,
       label: 'Soporte técnico',
-      renderValue: <span className="text-4xl font-black tracking-tight">24/7</span>,
+      renderValue: (
+        <span className="text-3xl font-bold tracking-tight text-[#252E49] sm:text-4xl">15 a 22 h</span>
+      ),
     },
   ];
 
   return (
-    <ParallaxSection id="about" className="py-20">
+    <ParallaxSection id="about" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref}>
           <SectionHeader
             title="NOSOTROS"
             subtitle="Somos una agencia de desarrollo de software e IA. Construimos productos escalables para empresas que necesitan velocidad, claridad y resultados."
-            className="mb-12"
+            className="mb-8"
           />
 
-          <div className="grid items-start gap-10 lg:grid-cols-12">
+          <div className="grid items-stretch gap-10 lg:grid-cols-12">
             <motion.div
-              className="space-y-6 lg:col-span-7"
+              className="grid h-full min-h-0 gap-6 md:grid-cols-2 md:items-stretch lg:col-span-7"
               initial={{ opacity: 0, y: 18 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
               transition={{ duration: 0.75, delay: 0.05 }}
             >
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+              <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)] md:p-10">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(192,38,211,0.10),transparent_55%),radial-gradient(circle_at_85%_25%,rgba(108,26,235,0.10),transparent_60%)]" />
-                <div className="relative">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-600">
+                <div className="relative flex min-h-0 flex-1 flex-col justify-center px-2">
+                  <div className="inline-flex self-center items-center gap-2 rounded-full border border-[#252E49]/20 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-[#252E49]">
                     MISIÓN
                   </div>
-                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#6C1AEB]">Nuestra Misión</h3>
-                  <p className="mt-4 text-base leading-relaxed text-[color:var(--brand-body)]">
+                  <h3 className="mt-5 self-center text-center text-2xl font-extrabold tracking-tight text-[#252E49]">
+                    Nuestra Misión
+                  </h3>
+                  <p className="mt-5 w-full text-left text-base leading-relaxed text-[#252E49]/85">
                     Transformamos la manera en que las empresas argentinas interactúan con la tecnología, creando soluciones
                     que no solo resuelven problemas actuales, sino que anticipan las necesidades del futuro digital.
                   </p>
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+              <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-8 shadow-[0_18px_45px_rgba(15,23,42,0.10)] md:p-10">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(108,26,235,0.10),transparent_55%),radial-gradient(circle_at_90%_30%,rgba(192,38,211,0.08),transparent_60%)]" />
-                <div className="relative">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white/70 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-slate-600">
+                <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center px-2 text-center">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[#252E49]/20 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-[#252E49]">
                     VALORES
                   </div>
-                  <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-[#6C1AEB]">Nuestros Valores</h3>
+                  <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-[#252E49]">Nuestros Valores</h3>
 
-                  <ul className="mt-5 space-y-4 text-[color:var(--brand-body)]">
-                    <li className="flex gap-3">
-                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
-                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                  <ul className="mt-6 flex w-full max-w-md flex-col items-center space-y-4 text-[#252E49]/85">
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-3 sm:text-left">
+                      <span className="inline-flex shrink-0 items-center justify-center text-[#DE3DD3] sm:mt-0.5">
+                        <Sparkles className="h-4 w-4" aria-hidden />
                       </span>
-                      <p className="text-sm leading-relaxed sm:text-base">
-                        <span className="font-extrabold text-slate-950">Innovación:</span> siempre a la vanguardia de la tecnología.
+                      <p className="max-w-sm text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-[#252E49]">Innovación:</span> siempre a la vanguardia de la tecnología.
                       </p>
                     </li>
-                    <li className="flex gap-3">
-                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
-                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-3 sm:text-left">
+                      <span className="inline-flex shrink-0 items-center justify-center text-[#DE3DD3] sm:mt-0.5">
+                        <Sparkles className="h-4 w-4" aria-hidden />
                       </span>
-                      <p className="text-sm leading-relaxed sm:text-base">
-                        <span className="font-extrabold text-slate-950">Transparencia:</span> comunicación clara y directa.
+                      <p className="max-w-sm text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-[#252E49]">Transparencia:</span> comunicación clara y directa.
                       </p>
                     </li>
-                    <li className="flex gap-3">
-                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#C026D3]/12 ring-1 ring-[#C026D3]/20">
-                        <Sparkles className="h-3.5 w-3.5 text-[#C026D3]" />
+                    <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-3 sm:text-left">
+                      <span className="inline-flex shrink-0 items-center justify-center text-[#DE3DD3] sm:mt-0.5">
+                        <Sparkles className="h-4 w-4" aria-hidden />
                       </span>
-                      <p className="text-sm leading-relaxed sm:text-base">
-                        <span className="font-extrabold text-slate-950">Calidad:</span> excelencia en cada línea de código.
+                      <p className="max-w-sm text-sm leading-relaxed sm:text-base">
+                        <span className="font-extrabold text-[#252E49]">Calidad:</span> excelencia en cada línea de código.
                       </p>
                     </li>
                   </ul>
@@ -121,7 +124,7 @@ export default function AboutSection() {
             </motion.div>
 
             <motion.div
-              className="grid grid-cols-2 gap-4 sm:gap-5 lg:col-span-5"
+              className="grid h-full min-h-0 auto-rows-fr grid-cols-2 gap-4 sm:gap-5 lg:col-span-5"
               initial={{ opacity: 0, y: 18 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
               transition={{ duration: 0.75, delay: 0.12 }}
@@ -129,7 +132,7 @@ export default function AboutSection() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  className="group relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)]"
+                  className="group relative flex h-full min-h-0 flex-col justify-center overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_55px_rgba(15,23,42,0.14)]"
                   initial={{ opacity: 0, y: 16 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                   transition={{ duration: 0.55, delay: 0.18 + index * 0.06 }}
@@ -137,12 +140,12 @@ export default function AboutSection() {
                   <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.12),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(108,26,235,0.10),transparent_60%)]" />
 
                   <div className="relative">
-                    <div className="mx-auto mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70">
-                      <stat.icon className="h-6 w-6 text-[#C026D3]" />
+                    <div className="mx-auto mb-4 flex justify-center">
+                      <stat.icon className="h-7 w-7 text-[#DE3DD3]" aria-hidden />
                     </div>
 
-                    <div className="text-[#6C1AEB]">{stat.renderValue}</div>
-                    <div className="mt-2 text-xs font-semibold tracking-[0.18em] text-slate-600 sm:text-sm">
+                    <div>{stat.renderValue}</div>
+                    <div className="mt-2 text-xs font-semibold tracking-[0.18em] text-[#252E49]/75 sm:text-sm">
                       {stat.label.toUpperCase()}
                     </div>
                   </div>

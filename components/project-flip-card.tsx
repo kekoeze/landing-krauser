@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ExternalLink, RotateCcw, Star, Wrench } from "lucide-react";
+import { ExternalLink, Star, Wrench } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
@@ -35,9 +35,9 @@ export default function ProjectFlipCard({ project, className, compact = false }:
   return (
     <div
       className={cn(
-        "[perspective:1200px] relative group/flip will-change-transform transition-transform duration-300",
-        "z-10 group-hover/flip:z-20",
-        "group-hover/flip:scale-[1.03]",
+        "[perspective:1200px] relative z-10 max-w-full min-h-0 group/flip will-change-transform transition-transform duration-300",
+        "group-hover/flip:z-20",
+        !compact && "group-hover/flip:scale-[1.03]",
         compact ? "h-[520px]" : "h-[620px]",
         className
       )}
@@ -53,7 +53,7 @@ export default function ProjectFlipCard({ project, className, compact = false }:
         {/* FRONT */}
         <Card
           className={cn(
-            "absolute inset-0 overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.10)]",
+            "absolute inset-0 flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.10)]",
             "[backface-visibility:hidden]"
           )}
         >
@@ -71,7 +71,7 @@ export default function ProjectFlipCard({ project, className, compact = false }:
           {project.imageUrl ? (
             <div
               className={cn(
-                "relative w-full overflow-hidden bg-slate-100",
+                "relative w-full shrink-0 overflow-hidden bg-slate-100",
                 compact ? "h-40" : "h-56"
               )}
             >
@@ -86,18 +86,32 @@ export default function ProjectFlipCard({ project, className, compact = false }:
             </div>
           ) : null}
 
-          <div className={cn("p-6 flex h-full flex-col", compact ? "sm:p-6" : "sm:p-8")}>
+          <div className={cn("flex min-h-0 flex-1 flex-col p-6", compact ? "sm:p-6" : "sm:p-8")}>
             {project.category ? (
               <p className="text-xs font-semibold tracking-[0.24em] text-[#8A2BE2] uppercase">
                 {project.category}
               </p>
             ) : null}
 
-            <h3 className={cn("mt-2 font-extrabold tracking-tight text-slate-950", compact ? "text-lg" : "text-2xl")}>
+            <h3
+              className={cn(
+                "mt-2 font-extrabold tracking-tight text-slate-950",
+                compact ? "text-lg [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden break-words" : "text-2xl",
+              )}
+            >
               {project.title}
             </h3>
             {project.subtitle ? (
-              <p className="mt-1 text-sm font-semibold text-slate-700">{project.subtitle}</p>
+              <p
+                className={cn(
+                  "mt-1 text-sm font-semibold text-slate-700",
+                  compact
+                    ? "[display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] overflow-hidden break-words"
+                    : "",
+                )}
+              >
+                {project.subtitle}
+              </p>
             ) : null}
 
             <p
@@ -124,28 +138,32 @@ export default function ProjectFlipCard({ project, className, compact = false }:
               </div>
             ) : null}
 
-            <div className="mt-auto pt-5 flex items-center justify-between gap-3">
-              <button
-                type="button"
-                onClick={() => setFlipped(true)}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#8A2BE2] hover:text-[#C026D3] transition-colors"
-                aria-label={`Ver detalles de ${project.title}`}
-              >
-                Ver detalles
-                <ExternalLink className="h-4 w-4" />
-              </button>
-
-              {project.href ? (
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  className="h-9 px-4"
-                  onClick={() => window.open(project.href, "_blank", "noopener,noreferrer")}
+            {!compact ? (
+              <div className="mt-auto pt-5 flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={() => setFlipped(true)}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#8A2BE2] hover:text-[#C026D3] transition-colors"
+                  aria-label={`Ver detalles de ${project.title}`}
                 >
-                  Ver
-                </Button>
-              ) : null}
-            </div>
+                  Ver detalles
+                  <ExternalLink className="h-4 w-4" />
+                </button>
+
+                {project.href ? (
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    className="h-9 px-4"
+                    onClick={() => window.open(project.href, "_blank", "noopener,noreferrer")}
+                  >
+                    Ver
+                  </Button>
+                ) : null}
+              </div>
+            ) : (
+              <div className="mt-auto shrink-0" aria-hidden />
+            )}
           </div>
         </Card>
 
@@ -158,7 +176,7 @@ export default function ProjectFlipCard({ project, className, compact = false }:
         >
           <div className={cn("p-6 h-full flex flex-col", compact ? "sm:p-6" : "sm:p-8")}>
             <div className="flex items-start justify-between gap-4">
-              <div>
+              <div className="min-w-0 flex-1">
                 {project.category ? (
                   <p className="text-xs font-semibold tracking-[0.24em] text-[#C026D3] uppercase">
                     {project.category}
@@ -182,15 +200,6 @@ export default function ProjectFlipCard({ project, className, compact = false }:
                   </div>
                 ) : null}
               </div>
-
-              <button
-                type="button"
-                onClick={() => setFlipped(false)}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 transition-colors"
-                aria-label="Volver"
-              >
-                <RotateCcw className="h-4 w-4 text-slate-700" />
-              </button>
             </div>
 
             <div
@@ -220,44 +229,38 @@ export default function ProjectFlipCard({ project, className, compact = false }:
               ) : null}
             </div>
 
-            <div className="mt-auto pt-5 flex items-center justify-end gap-3">
-              <button
-                type="button"
-                onClick={() => setFlipped(false)}
-                className="text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors"
-              >
-                Cerrar
-              </button>
-              {project.href ? (
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  className="h-9 px-4"
-                  onClick={() => window.open(project.href, "_blank", "noopener,noreferrer")}
-                >
-                  Ver proyecto
-                </Button>
-              ) : null}
-            </div>
+            {(project.href || compact) ? (
+              <div className="mt-auto pt-5 flex items-center justify-end">
+                {project.href ? (
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    className="h-9 px-4"
+                    onClick={() => {
+                      setFlipped(false);
+                      window.open(project.href, "_blank", "noopener,noreferrer");
+                    }}
+                  >
+                    Ver proyecto
+                  </Button>
+                ) : (
+                  <Button
+                    variant="gradient"
+                    size="sm"
+                    className="h-9 px-4"
+                    onClick={() => {
+                      setFlipped(false);
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    Ver proyecto
+                  </Button>
+                )}
+              </div>
+            ) : null}
           </div>
-
-          {/* Tap/click helper */}
-          <button
-            type="button"
-            onClick={() => setFlipped(false)}
-            className="absolute inset-0 md:hidden"
-            aria-label="Cerrar detalles"
-          />
         </Card>
       </div>
-
-      {/* Mobile tap to flip */}
-      <button
-        type="button"
-        onClick={() => setFlipped((v) => !v)}
-        className="absolute inset-0 md:hidden"
-        aria-label={flipped ? "Cerrar detalles" : "Ver detalles"}
-      />
     </div>
   );
 }

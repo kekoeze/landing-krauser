@@ -35,7 +35,7 @@ export default function WhyUsSection() {
   ];
 
   return (
-    <ParallaxSection className="py-20">
+    <ParallaxSection className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="mb-16">
           <SectionHeader
@@ -61,8 +61,8 @@ export default function WhyUsSection() {
               transition={{ duration: 0.55, delay: 0.15 + index * 0.08 }}
               whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="mx-auto mb-4 h-14 w-14 rounded-2xl bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)] ring-1 ring-slate-200/70 flex items-center justify-center">
-                <advantage.icon className="h-7 w-7 text-[color:hsl(var(--primary))]" />
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-md border border-[#DE3DD3]/35 bg-white shadow-[0_12px_26px_rgba(15,23,42,0.12)]">
+                <advantage.icon className="h-7 w-7 text-[#DE3DD3]" />
               </div>
               <h4 className="text-lg font-bold text-slate-900 mb-2">
                 {advantage.title}

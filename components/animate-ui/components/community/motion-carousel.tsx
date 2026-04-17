@@ -4,6 +4,7 @@ import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type MotionCarouselProps<T> = {
   slides: T[];
@@ -84,18 +85,18 @@ export function MotionCarousel<T>({
             onClick={scrollPrev}
             disabled={!canScrollPrev}
             aria-label="Anterior"
-            className="pointer-events-auto absolute left-0 top-1/2 -translate-x-2 -translate-y-1/2 rounded-full border border-slate-200/80 bg-white/80 p-3 shadow-[0_14px_40px_rgba(15,23,42,0.10)] backdrop-blur-md opacity-0 transition-opacity duration-200 hover:bg-white disabled:opacity-0 group-hover:opacity-100"
+            className="pointer-events-auto absolute left-0 top-1/2 z-20 -translate-x-1 -translate-y-1/2 rounded-full border border-white/30 bg-[#20B0FE] p-3.5 shadow-[0_10px_32px_rgba(32,176,254,0.5)] opacity-0 ring-0 transition-all duration-200 hover:-translate-y-1/2 hover:-translate-x-0.5 hover:border-white/45 hover:bg-[#1aa2f0] hover:shadow-[0_14px_40px_rgba(32,176,254,0.62)] hover:ring-2 hover:ring-[#EAEEF5]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EAEEF5]/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#20B0FE] disabled:pointer-events-none disabled:opacity-0 disabled:shadow-none group-hover:opacity-100"
           >
-            <span className="block h-2 w-2 rotate-45 border-b-2 border-l-2 border-[#8A2BE2]" />
+            <ChevronLeft className="h-5 w-5 text-[#EAEEF5]" strokeWidth={2.5} aria-hidden />
           </button>
           <button
             type="button"
             onClick={scrollNext}
             disabled={!canScrollNext}
             aria-label="Siguiente"
-            className="pointer-events-auto absolute right-0 top-1/2 translate-x-2 -translate-y-1/2 rounded-full border border-slate-200/80 bg-white/80 p-3 shadow-[0_14px_40px_rgba(15,23,42,0.10)] backdrop-blur-md opacity-0 transition-opacity duration-200 hover:bg-white disabled:opacity-0 group-hover:opacity-100"
+            className="pointer-events-auto absolute right-0 top-1/2 z-20 translate-x-1 -translate-y-1/2 rounded-full border border-white/30 bg-[#20B0FE] p-3.5 shadow-[0_10px_32px_rgba(32,176,254,0.5)] opacity-0 ring-0 transition-all duration-200 hover:-translate-y-1/2 hover:translate-x-0.5 hover:border-white/45 hover:bg-[#1aa2f0] hover:shadow-[0_14px_40px_rgba(32,176,254,0.62)] hover:ring-2 hover:ring-[#EAEEF5]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EAEEF5]/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#20B0FE] disabled:pointer-events-none disabled:opacity-0 disabled:shadow-none group-hover:opacity-100"
           >
-            <span className="block h-2 w-2 -rotate-45 border-b-2 border-r-2 border-[#8A2BE2]" />
+            <ChevronRight className="h-5 w-5 text-[#EAEEF5]" strokeWidth={2.5} aria-hidden />
           </button>
         </div>
       ) : null}
@@ -115,8 +116,8 @@ export function MotionCarousel<T>({
                 <div
                   key={index}
                   className={[
-                    "min-w-0 flex-[0_0_auto]",
-                    slideClassName ?? "",
+                    "min-w-0 shrink-0",
+                    slideClassName ?? "flex-[0_0_auto]",
                   ].join(" ")}
                 >
                   {renderSlide ? renderSlide(slide, index) : defaultRender(slide)}
@@ -138,8 +139,8 @@ export function MotionCarousel<T>({
                 onClick={() => scrollTo(index)}
                 aria-label={`Ir al slide ${index + 1}`}
                 className={[
-                  "h-2 w-2 rounded-full bg-[#8A2BE2] transition-opacity",
-                  isActive ? "opacity-100" : "opacity-35 hover:opacity-60",
+                  "h-2 w-2 rounded-full bg-[#252E49] transition-all duration-200",
+                  isActive ? "scale-110 opacity-100 shadow-[0_0_0_3px_rgba(37,46,73,0.12)]" : "opacity-30 hover:scale-105 hover:opacity-55",
                 ].join(" ")}
               />
             );

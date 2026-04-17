@@ -19,16 +19,20 @@ export default function SectionHeader({ title, subtitle, className }: SectionHea
       transition={{ duration: 0.7 }}
       className={`text-center ${className ?? ""}`}
     >
-      <div className="mx-auto mb-4 flex justify-center">
-        <Image src="/isologo.png" alt="Krauser" width={56} height={56} className="h-14 w-14" />
-      </div>
+      {/*
+        Marca Krauser (SectionHeader en cada sección): solo logotipo horizontal, sin isologo.
+        Los <span> son decoración bajo el wordmark (brillo + línea con primary).
+      */}
+  
 
-      <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white md:text-4xl">
+      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
         <GradientText text={title} className="font-bold" />
       </h2>
 
       {subtitle ? (
-        <p className="mt-4 text-lg text-[color:var(--brand-body)] max-w-3xl mx-auto">{subtitle}</p>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-[color:var(--brand-body)] sm:text-lg">
+          {subtitle}
+        </p>
       ) : null}
     </motion.div>
   );

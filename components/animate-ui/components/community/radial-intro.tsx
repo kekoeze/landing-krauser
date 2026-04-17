@@ -42,7 +42,7 @@ export function RadialIntro({
     selectedId === undefined || selectedId === null || selectedId === "" ? undefined : selectedId;
   const currentSelected = normalizedSelectedId ?? internalSelected;
   const count = Math.max(orbitItems.length, 1);
-  const radius = 132;
+  const radius = 168;
   const fallbackCenterItem = orbitItems.find((i) => i.id === currentSelected) ?? orbitItems[0];
   const centerSrc = centerLogoSrc ?? fallbackCenterItem?.src;
   const centerAlt = centerLogoAlt ?? fallbackCenterItem?.name ?? "Partner";
@@ -56,12 +56,43 @@ export function RadialIntro({
 
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative mx-auto flex aspect-square w-full max-w-[420px] items-center justify-center">
+      <div className="relative mx-auto flex aspect-square w-full max-w-[520px] items-center justify-center">
         {/* Soft radial background */}
         <div />
-        <div className="absolute inset-8 rounded-full border border-slate-200/70 bg-white/60 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur" />
-        <div className="absolute inset-12 rounded-full border border-slate-200/60" />
-        <div className="absolute inset-20 rounded-full border border-slate-200/50" />
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-6 rounded-full blur-2xl"
+          style={{
+            background:
+              "radial-gradient(circle at 45% 40%, rgba(108,26,235,0.22), transparent 55%), radial-gradient(circle at 55% 62%, rgba(192,38,211,0.16), transparent 58%)",
+          }}
+          animate={{ opacity: [0.35, 0.75, 0.35], scale: [1, 1.03, 1] }}
+          transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-10 rounded-full blur-xl"
+          style={{
+            background:
+              "radial-gradient(circle at 30% 55%, rgba(128,117,233,0.18), transparent 60%), radial-gradient(circle at 70% 45%, rgba(192,38,211,0.10), transparent 62%)",
+          }}
+          animate={{ opacity: [0.25, 0.55, 0.25], x: [0, 6, 0], y: [0, -4, 0] }}
+          transition={{ duration: 7.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Base ring + glass */}
+        <motion.div
+          className="absolute inset-8 rounded-full border border-slate-200/70 bg-white/60 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur"
+          animate={{
+            boxShadow: [
+              "0_18px_55px_rgba(15,23,42,0.06)",
+              "0_28px_86px_rgba(15,23,42,0.10)",
+              "0_18px_55px_rgba(15,23,42,0.06)",
+            ],
+          }}
+          transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Anillo con degradé de marca alrededor del logo: ver clases en globals.css */}
 
         {/* Rotating orbit */}
         <motion.div
@@ -90,7 +121,7 @@ export function RadialIntro({
                   }}
                   aria-pressed={isSelected}
                   className={cn(
-                    "relative grid h-16 w-16 place-items-center rounded-2xl border bg-white shadow-[0_14px_40px_rgba(15,23,42,0.10)] transition-all duration-300",
+                    "relative grid h-20 w-20 place-items-center rounded-3xl border bg-white shadow-[0_16px_46px_rgba(15,23,42,0.12)] transition-all duration-300",
                     "hover:-translate-y-0.5 hover:shadow-[0_18px_48px_rgba(15,23,42,0.14)]",
                     isSelected ? "border-[#C026D3]/40 ring-2 ring-[#C026D3]/25" : "border-slate-200/80"
                   )}
@@ -110,7 +141,7 @@ export function RadialIntro({
                     <img
                       src={item.src}
                       alt={item.name}
-                      className="relative z-10 h-12 w-12 rounded-xl bg-white p-2 object-contain"
+                      className="relative z-10 h-14 w-14 rounded-2xl bg-white p-2.5 object-contain"
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
@@ -139,17 +170,6 @@ export function RadialIntro({
                 transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.div
-                className="absolute h-[210px] w-[210px] rounded-full"
-                style={{
-                  background:
-                    "conic-gradient(from 180deg, rgba(108,26,235,0.0), rgba(108,26,235,0.35), rgba(192,38,211,0.35), rgba(108,26,235,0.0))",
-                  maskImage: "radial-gradient(circle, transparent 56%, black 62%)",
-                  WebkitMaskImage: "radial-gradient(circle, transparent 56%, black 62%)",
-                }}
-                animate={{ rotate: 360 }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              />
-              <motion.div
                 className="absolute h-[186px] w-[186px] rounded-full border border-slate-200/60 bg-white/40 backdrop-blur"
                 animate={{ scale: [1, 1.035, 1] }}
                 transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
@@ -162,13 +182,21 @@ export function RadialIntro({
             animate={centerEmphasis ? { y: [0, -3, 0] } : { y: 0 }}
             transition={centerEmphasis ? { duration: 2.6, repeat: Infinity, ease: "easeInOut" } : { duration: 0 }}
           >
-            <div className="relative h-[148px] w-[148px]">
+            <div className="relative h-[188px] w-[188px]">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-[236px] w-[236px] -translate-x-1/2 -translate-y-1/2 items-center justify-center"
+              >
+                <div className="partner-gradient-ring-glow absolute inset-0" />
+              </div>
+
+              <div className="relative z-10 h-full w-full">
               {centerSrc ? (
                 <Image
                   src={centerSrc}
                   alt={centerAlt}
                   fill
-                  sizes="148px"
+                  sizes="188px"
                   className="object-contain"
                   priority
                 />
@@ -177,6 +205,7 @@ export function RadialIntro({
                   {centerFallback || "?"}
                 </div>
               )}
+              </div>
             </div>
           </motion.div>
         </div>

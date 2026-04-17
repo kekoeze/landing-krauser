@@ -127,20 +127,20 @@ export default function PortfolioSection() {
         "Gestión de grupos de WhatsApp para comunicación segmentada",
         "Planes escalables con reportes, multiusuario e integraciones según el negocio",
       ],
-      imageUrl: "/miviandita_home.png",
+      imageUrl: "/miviandita-sistema-viandas.png",
       techTags: ["ERP", "WhatsApp", "Kanban", "Suscripciones"],
       status: "process",
     },
   ];
 
   return (
-    <ParallaxSection id="portfolio" className="py-20">
+    <ParallaxSection id="portfolio" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="mb-12 text-center">
+        <div ref={ref} className="mb-8 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
             <GradientText text="PROYECTOS QUE IMPULSAMOS, NEGOCIOS REALES" className="font-extrabold" />
           </h2>
-          <p className="mt-4 mx-auto max-w-3xl text-base text-[#C026D3]/80 md:text-lg">
+          <p className="mt-4 mx-auto max-w-3xl text-base text-slate-900 md:text-lg">
             Conocé algunos de los desarrollos que ayudaron a nuestros clientes a crecer y profesionalizar su presencia
             digital.
           </p>

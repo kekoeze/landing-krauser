@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="mb-16">
           <SectionHeader
@@ -150,7 +150,7 @@ export default function TestimonialsSection() {
             <div className="text-slate-500 dark:text-gray-400">Satisfacción del cliente</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">50+</div>
+            <div className="text-4xl font-bold gradient-text mb-2">13</div>
             <div className="text-slate-500 dark:text-gray-400">Proyectos completados</div>
           </div>
           <div className="text-center">

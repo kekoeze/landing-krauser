@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -108,10 +106,13 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
     color: var(--text-primary);
-    /* Fondo más limpio para no opacar los acentos violeta/rosado */
-    background: var(--brand-bg-top);
+    /* Fondo limpio pero con profundidad sutil */
+    background:
+      radial-gradient(900px 420px at 15% 0%, rgba(108, 26, 235, 0.06), transparent 60%),
+      radial-gradient(760px 380px at 85% 12%, rgba(192, 38, 211, 0.05), transparent 58%),
+      linear-gradient(180deg, var(--brand-bg-top) 0%, var(--brand-bg-bottom) 100%);
   }
 }
 
@@ -360,6 +361,17 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: rgba(108, 26, 235, 0.22);
+}
+
+@layer utilities {
+  .font-logo {
+    font-family: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -398,6 +410,65 @@ html {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes ring-breathe {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0.25;
+  }
+}
+
+@layer utilities {
+  .ring-breathe-magenta {
+    animation: ring-breathe 2.1s ease-in-out infinite;
+    will-change: transform, opacity;
+    filter: blur(10px);
+  }
+
+  .ring-breathe-magenta-soft {
+    animation: ring-breathe 2.8s ease-in-out infinite;
+    will-change: transform, opacity;
+    filter: blur(14px);
+  }
+
+  /* RadialIntro: halo con degradé de marca que respira alrededor del logo */
+  .partner-gradient-ring-glow {
+    border-radius: 9999px;
+    background: conic-gradient(
+      from 200deg,
+      rgba(32, 176, 254, 0.95),
+      rgba(222, 61, 211, 0.88),
+      rgba(128, 117, 233, 0.95),
+      rgba(32, 176, 254, 0.95)
+    );
+    filter: blur(18px);
+    -webkit-mask-image: radial-gradient(circle, transparent 46%, #000 58%, transparent 74%);
+    mask-image: radial-gradient(circle, transparent 46%, #000 58%, transparent 74%);
+    animation: partner-gradient-ring-glow-breathe 3.05s ease-in-out infinite;
+    animation-delay: 0.18s;
+    will-change: transform, opacity;
+  }
+}
+
+@keyframes partner-gradient-ring-glow-breathe {
+  0%,
+  100% {
+    transform: scale(0.86);
+    opacity: 0.32;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 0.62;
+  }
 }
 
 /* Enhanced scroll reveal animations */

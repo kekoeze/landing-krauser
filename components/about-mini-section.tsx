@@ -4,7 +4,7 @@ import SectionHeader from "@/components/section-header";
 
 export default function AboutMiniSection() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Impulsá tu negocio con una solución digital a medida"

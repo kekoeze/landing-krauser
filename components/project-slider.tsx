@@ -24,7 +24,7 @@ export default function ProjectSlider({
     <div className="group relative">
       {title ? (
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-[#8A2BE2] md:text-4xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-[#9933FF] md:text-4xl">
             {title}
           </h2>
           {subtitle ? (
@@ -44,13 +44,13 @@ export default function ProjectSlider({
             slides={projects}
             options={OPTIONS}
             onIndexChange={(index) => setActive(index)}
-            viewportClassName="pb-10 px-1 sm:px-2"
-            trackClassName="gap-6 md:gap-7 lg:gap-8"
-            slideClassName="pl-0 pr-0"
+            viewportClassName="pb-10"
+            trackClassName="gap-8 md:gap-10 lg:gap-10"
+            slideClassName="flex-[0_0_100%] md:flex-[0_0_calc((100%-2.5rem)/2)] lg:flex-[0_0_calc((100%-5rem)/3)]"
             showArrows
             showDots
             renderSlide={(project, idx) => (
-              <div className="w-[78vw] sm:w-[58vw] md:w-[calc((100vw-64px)/2)] lg:w-[calc((1120px-40px)/3)] py-2">
+              <div className="w-full px-2 py-3 sm:px-3 md:px-2 lg:px-2.5">
                 <ProjectFlipCard project={project} compact />
               </div>
             )}

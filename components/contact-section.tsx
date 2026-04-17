@@ -92,7 +92,7 @@ export default function ContactSection() {
   };
 
   return (
-    <ParallaxSection id="contact" className="py-20">
+    <ParallaxSection id="contact" className="py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className="mb-16">
           <SectionHeader
@@ -263,7 +263,8 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full btn-gradient text-white py-4 font-semibold text-base group disabled:opacity-50 disabled:cursor-not-allowed"
+                variant="gradient"
+                className="w-full py-4 font-semibold text-base group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>

@@ -13,7 +13,7 @@ import Footer from '@/components/footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen surface-primary text-primary overflow-x-clip theme-transition">
+    <main className="min-h-screen bg-transparent text-primary overflow-x-clip theme-transition">
       <Navbar />
       <HeroSection />
       <ValuePropSection />
