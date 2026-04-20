@@ -56,7 +56,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          <div className="flex min-w-0 max-w-[calc(100vw-5.5rem)] items-center sm:max-w-none">
+          <div className="flex flex-1 min-w-0 items-center">
             <a
               href={getMenuHref('#home')}
               className="group inline-flex min-w-0 max-w-full items-center overflow-hidden rounded-2xl px-2 py-2 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8075E9]/35"
@@ -110,7 +110,7 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="relative z-50 flex shrink-0 items-center space-x-4">
             {/* Mobile menu (Sheet) */}
             <Sheet>
               <SheetTrigger asChild>
