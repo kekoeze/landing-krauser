@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
 
 import { cn } from "@/lib/utils";
@@ -42,6 +42,91 @@ export type RadialOrbitItem = {
   src?: string;
 };
 
+type OrbitPartnerTileProps = {
+  orbitSpinDeg: ReturnType<typeof useMotionValue<number>>;
+  angleDeg: number;
+  radius: number;
+  item: RadialOrbitItem;
+  isSelected: boolean;
+  layoutMode: RadialLayoutMode;
+  onPick: (item: RadialOrbitItem) => void;
+};
+
+function OrbitPartnerTile({ orbitSpinDeg, angleDeg, radius, item, isSelected, layoutMode, onPick }: OrbitPartnerTileProps) {
+  const keepUpright = useTransform(orbitSpinDeg, (deg) => -deg);
+  const angleRad = (angleDeg * Math.PI) / 180;
+  const x = radius * Math.cos(angleRad);
+  const y = radius * Math.sin(angleRad);
+  const fallback = String(item.name ?? "")
+    .trim()
+    .slice(0, 2)
+    .toUpperCase();
+
+  return (
+    <div
+      className="absolute left-1/2 top-1/2"
+      style={{
+        transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+      }}
+    >
+      <motion.button
+        type="button"
+        onClick={() => onPick(item)}
+        aria-pressed={isSelected}
+        style={{ rotate: keepUpright }}
+        className={cn(
+          "group relative inline-flex items-center justify-center overflow-hidden border bg-white leading-none transition-[box-shadow,transform,border-color] duration-300 hover:-translate-y-0.5",
+          layoutMode === "desktop" &&
+            "h-20 w-20 rounded-2xl shadow-[0_12px_36px_rgba(15,23,42,0.10)] hover:shadow-[0_14px_40px_rgba(15,23,42,0.12)]",
+          layoutMode === "tablet-compact" &&
+            "h-12 w-12 rounded-xl shadow-[0_9px_26px_rgba(15,23,42,0.095)] hover:shadow-[0_11px_30px_rgba(15,23,42,0.11)]",
+          layoutMode === "mobile-compact" &&
+            "h-14 w-14 rounded-2xl shadow-[0_10px_30px_rgba(15,23,42,0.10)] hover:shadow-[0_12px_34px_rgba(15,23,42,0.12)]",
+          isSelected ? "border-[#C026D3]/40 ring-2 ring-[#C026D3]/25" : "border-slate-200/80"
+        )}
+      >
+        <span
+          className={cn(
+            "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300",
+            layoutMode === "desktop" ? "rounded-2xl" : layoutMode === "tablet-compact" ? "rounded-xl" : "rounded-2xl",
+            "bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(108,26,235,0.14),transparent_55%)]",
+            isSelected ? "opacity-100" : "group-hover:opacity-100"
+          )}
+        />
+
+        {item.src ? (
+          // Use <img> to support remote URLs without Next config.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={item.src}
+            alt={item.name}
+            className={cn(
+              "relative z-10 block shrink-0 bg-white object-contain object-center",
+              layoutMode === "desktop" && "max-h-[76%] max-w-[76%] rounded-xl",
+              layoutMode === "tablet-compact" && "max-h-[78%] max-w-[78%] rounded-md",
+              layoutMode === "mobile-compact" && "max-h-[80%] max-w-[80%] rounded-lg"
+            )}
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <span
+            className={cn(
+              "relative z-10 shrink-0 font-extrabold tracking-tight text-slate-800",
+              layoutMode === "desktop" && "text-xs",
+              layoutMode === "tablet-compact" && "text-[11px]",
+              layoutMode === "mobile-compact" && "text-xs"
+            )}
+          >
+            {fallback}
+          </span>
+        )}
+      </motion.button>
+    </div>
+  );
+}
+
 type RadialIntroProps = {
   orbitItems: RadialOrbitItem[];
   className?: string;
@@ -65,6 +150,7 @@ export function RadialIntro({
 }: RadialIntroProps) {
   const layoutMode = useRadialLayoutMode();
   const compact = layoutMode !== "desktop";
+  const orbitSpinDeg = useMotionValue(0);
   const firstId = orbitItems[0]?.id;
   const [internalSelected, setInternalSelected] = React.useState<RadialOrbitItem["id"] | undefined>(
     defaultSelectedId ?? firstId
@@ -74,20 +160,11 @@ export function RadialIntro({
     selectedId === undefined || selectedId === null || selectedId === "" ? undefined : selectedId;
   const currentSelected = normalizedSelectedId ?? internalSelected;
   const count = Math.max(orbitItems.length, 1);
-  /* Radio en px: en móvil/tablet compacto los logos van más lejos del centro (columna estrecha vs ancha). */
+  /* Radio en px: en móvil tiles más grandes → un poco más de radio para que no se pisen. */
   const radius =
-    layoutMode === "desktop" ? 206 : layoutMode === "tablet-compact" ? 122 : 91;
+    layoutMode === "desktop" ? 206 : layoutMode === "tablet-compact" ? 128 : 112;
   const fallbackCenterItem = orbitItems.find((i) => i.id === currentSelected) ?? orbitItems[0];
-  const overrideItemSrc = React.useCallback((item: RadialOrbitItem | undefined) => {
-    if (!item) return undefined;
-    // Override solicitado: usar el logo full para CiTeCoPa.
-    if (String(item.id) === "citecopa") return "/citecopa.png";
-    return item.src;
-  }, []);
-  const centerSrc =
-    String(currentSelected) === "citecopa"
-      ? "/citecopa.png"
-      : centerLogoSrc ?? overrideItemSrc(fallbackCenterItem);
+  const centerSrc = centerLogoSrc ?? fallbackCenterItem?.src;
   const centerAlt = centerLogoAlt ?? fallbackCenterItem?.name ?? "Partner";
   const centerFallback = String(centerAlt ?? "")
     .trim()
@@ -96,6 +173,11 @@ export function RadialIntro({
     .map((w) => w[0])
     .join("")
     .toUpperCase();
+
+  React.useEffect(() => {
+    const controls = animate(orbitSpinDeg, 360, { duration: 50, ease: "linear", repeat: Infinity });
+    return () => controls.stop();
+  }, [orbitSpinDeg]);
 
   return (
     <div className={cn("relative w-full", compact && "overflow-visible", className)}>
@@ -151,76 +233,26 @@ export function RadialIntro({
 
         {/* Anillo con degradé de marca alrededor del logo: ver clases en globals.css */}
 
-        {/* Rotating orbit */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 50, ease: "linear", repeat: Infinity }}
-        >
+        {/* Órbita: el anillo gira; cada tile compensa para que el logo siga derecho */}
+        <motion.div className="absolute inset-0" style={{ rotate: orbitSpinDeg }}>
           {orbitItems.map((item, idx) => {
-            const angle = (360 / count) * idx;
+            const angleDeg = (360 / count) * idx;
             const isSelected = item.id === currentSelected;
-            const fallback = String(item.name ?? "").trim().slice(0, 2).toUpperCase();
 
             return (
-              <div
+              <OrbitPartnerTile
                 key={item.id}
-                className="absolute left-1/2 top-1/2"
-                style={{
-                  transform: `rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg) translate(-50%, -50%)`,
+                orbitSpinDeg={orbitSpinDeg}
+                angleDeg={angleDeg}
+                radius={radius}
+                item={item}
+                isSelected={isSelected}
+                layoutMode={layoutMode}
+                onPick={(picked) => {
+                  setInternalSelected(picked.id);
+                  onSelect?.(picked);
                 }}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setInternalSelected(item.id);
-                    onSelect?.(item);
-                  }}
-                  aria-pressed={isSelected}
-                  className={cn(
-                    "group relative grid place-items-center border bg-white transition-all duration-300 hover:-translate-y-0.5",
-                    compact
-                      ? "h-12 w-12 rounded-2xl shadow-[0_10px_28px_rgba(15,23,42,0.10)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.12)]"
-                      : "h-24 w-24 rounded-3xl shadow-[0_16px_46px_rgba(15,23,42,0.12)] hover:shadow-[0_18px_48px_rgba(15,23,42,0.14)]",
-                    isSelected ? "border-[#C026D3]/40 ring-2 ring-[#C026D3]/25" : "border-slate-200/80"
-                  )}
-                >
-                  {/* tiny radial glow on hover/selected */}
-                  <span
-                    className={cn(
-                      "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300",
-                      compact ? "rounded-2xl" : "rounded-3xl",
-                      "bg-[radial-gradient(circle_at_30%_20%,rgba(192,38,211,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(108,26,235,0.14),transparent_55%)]",
-                      isSelected ? "opacity-100" : "group-hover:opacity-100"
-                    )}
-                  />
-
-                  {overrideItemSrc(item) ? (
-                    // Use <img> to support remote URLs without Next config.
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={overrideItemSrc(item)}
-                      alt={item.name}
-                      className={cn(
-                        "relative z-10 bg-white object-contain",
-                        compact ? "h-10 w-10 rounded-xl p-1.5" : "h-16 w-16 rounded-2xl p-2"
-                      )}
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <span
-                      className={cn(
-                        "relative z-10 font-extrabold tracking-tight text-slate-800",
-                        compact ? "text-[11px]" : "text-sm"
-                      )}
-                    >
-                      {fallback}
-                    </span>
-                  )}
-                </button>
-              </div>
+              />
             );
           })}
         </motion.div>
@@ -257,8 +289,8 @@ export function RadialIntro({
                 "relative",
                 compact
                   ? layoutMode === "tablet-compact"
-                    ? "h-[108px] w-[108px]"
-                    : "h-[96px] w-[96px]"
+                    ? "h-[116px] w-[116px]"
+                    : "h-[124px] w-[124px]"
                   : "h-[204px] w-[204px]"
               )}
             >
@@ -268,8 +300,8 @@ export function RadialIntro({
                   "pointer-events-none absolute left-1/2 top-1/2 z-0 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center",
                   compact
                     ? layoutMode === "tablet-compact"
-                      ? "h-[142px] w-[142px]"
-                      : "h-[128px] w-[128px]"
+                      ? "h-[152px] w-[152px]"
+                      : "h-[168px] w-[168px]"
                     : "h-[256px] w-[256px]"
                 )}
               >
@@ -278,20 +310,22 @@ export function RadialIntro({
 
               <div className="relative z-10 h-full w-full">
               {centerSrc ? (
-                <Image
-                  src={centerSrc}
-                  alt={centerAlt}
-                  fill
-                  sizes={
-                    compact
-                      ? layoutMode === "tablet-compact"
-                        ? "108px"
-                        : "96px"
-                      : "204px"
-                  }
-                  className="object-contain"
-                  priority
-                />
+                <div className="absolute inset-2 sm:inset-3">
+                  <Image
+                    src={centerSrc}
+                    alt={centerAlt}
+                    fill
+                    sizes={
+                      compact
+                        ? layoutMode === "tablet-compact"
+                          ? "116px"
+                          : "124px"
+                        : "204px"
+                    }
+                    className="block object-contain object-center"
+                    priority
+                  />
+                </div>
               ) : (
                 <div className="grid h-full w-full place-items-center rounded-3xl border border-slate-200/80 bg-white text-3xl font-black tracking-tight text-slate-900">
                   {centerFallback || "?"}
