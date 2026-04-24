@@ -66,7 +66,7 @@ export default function HeroSection() {
                   <GradientText
                     text="EVAN"
                     className="pb-[0.06em] leading-none"
-                    gradient="linear-gradient(108deg, #20B0FE 0%, #8075E9 42%, #DE3DD3 72%, #DE3DD3 100%)"
+                    gradient="linear-gradient(108deg, #20B0FE 0%, #8075E9 42%, #252E49 72%, #20B0FE 100%)"
                     transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
                   />
                   <span
