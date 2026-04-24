@@ -16,6 +16,7 @@ export type ProjectFlipData = {
   longDescription?: string; // long text (back)
   features?: string[];
   imageUrl?: string;
+  imageFit?: "cover" | "contain";
   techTags?: string[];
   href?: string;
   usable?: boolean;
@@ -31,6 +32,7 @@ type ProjectFlipCardProps = {
 export default function ProjectFlipCard({ project, className, compact = false }: ProjectFlipCardProps) {
   const [flipped, setFlipped] = React.useState(false);
   const status = project.status ?? (project.usable ? "usable" : undefined);
+  const imageFit = project.imageFit ?? "cover";
 
   return (
     <div
@@ -80,7 +82,10 @@ export default function ProjectFlipCard({ project, className, compact = false }:
                 alt={project.title}
                 fill
                 sizes={compact ? "(min-width: 1024px) 360px, (min-width: 768px) 45vw, 85vw" : "(min-width: 1024px) 560px, 92vw"}
-                className="object-cover"
+                className={cn(
+                  "h-full w-full",
+                  imageFit === "contain" ? "object-contain p-3 bg-white" : "object-cover"
+                )}
               />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(138,43,226,0.12),transparent_55%),radial-gradient(circle_at_80%_20%,rgba(192,38,211,0.10),transparent_60%)]" />
             </div>

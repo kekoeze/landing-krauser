@@ -15,7 +15,7 @@ export default function ServicesSection() {
     {
       icon: ShoppingCart,
       title: 'Tienda E-commerce',
-      price: '350.000 al año (pago único)',
+      price: '500.000 ARS anual',
       description:
         'Tienda online lista para vender con pagos, catálogo, carrito y panel de administración.',
       features: [
@@ -29,7 +29,7 @@ export default function ServicesSection() {
     {
       icon: FileText,
       title: 'Landing Page',
-      price: '150.000 al año (pago único)',
+      price: '150.000 ARS anual',
       description:
         'Página enfocada a la conversión para campañas, servicios y captación de leads.',
       features: [
@@ -43,7 +43,7 @@ export default function ServicesSection() {
     {
       icon: PenTool,
       title: 'Sitio Web Blog',
-      price: '350.000 al año (pago único)',
+      price: '350.000 ARS anual',
       description:
         'Blog con publicaciones editables, categorías, comentarios y SEO. Soporte extendido.',
       features: [

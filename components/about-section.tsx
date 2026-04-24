@@ -75,9 +75,6 @@ export default function AboutSection() {
                   <div className="inline-flex self-center items-center gap-2 rounded-full border border-[#252E49]/20 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-[#252E49]">
                     MISIÓN
                   </div>
-                  <h3 className="mt-5 self-center text-center text-2xl font-extrabold tracking-tight text-[#252E49]">
-                    Nuestra Misión
-                  </h3>
                   <p className="mt-5 w-full text-left text-base leading-relaxed text-[#252E49]/85">
                     Transformamos la manera en que las empresas argentinas interactúan con la tecnología, creando soluciones
                     que no solo resuelven problemas actuales, sino que anticipan las necesidades del futuro digital.
@@ -91,8 +88,6 @@ export default function AboutSection() {
                   <div className="inline-flex items-center gap-2 rounded-full border border-[#252E49]/20 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.22em] text-[#252E49]">
                     VALORES
                   </div>
-                  <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-[#252E49]">Nuestros Valores</h3>
-
                   <ul className="mt-6 flex w-full max-w-md flex-col items-center space-y-4 text-[#252E49]/85">
                     <li className="flex flex-col items-center gap-2 sm:flex-row sm:items-start sm:gap-3 sm:text-left">
                       <span className="inline-flex shrink-0 items-center justify-center text-[#DE3DD3] sm:mt-0.5">

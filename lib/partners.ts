@@ -922,7 +922,7 @@ export const partners: Partner[] = [
     cardGradient: 'gradient-bg-3',
     logo: {
       alt: 'Fundación CiTeCopa',
-      src: '/citecopa_short.png',
+      src: '/citecopa.png',
       initials: 'FC',
       gradient: 'from-green-500 to-lime-500',
       variant: 'wide',
