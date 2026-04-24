@@ -58,7 +58,7 @@ export default function ServicesSection() {
     {
       icon: Code,
       title: 'Desarrollo Personalizado',
-      price: 'Según requerimientos del cliente',
+      price: 'Según requerimientos',
       description:
         'Software a medida: integraciones, automatizaciones y sistemas internos escalables.',
       features: [
