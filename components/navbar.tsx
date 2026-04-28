@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { Menu } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -18,6 +19,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+
+/** Muestra el logotipo textual solo al hover/focus del isologo o al focus del enlace (teclado). */
+const LOGO_WORDMARK_REVEAL =
+  'ml-2 inline-flex max-w-0 items-center overflow-hidden whitespace-nowrap pr-0 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ' +
+  'peer-hover/icon:ml-3 peer-hover/icon:max-w-[220px] peer-hover/icon:pr-1 peer-hover/icon:opacity-100 ' +
+  'md:peer-hover/icon:max-w-[240px] md:peer-hover/icon:pr-0 ' +
+  'group-focus-visible/link:ml-3 group-focus-visible/link:max-w-[220px] group-focus-visible/link:pr-1 group-focus-visible/link:opacity-100 ' +
+  'md:group-focus-visible/link:max-w-[240px] md:group-focus-visible/link:pr-0';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +54,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-40 overflow-visible transition-[background-color,box-shadow,border-color] duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 overflow-visible transition-[background-color,box-shadow,border-color] duration-300 ${
         scrolled
           ? 'border-b border-slate-200/75 bg-slate-50/95 shadow-[0_12px_30px_rgba(15,23,42,0.08)]'
           : 'border-b border-transparent bg-slate-50/90'
@@ -59,18 +68,20 @@ export default function Navbar() {
           <div className="flex flex-1 min-w-0 items-center">
             <a
               href={getMenuHref('#home')}
-              className="group inline-flex min-w-0 max-w-full items-center overflow-hidden rounded-2xl px-2 py-2 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8075E9]/35"
+              className="group/link inline-flex min-w-0 max-w-full items-center overflow-visible rounded-2xl px-2 py-2 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8075E9]/35"
               aria-label="Ir al inicio"
             >
-              <Image
-                src="/isologo.png"
-                alt="Krauser"
-                width={44}
-                height={44}
-                className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
-                priority
-              />
-              <span className="ml-2 inline-flex max-w-0 overflow-hidden whitespace-nowrap pr-0 opacity-0 transition-all duration-300 ease-out group-hover:ml-3 group-hover:max-w-[220px] group-hover:pr-1 group-hover:opacity-100 md:group-hover:max-w-[240px] md:group-hover:pr-0 group-focus-visible:ml-3 group-focus-visible:max-w-[220px] group-focus-visible:pr-1 group-focus-visible:opacity-100 md:group-focus-visible:max-w-[240px] md:group-focus-visible:pr-0 group-active:ml-3 group-active:max-w-[220px] group-active:pr-1 group-active:opacity-100 md:group-active:max-w-[240px] md:group-active:pr-0">
+              <span className="peer/icon inline-flex shrink-0 rounded-2xl">
+                <Image
+                  src="/isologo.png"
+                  alt="Krauser"
+                  width={44}
+                  height={44}
+                  className="h-10 w-10 shrink-0 sm:h-11 sm:w-11"
+                  priority
+                />
+              </span>
+              <span className={LOGO_WORDMARK_REVEAL}>
                 <Image
                   src="/logotipo-oscuro.png"
                   alt="Krauser"
@@ -84,7 +95,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex flex-1 items-center justify-center">
+          <div className="hidden lg:flex flex-1 items-center justify-center">
             <NavigationMenu>
               <NavigationMenuList className="gap-1 lg:gap-2">
                 {menuItems.map((item) => {
@@ -110,41 +121,71 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          <div className="relative z-50 flex shrink-0 items-center space-x-4">
+          <div className="relative z-50 flex shrink-0 items-center space-x-2">
             {/* Mobile menu (Sheet) */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="md:hidden h-11 w-11 rounded-2xl text-[#8075E9] hover:text-[#8075E9] hover:bg-[#8075E9]/10"
+                  className="lg:hidden h-11 w-11 rounded-2xl text-[#8075E9] hover:text-[#8075E9] hover:bg-[#8075E9]/10 border border-[#8075E9]/15"
                   aria-label="Abrir menú"
                 >
-                  <span className="relative block h-5 w-6">
-                    <span className="absolute left-0 top-0 block h-[3px] w-full rounded-full bg-current" />
-                    <span className="absolute left-0 top-1/2 block h-[3px] w-full -translate-y-1/2 rounded-full bg-current opacity-90" />
-                    <span className="absolute left-0 bottom-0 block h-[3px] w-full rounded-full bg-current" />
-                  </span>
+                  <Menu className="h-6 w-6" strokeWidth={2.4} aria-hidden />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-white/90 backdrop-blur-md">
+              <SheetContent className="w-[86vw] max-w-[360px] border-l border-slate-200/70 bg-white/95 backdrop-blur-xl">
                 <SheetHeader>
                   <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
-                  <div className="flex justify-center pt-1">
-                    <a
+                  <motion.div
+                    className="flex flex-col items-stretch justify-start pt-1"
+                    initial={{ opacity: 0, x: -22, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 420,
+                      damping: 34,
+                      mass: 0.82,
+                    }}
+                  >
+                    <motion.a
                       href={getMenuHref('#home')}
-                      className="group inline-flex items-center justify-center rounded-2xl px-2 py-2 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8075E9]/35"
+                      className="group/link inline-flex items-center justify-start overflow-visible rounded-2xl px-2 py-2 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8075E9]/35"
                       aria-label="Ir al inicio"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                        delay: 0.04,
+                      }}
                     >
-                      <Image
-                        src="/isologo.png"
-                        alt="Krauser"
-                        width={44}
-                        height={44}
-                        className="h-11 w-11 shrink-0 opacity-95"
-                        priority={false}
-                      />
-                      <span className="ml-2 inline-flex max-w-0 overflow-hidden whitespace-nowrap pr-0 opacity-0 transition-all duration-300 ease-out group-hover:ml-3 group-hover:max-w-[240px] group-hover:pr-2 group-hover:opacity-100 group-focus-visible:ml-3 group-focus-visible:max-w-[240px] group-focus-visible:pr-2 group-focus-visible:opacity-100 group-active:ml-3 group-active:max-w-[240px] group-active:pr-2 group-active:opacity-100">
+                      <motion.span
+                        className="peer/icon group/isoframe relative inline-flex shrink-0 rounded-2xl"
+                        initial={{ scale: 0.88, rotate: -6 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 22,
+                          delay: 0.06,
+                        }}
+                      >
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#9933FF]/25 via-[#C026D3]/15 to-transparent opacity-0 blur-md transition-opacity duration-300 group-hover/isoframe:opacity-100"
+                        />
+                        <Image
+                          src="/isologo.png"
+                          alt="Krauser"
+                          width={44}
+                          height={44}
+                          className="relative h-11 w-11 shrink-0 opacity-95"
+                          priority={false}
+                        />
+                      </motion.span>
+                      <span className={LOGO_WORDMARK_REVEAL}>
                         <Image
                           src="/logotipo-oscuro.png"
                           alt="Krauser"
@@ -154,8 +195,19 @@ export default function Navbar() {
                           priority={false}
                         />
                       </span>
-                    </a>
-                  </div>
+                    </motion.a>
+                    <motion.div
+                      aria-hidden
+                      className="mt-3 h-[2px] max-w-[min(220px,88%)] origin-left rounded-full bg-gradient-to-r from-[#9933FF] via-[#C026D3] to-[#20B0FE]/60"
+                      initial={{ scaleX: 0, opacity: 0 }}
+                      animate={{ scaleX: 1, opacity: 1 }}
+                      transition={{
+                        delay: 0.14,
+                        duration: 0.55,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    />
+                  </motion.div>
                 </SheetHeader>
 
                 <div className="mt-6 space-y-2">
